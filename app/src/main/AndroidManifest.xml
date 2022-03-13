@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BettingTipsKing"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.auth.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.SignUpActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ui.auth.PhoneLoginActivity"
             android:exported="false" />
