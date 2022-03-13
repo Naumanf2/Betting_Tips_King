@@ -12,6 +12,7 @@ import com.bettingtipsking.app.databinding.ActivityLogInBinding;
 public class LogInActivity extends AppCompatActivity {
 
   ActivityLogInBinding binding;
+  String abc;
 
 
     @Override
