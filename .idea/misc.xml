@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_home.xml" value="0.209375" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/fragment_notifications.xml" value="0.33" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_notifications.xml" value="0.33" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-mdpi/inputs_background.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-mdpi/save_btn_background.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable/bg_button_bottom_left_right_rounded.xml" value="0.156" />
@@ -11,22 +14,17 @@
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable/bg_rounded_corner_white.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_account.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_forgot_password.xml" value="0.1328195829555757" />
-        <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_login_activity.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_notification.xml" value="0.18" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_phone_login.xml" value="0.25" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_profile_info.xml" value="0.2" />
-        <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_reset_password.xml" value="0.2" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/fragment_account.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/fragment_account_login.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/fragment_account_not_login.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/fragment_linup_players.xml" value="0.12047101449275362" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/fragment_news.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/layout_account_login.xml" value="0.18" />
-        <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/layout/layout_account_not_login.xml" value="0.25" />
       </map>
     </option>
   </component>

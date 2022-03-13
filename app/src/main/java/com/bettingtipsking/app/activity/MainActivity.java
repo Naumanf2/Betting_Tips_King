@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     MenuItem nav_login_logout;
     boolean isLogin;
-    String noman;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
