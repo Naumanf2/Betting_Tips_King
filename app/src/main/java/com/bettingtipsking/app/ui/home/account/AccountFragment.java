@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.ui.account;
+package com.bettingtipsking.app.ui.home.account;
 
 import android.os.Bundle;
 

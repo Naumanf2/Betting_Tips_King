@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.ui.news;
+package com.bettingtipsking.app.ui.home.news;
 
 import android.os.Bundle;
 

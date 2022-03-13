@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.ui.account;
+package com.bettingtipsking.app.ui.home.notification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,7 @@ import android.os.Bundle;
 import com.bettingtipsking.app.R;
 
 public class NotificationActivity extends AppCompatActivity {
-    String newChage;
-    String change;
 
-    String hdhhd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
