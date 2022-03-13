@@ -7,10 +7,11 @@ import android.os.Bundle;
 import com.bettingtipsking.app.R;
 
 public class NotificationActivity extends AppCompatActivity {
-    String newChage;
-    String change;
+
 
     String hdhhd;
+
+    String nomanqadir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
