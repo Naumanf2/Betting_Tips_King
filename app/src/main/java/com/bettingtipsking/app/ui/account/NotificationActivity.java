@@ -8,7 +8,7 @@ import com.bettingtipsking.app.R;
 
 public class NotificationActivity extends AppCompatActivity {
 
-    String abc;
+    String hdhhd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
