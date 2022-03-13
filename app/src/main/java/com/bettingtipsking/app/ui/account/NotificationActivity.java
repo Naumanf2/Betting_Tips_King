@@ -10,9 +10,11 @@ public class NotificationActivity extends AppCompatActivity {
     String newChage;
     String change;
 
+    String hdhhd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+
     }
 }
