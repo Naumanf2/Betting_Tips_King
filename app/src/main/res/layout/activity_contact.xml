@@ -63,14 +63,13 @@
 
             android:fontFamily="@font/poppins_regular"
             android:hint="Enter your name"
-            android:inputType="textPassword|textNoSuggestions"
             android:textColor="#1D2226"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtEmail"
+        android:id="@+id/TextInputLayoutContactEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -94,7 +93,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/EditTextMessage"
         android:layout_width="0dp"
         android:layout_height="181dp"
         android:layout_marginTop="10dp"
@@ -107,13 +106,13 @@
         android:textColor="#1D2226"
         android:textSize="14sp"
         app:hintTextColor="#1D2226"
-        app:layout_constraintEnd_toEndOf="@+id/edtEmail"
-        app:layout_constraintStart_toStartOf="@+id/edtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutContactEmail"
+        app:layout_constraintStart_toStartOf="@+id/TextInputLayoutContactEmail"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutContactEmail" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
+        android:id="@+id/appCompatButtonSend"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -127,7 +126,7 @@
         android:textSize="@dimen/size_19"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/EditTextMessage" />
 
     <TextView
         android:id="@+id/textView2"
@@ -140,10 +139,10 @@
         android:textColor="#1D2226"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButtonSend" />
 
     <TextView
-        android:id="@+id/txtEmail"
+        android:id="@+id/TextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -163,11 +162,11 @@
         android:text="Official website:"
         android:textColor="#1D2226"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/txtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        app:layout_constraintStart_toStartOf="@+id/TextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/TextEmail" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/TextWebsite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
@@ -186,7 +185,7 @@
         android:text="Or via social media"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/TextWebsite" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -198,7 +197,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/ImageFacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -212,9 +211,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:src="@drawable/icon_facebook"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/ImageFacebook"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintStart_toEndOf="@+id/ImageFacebook"
+        app:layout_constraintTop_toTopOf="@+id/ImageFacebook" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
