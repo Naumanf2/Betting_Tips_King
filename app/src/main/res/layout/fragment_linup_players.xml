@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color10"
+        tools:context=".activity.fixtures.LineupPlayersFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="6dp"
+                android:id="@+id/cardview"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/team_flag_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/team_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toEndOf="@+id/team_flag_iv"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="" />
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.75dp"
+                        android:background="@color/separator"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/team_flag_iv"/>
+
+                    <ImageView
+                        android:id="@+id/coach_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_below="@+id/view"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/coach_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/view"
+                        android:layout_toEndOf="@+id/coach_iv"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:background="@drawable/background">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginEnd="80dp"
+                    android:src="@drawable/background2" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginEnd="120dp"
+                    android:src="@drawable/background3" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginEnd="80dp"
+                    android:src="@drawable/background2" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginEnd="120dp"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/background3" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:id="@+id/separatorView"
+                    android:background="@color/white"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/background4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/keeper1_rv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/defender1_rv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="140dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/midfielder1_rv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="200dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/forward1_rv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="270dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/keeper2_rv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/defender2_rv"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="140dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/midfielder2_rv"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="200dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/forward2_rv"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="270dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="6dp"
+                android:id="@+id/cardview1"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/team2_flag_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/team2_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toEndOf="@+id/team2_flag_iv"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="" />
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.75dp"
+                        android:background="@color/separator"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/team2_flag_iv"/>
+
+                    <ImageView
+                        android:id="@+id/coach2_iv"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/view2"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/coach2_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/view2"
+                        android:layout_toEndOf="@+id/coach2_iv"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

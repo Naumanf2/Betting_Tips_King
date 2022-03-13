@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/color11">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_launcher"/>
+
+    <!--<TextView
+        android:id="@+id/txt_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/app_name"
+        android:textSize="28sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_app_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/redressed_regular"
+        android:text="Take tips before betting"/>-->
+
+</RelativeLayout>

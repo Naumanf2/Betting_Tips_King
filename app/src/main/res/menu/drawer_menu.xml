@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_subscription"
+            android:title="Subscription"
+            android:icon="@drawable/ic_subscription"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/nav_forgot_password"
+            android:title="Forgot Password"
+            android:icon="@drawable/ic_password"/>
+    </group>
+    <group
+        android:id="@+id/menu_top1">
+        <item
+            android:id="@+id/nav_d_policy"
+            android:title="Privacy Policy"
+            android:icon="@drawable/ic_policy"/>
+    </group>
+    <group
+        android:id="@+id/menu_top2">
+        <item
+            android:id="@+id/nav_d_share"
+            android:title="Share"
+            android:icon="@drawable/ic_share"/>
+    </group>
+    <group
+        android:id="@+id/menu_top3">
+        <item
+            android:id="@+id/nav_d_rateus"
+            android:title="Rate us"
+            android:icon="@drawable/ic_rate_us"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/nav_login_logout"
+            android:title="Login"
+            android:icon="@drawable/ic_login"/>
+    </group>
+
+
+
+
+
+
+</menu>

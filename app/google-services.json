@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "323347514447",
+    "project_id": "betting-tips-king",
+    "storage_bucket": "betting-tips-king.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323347514447:android:deaee5a70ff7f037b5d63a",
+        "android_client_info": {
+          "package_name": "com.bettingtipsking.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323347514447-n61gnk1jmhtifkskkh32tv5gvfn2jr2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-Ed3UZN2KUbXt3XepXhcj_gVTfLAAaMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323347514447-n61gnk1jmhtifkskkh32tv5gvfn2jr2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
