@@ -15,6 +15,21 @@
         android:theme="@style/Theme.BettingTipsKing"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.profile.EditProfileActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.contact.ContactActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".ui.auth.ResetPasswordActivity"
             android:exported="false" />
         <activity
@@ -22,7 +37,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.LogInActivity"
-            android:exported="false" />
+            android:exported="true"></activity>
         <activity
             android:name=".ui.home.notification.NotificationActivity"
             android:exported="false" />
