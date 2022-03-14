@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.home.notification.NotificationActivity">
+    tools:context=".ui.home.notification.NotificationSettingActivity">
 
     <ImageView
         android:id="@+id/img_backButton"
@@ -217,27 +217,28 @@
 
     <TextView
         android:id="@+id/importantNotificationTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/important_notification_title"
-        android:textSize="@dimen/textSizeH5"
-        android:textColor="@color/black"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginTop="@dimen/size_10"
         android:layout_marginStart="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_10"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/important_notification_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeH5"
+        app:layout_constraintEnd_toStartOf="@+id/switch1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_2"
         android:fontFamily="@font/poppins_regular"
         android:text="@string/important_notification_description"
         android:textSize="@dimen/textSizeP2"
-        android:layout_marginTop="@dimen/size_2"
-        android:layout_marginStart="@dimen/size_30"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/importantNotificationTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/importantNotificationTitle" />
 
@@ -245,6 +246,7 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/importantNotificationTitle" />
 

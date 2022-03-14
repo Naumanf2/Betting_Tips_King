@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/icon_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navMatch"
+        android:icon="@drawable/icon_football"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navNews"
+        android:icon="@drawable/icon_football"
+        android:title="News" />
+
+    <item
+        android:id="@+id/navNotification"
+        android:icon="@drawable/icon_notification_bell"
+        android:title="News" />
+
+    <item
+        android:id="@+id/navAccount"
+        android:icon="@drawable/icon_notification_bell"
+        android:title="Account" />
+
+</menu>

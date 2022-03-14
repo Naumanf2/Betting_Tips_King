@@ -15,17 +15,14 @@
         android:theme="@style/Theme.BettingTipsKing"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.home.matches.MatchDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.favorite.FavouriteLeaguesActivity"
             android:exported="false" />
         <activity
             android:name=".ui.follow.FollowTeamActivity"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="true" />
@@ -37,13 +34,16 @@
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.auth.LogInActivity"
             android:exported="true" />
-        <activity
-            android:name=".ui.home.notification.NotificationActivity"
-            android:exported="false" />
         <activity
             android:name=".ui.auth.SignUpActivity"
             android:exported="false" />
