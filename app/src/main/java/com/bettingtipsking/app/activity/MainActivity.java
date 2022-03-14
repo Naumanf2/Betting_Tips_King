@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.nav_forgot_password:
-                      //  startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class));
+
                         break;
                     case R.id.nav_d_rateus:
                         launchMarket();

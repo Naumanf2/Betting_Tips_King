@@ -47,8 +47,8 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/datePicker"
         android:layout_above="@+id/adView"
+        android:layout_below="@+id/datePicker"
         tools:listitem="@layout/item_all_prediction" />
 
 
