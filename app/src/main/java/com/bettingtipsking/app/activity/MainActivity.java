@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     MenuItem nav_login_logout;
     boolean isLogin;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.nav_forgot_password:
-                     //   startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class));
+
                         break;
                     case R.id.nav_d_rateus:
                         launchMarket();
