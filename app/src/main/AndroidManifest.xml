@@ -16,7 +16,13 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.home.matches.MatchDetailsActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.favorite.FavouriteLeaguesActivity"
             android:exported="false" />
@@ -35,11 +41,7 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.auth.LogInActivity"
