@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/drawable/ic_play_video.xml" value="0.1635" />
         <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_home.xml" value="0.209375" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/fragment_account_not_login.xml" value="0.1718683197947841" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/fragment_news.xml" value="0.2" />
         <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/fragment_notifications.xml" value="0.33" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/fragment_videos.xml" value="0.1718683197947841" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_news_main_recyclerview.xml" value="0.1718683197947841" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_news_recyclerview.xml" value="0.33" />
         <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_notifications.xml" value="0.33" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_videos_landscape.xml" value="0.2" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_videos_main_recyclerview.xml" value="0.1718683197947841" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_videos_portrait.xml" value="0.5" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-mdpi/inputs_background.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-mdpi/save_btn_background.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable/bg_button_bottom_left_right_rounded.xml" value="0.156" />
