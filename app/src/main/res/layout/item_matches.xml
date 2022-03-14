@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_margin="5dp"
+    android:layout_margin="1.5dp"
     app:cardCornerRadius="10dp"
-    android:elevation="5dp"
+    android:elevation="2dp"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/imageTeam1"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/icon_team1"
             app:layout_constraintStart_toEndOf="@+id/textTime"
@@ -27,11 +27,11 @@
             android:id="@+id/textTeam1name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/tinos_regular"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Real Madrid"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="4dp"
             android:textColor="#1D2226"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageTeam1"
             app:layout_constraintStart_toEndOf="@+id/imageTeam1"
             app:layout_constraintTop_toTopOf="@+id/imageTeam1" />
@@ -39,8 +39,8 @@
 
         <ImageView
             android:id="@+id/imageTeam2"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/icon_team2"
             app:layout_constraintStart_toStartOf="@+id/imageTeam1"
@@ -50,10 +50,11 @@
             android:id="@+id/textTeam2name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/tinos_regular"
+            android:fontFamily="@font/poppins_semibold"
             android:text="FC Barcelona"
             android:textColor="#1D2226"
-            android:textSize="14sp"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageTeam2"
             app:layout_constraintStart_toEndOf="@+id/imageTeam2"
             app:layout_constraintTop_toTopOf="@+id/imageTeam2" />
@@ -62,7 +63,7 @@
             android:id="@+id/textTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/calibri_regular"
+            android:fontFamily="@font/tinos_regular"
             android:text="12:20"
             android:textColor="#1D2226"
             android:textSize="13sp"
@@ -75,7 +76,7 @@
             android:id="@+id/textTeam1Score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/calibri_regular"
+            android:fontFamily="@font/tinos_regular"
             android:text="3"
             android:textColor="#1D2226"
             android:textSize="16sp"
@@ -88,7 +89,7 @@
             android:id="@+id/textTeam2Score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/calibri_regular"
+            android:fontFamily="@font/tinos_regular"
             android:text="3"
             android:textColor="#1D2226"
             android:textSize="16sp"
@@ -104,13 +105,15 @@
             app:layout_constraintBottom_toBottomOf="@+id/textTeam1name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textTeam1name" />
+
         <ImageView
             android:id="@+id/imageStar"
-            android:layout_width="21.56dp"
-            android:layout_height="21.56dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:src="@drawable/icon_star_border"
             app:layout_constraintBottom_toBottomOf="@+id/textTeam2name"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageExpand"
             app:layout_constraintTop_toTopOf="@+id/textTeam2name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
