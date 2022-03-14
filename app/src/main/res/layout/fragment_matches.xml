@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    tools:context=".ui.home.matches.MatchesFragment">
+
+    <TextView
+
+        android:id="@+id/textToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/calibri_bold"
+        android:text="Today"
+        android:textColor="#707070"
+        android:gravity="center"
+
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textLive"
+        app:layout_constraintEnd_toStartOf="@+id/textLive"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textLive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/calibri_bold"
+        android:text="Live"
+        android:gravity="center"
+
+        android:textColor="#707070"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textUpcoming"
+        app:layout_constraintEnd_toStartOf="@+id/textUpcoming"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textToday" />
+
+    <TextView
+        android:id="@+id/textUpcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_skyblue_txt"
+        android:fontFamily="@font/calibri_bold"
+        android:text="Upcoming"
+android:gravity="center"
+        android:textColor="#707070"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Past"
+        app:layout_constraintEnd_toStartOf="@+id/Past"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textLive" />
+
+    <TextView
+        android:id="@+id/Past"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/calibri_bold"
+        android:text="Past"
+        android:textColor="#707070"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textUpcoming"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+android:id="@+id/searchViewMatches"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_light_back_searchview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLive" />
+
+    <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchViewMatches"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewMatches" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_multircl"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

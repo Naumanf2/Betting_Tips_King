@@ -34,7 +34,7 @@
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/drawable/bg_rounded_corner_white.xml" value="0.1" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/drawable/bg_rounded_skyblue_txt.xml" value="0.175" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/drawable/bg_shape.xml" value="0.1" />
-        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_alert.xml" value="0.11" />
+        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_alert.xml" value="0.25" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_contact.xml" value="0.16" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_favourite_leagues.xml" value="0.16" />
@@ -42,10 +42,15 @@
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_log_in.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_notification.xml" value="0.15703125" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_notification2.xml" value="0.15703125" />
+        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_reset_password.xml" value="0.15703125" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/activity_sign_up.xml" value="0.209375" />
+        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/fragment_matches.xml" value="0.14" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/item_alertnotification.xml" value="0.15703125" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/item_favouriteteam.xml" value="0.15703125" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/item_followteams.xml" value="0.33" />
+        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/item_matches.xml" value="0.18" />
+        <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/item_multircl.xml" value="0.22" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/layout_account_login.xml" value="0.209375" />
         <entry key="..\:/Users/Nomii/AndroidStudioProjects/Betting_Tips_King/app/src/main/res/layout/layout_account_not_login.xml" value="0.209375" />
       </map>
