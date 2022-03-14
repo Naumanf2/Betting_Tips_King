@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.bettingtipsking.app.R;
 
+import com.bettingtipsking.app.ui.home.matches.CoachFragment;
 import com.bettingtipsking.app.ui.home.news.NewsFragment;
 import com.bettingtipsking.app.ui.home.notification.NotificationsFragment;
 
@@ -20,9 +21,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new NewsFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new CoachFragment()).commit();
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.framLayout, new MatchesFragment()).commit();
     }
 }
