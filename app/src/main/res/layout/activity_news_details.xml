@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.news.NewsDetailsActivity">
+    <ImageView
+        android:id="@+id/imgBackArrow"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="News Detail"
+        android:textColor="#1d2226"
+        android:textSize="23sp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/imgShareNews"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="21dp"
+        android:src="@drawable/ic_share"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNewsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Rangnick in disbelief over human disaster in Ukraine"
+        android:textColor="#1d2226"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNewsTitle">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_football"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="Betting Tips King"
+            android:textColor="#111111"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/imgIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textRecentNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="Recent News"
+            android:textColor="#AB111111"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/textAppName"
+            app:layout_constraintTop_toBottomOf="@id/textAppName"
+
+            />
+
+        <TextView
+            android:id="@+id/tvNewsDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/calibri_bold"
+            android:text="26/02/2022"
+            android:textColor="#1d2226"
+            android:textSize="15sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/tvNewsTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="20:47 "
+            android:textColor="#1d2226"
+            android:textSize="13sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNewsDate"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvNewsSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/calibri_bold"
+                android:text="Heung Min Son helped inspire with over Manchester City"
+                android:textColor="#1d2226"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNewsDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="11dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/roboto"
+                android:text="The Russian Football Union criticized UEFA for not
+                             keeping 'sport out of politics regarding' its ruling on the Champions
+                             League final.UEFA's decision to move the Champions League final
+                             from St Petersburg to Paris has been criticized by the Russian
+                             Football Union (RFU),which believes the move was 'dictated
+                             by political reasons. The decision came after European football's
+                             governing body condemned Russia's invasion of Ukraine on Thursday and
+                             called an emergency meeting of the executive committee to discuss the situation.
+                             The Russian Football Union criticized UEFA for not
+                             keeping 'sport out of politics regarding' its ruling on the Champions
+                             League final.UEFA's decision to move the Champions League final
+                             from St Petersburg to Paris has been criticized by the Russian
+                             Football Union (RFU),which believes the move was 'dictated
+                             by political reasons. The decision came after European football's
+                             governing body condemned Russia's invasion of Ukraine on Thursday and
+                             called an emergency meeting of the executive committee to discuss the situation.
+                             The Russian Football Union criticized UEFA for not
+                             keeping 'sport out of politics regarding' its ruling on the Champions
+                             League final.UEFA's decision to move the Champions League final
+                             from St Petersburg to Paris has been criticized by the Russian
+                             Football Union (RFU),which believes the move was 'dictated
+                             by political reasons. The decision came after European football's
+                             governing body condemned Russia's invasion of Ukraine on Thursday and
+                             called an emergency meeting of the executive committee to discuss the situation.
+                             The Russian Football Union criticized UEFA for not
+                             keeping 'sport out of politics regarding' its ruling on the Champions
+                             League final.UEFA's decision to move the Champions League final
+                             from St Petersburg to Paris has been criticized by the Russian
+                             Football Union (RFU),which believes the move was 'dictated
+                             by political reasons. The decision came after European football's
+                             governing body condemned Russia's invasion of Ukraine on Thursday and
+                             called an emergency meeting of the executive committee to discuss the situation.
+                             The Russian Football Union criticized UEFA for not
+                             keeping 'sport out of politics regarding' its ruling on the Champions
+                             League final.UEFA's decision to move the Champions League final
+                             from St Petersburg to Paris has been criticized by the Russian
+                             Football Union (RFU),which believes the move was 'dictated
+                             by political reasons. The decision came after European football's
+                             governing body condemned Russia's invasion of Ukraine on Thursday and
+                             called an emergency meeting of the executive committee to discuss the situation."
+                android:textColor="#0d0c0c"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNewsSubTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
