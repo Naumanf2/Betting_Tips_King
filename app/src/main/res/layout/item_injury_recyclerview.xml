@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="15dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/tvItemInjuryNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23'"
+        android:fontFamily="@font/calibri_regular"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toStartOf="@id/imgItemInjury"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgItemInjury"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:src="@drawable/icon_person"
+        android:padding="1dp"
+app:layout_constraintStart_toEndOf="@id/tvItemInjuryNumber"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvItemInjuryPlayerName"
+        app:strokeColor="#707070"
+        app:strokeWidth="1dp"
+
+
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+    <TextView
+        android:id="@+id/tvItemInjuryPlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/calibri_bold"
+        android:text="Tom Brady"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvItemInjuryNumber"
+        app:layout_constraintStart_toEndOf="@id/imgItemInjury"
+        />
+
+    <TextView
+        android:id="@+id/tvItemInjuryType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/calibri_regular"
+        android:text="Knee Injury"
+        android:textColor="#000000"
+        android:textSize="16sp"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvItemInjuryPlayerName"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

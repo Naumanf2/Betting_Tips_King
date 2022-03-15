@@ -20,9 +20,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new NewsFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new NewsFragment()).commit();
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.framLayout, new MatchesFragment()).commit();
     }
 }
