@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bettingtipsking.app.Model.NotificationsModel;
+import com.bettingtipsking.app.model.NotificationsModel;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.adapter.NotificationsAdapter;
 

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            tools:context=".ui.home.news.NewsDetailsActivity">
+
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textNewsDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="News Detail"
+                android:textColor="#1d2226"
+                android:textSize="23sp"
+                app:flow_horizontalAlign="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageShare"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textNewsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="13dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#1d2226"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textIntroduction" />
+
+
+            <TextView
+                android:id="@+id/textAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/icon_football"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="Betting Tips King"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textNewsTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textNewsTitle" />
+
+            <TextView
+                android:id="@+id/textCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Football"
+                android:textColor="#AB111111"
+                android:textSize="13sp"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toStartOf="@+id/textAppName"
+                app:layout_constraintTop_toBottomOf="@id/textAppName" />
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="26/02/2022"
+                android:textColor="#1d2226"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/textNewsTitle"
+                app:layout_constraintTop_toTopOf="@+id/textAppName" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Local Team:"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/textCategory"
+                app:layout_constraintTop_toBottomOf="@+id/textCategory" />
+
+            <TextView
+                android:id="@+id/textLocalTeam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#0d0c0c"
+                android:textSize="14sp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintEnd_toEndOf="@+id/textDate"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Visitor Team:"
+                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="@+id/textLocalTeam"
+                app:layout_constraintTop_toBottomOf="@+id/textLocalTeam" />
+
+
+            <TextView
+                android:id="@+id/textVisitorTeam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#0d0c0c"
+                android:textSize="14sp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintEnd_toEndOf="@+id/textLocalTeam"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textIntroduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Introduction"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/imageBack"
+                app:layout_constraintTop_toBottomOf="@+id/textNewsDetail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

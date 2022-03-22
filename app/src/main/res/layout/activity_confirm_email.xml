@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth.ConfirmEmailActivity">
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <ImageView
+            android:id="@+id/imageEmailOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:src="@drawable/icon_email_open"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_email_open" />
+
+        <TextView
+            android:id="@+id/textCheckEmailInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/check_your_email"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageEmailOpen"
+            app:layout_constraintStart_toStartOf="@+id/imageEmailOpen"
+            app:layout_constraintTop_toBottomOf="@+id/imageEmailOpen" />
+
+        <TextView
+            android:id="@+id/textOpenEmail"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_button_rounded_blue"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/open_email_app"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/textCheckEmailInfo"
+            app:layout_constraintStart_toStartOf="@+id/textCheckEmailInfo"
+            app:layout_constraintTop_toBottomOf="@+id/textCheckEmailInfo" />
+
+        <TextView
+            android:id="@+id/textSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="@string/skip_confirm_later"
+            android:textColor="#1D2226"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/textOpenEmail"
+            app:layout_constraintStart_toStartOf="@+id/textOpenEmail"
+            app:layout_constraintTop_toBottomOf="@+id/textOpenEmail" />
+
+        <TextView
+            android:id="@+id/textEmailNotReceive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="@string/email_not_receive"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

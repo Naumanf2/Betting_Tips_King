@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Betting Tips King</string>
 
+
+    <string name="facebook_app_id">507638614188274</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">e95e9c973d91c5c629351fd156240e70</string>
+
+
     <string name="login">LogIn</string>
     <string name="signup">Signup</string>
     <string name="create_new_account">Create New Account</string>
@@ -12,6 +18,28 @@
     <string name="via_social_media">Or via social media</string>
     <string name="auth_terms_and_condition">By Signing up, you are agress with our Terms &amp; Conditions</string>
 
+
+    <string name="reset_password">Reset Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="reset_password_info">Enter the email associated with your account and we will send an email with instructions to reset your password</string>
+    <string name="check_your_email">Check your email</string>
+    <string name="open_email_app">Open email app</string>
+    <string name="skip_confirm_later">skip, i\'ll confirm later</string>
+    <string name="email_not_receive">Didn\'t receive the email? Check your spam filter, or try another Email</string>
+    <string name="send_instruction">Send Instruction</string>
+
+
+    <string name="contact_us">Contact Us</string>
+    <string name="your_name">Your name</string>
+    <string name="your_email">Your email</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="send">send</string>
+    <string name="official_email">Official Email:</string>
+    <string name="support_email">support@bettingtips-king.com</string>
+    <string name="official_website">Official Website:</string>
+    <string name="support_website">www.bettingtips-king.com</string>
+
+    <string name="news">News</string>
 
     <string name="notification">Notification</string>
     <string name="close_notification_title">Close all notification</string>
@@ -25,6 +53,13 @@
     <string name="important_notification_title">Important from platfrom</string>
     <string name="important_notification_description">Get all important updates from Betting Tips Kings</string>
 
+
+    <string name="profile_setting">Profile Setting</string>
+    <string name="change_subscription">Change Subscription</string>
+    <string name="contact_to_support">Contact to support</string>
+    <string name="leave_feedback">Leave Feedback</string>
+    <string name="share_with_friends">Share with friends</string>
+    <string name="logout">LogOut</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

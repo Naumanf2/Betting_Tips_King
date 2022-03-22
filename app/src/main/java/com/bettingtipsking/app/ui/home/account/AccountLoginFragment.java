@@ -1,5 +1,6 @@
 package com.bettingtipsking.app.ui.home.account;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bettingtipsking.app.R;
+import com.bettingtipsking.app.ui.contact.ContactActivity;
+import com.bettingtipsking.app.ui.profile.EditProfileActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AccountLoginFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AccountLoginFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -58,9 +57,16 @@ public class AccountLoginFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account_login, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.fragment_account_login, container, false);
+
+       view.findViewById(R.id.textSupportContact).setOnClickListener(v -> {
+           startActivity(new Intent(getContext(), ContactActivity.class));
+       });
+
+        view.findViewById(R.id.textProfileSetting).setOnClickListener(v -> {
+            startActivity(new Intent(getContext(), EditProfileActivity.class));
+        });
+        return view;
     }
 }

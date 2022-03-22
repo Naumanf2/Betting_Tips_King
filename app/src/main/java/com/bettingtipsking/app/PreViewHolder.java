@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.bettingtipsking.app.Repository.Repository;
+import com.bettingtipsking.app.repository.Repository;
 import com.bettingtipsking.app.Room.PendingPredictions;
 import com.bettingtipsking.app.Room.Predictions;
 

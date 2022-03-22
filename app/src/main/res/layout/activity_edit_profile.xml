@@ -4,24 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="25dp"
+    android:layout_margin="30dp"
     tools:context=".ui.profile.EditProfileActivity">
-
 
     <ImageView
         android:id="@+id/imageBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textEditProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Edit Profile"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/profile_setting"
         android:textColor="#1D2226"
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,68 +28,71 @@
         app:layout_constraintTop_toBottomOf="@+id/imageBack" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgProfile"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:src="@drawable/icon_person"
+        android:id="@+id/imageProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/icon_person"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textEditProfile" />
 
     <ImageView
         android:id="@+id/imgEditProfile"
         android:layout_width="23dp"
         android:layout_height="23dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
+        app:layout_constraintBottom_toBottomOf="@+id/imageProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/imageProfile"
+        app:layout_constraintTop_toBottomOf="@+id/textEditProfile"
         app:layout_constraintVertical_bias="0.75" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputLayoutName"
+        android:id="@+id/textInputLayoutName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/your_name"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:hintTextColor="#000000"
-        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfile">
+        app:layout_constraintTop_toBottomOf="@+id/imageProfile">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:background="@drawable/bg_rounded_corner_white"
             android:elevation="15dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Nouman Majeed"
+            android:text="Talha Shahab"
             android:textColor="#000000"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputLayoutEmail"
+        android:id="@+id/textInputLayoutEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-
         app:hintTextColor="#000000"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutName">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_rounded_corner_white"
             android:elevation="15dp"
-            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_regular"
-            android:hint="Email"
-            android:text="naumanmajeed7@gmail.com"
+            android:hint="@string/email"
+            android:text="@string/support_email"
             android:textColor="#000000"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -100,26 +102,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-
         app:hintTextColor="#1D2226"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutEmail">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_rounded_corner_white"
             android:elevation="15dp"
-            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_regular"
             android:hint="Date of birth"
             android:text="18/09/1999"
             android:textColorHint="#000000"
-
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

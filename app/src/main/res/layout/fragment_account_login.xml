@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <View
             android:id="@+id/view1"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/personImageView"
+            android:id="@+id/imagePerson"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="20dp"
@@ -40,18 +40,17 @@
             android:textColor="#050608"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/personImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imagePerson" />
 
         <TextView
             android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:fontFamily="@font/calibri_bold"
-            android:text="contact@bettingtipsking.com"
+            android:text="@string/support_email"
             android:textColor="#171D1E"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textName"
             app:layout_constraintTop_toBottomOf="@+id/textName" />
 
 
@@ -61,13 +60,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
-            android:drawableStart="@drawable/icon_edit"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Profile setting"
+            android:text="@string/profile_setting"
             android:textColor="#575157"
             android:textSize="17sp"
+            app:drawableStartCompat="@drawable/icon_edit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view1" />
 
@@ -75,16 +74,15 @@
             android:id="@+id/textChangeSubscription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:drawableStart="@drawable/icon_subscription"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Change subscription"
+            android:text="@string/change_subscription"
             android:textColor="#575157"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/icon_subscription"
+            app:layout_constraintStart_toStartOf="@+id/textProfileSetting"
             app:layout_constraintTop_toBottomOf="@+id/textProfileSetting" />
 
 
@@ -92,48 +90,45 @@
             android:id="@+id/textNotification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:drawableStart="@drawable/icon_notification_bell"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Notification"
+            android:text="@string/notification"
             android:textColor="#575157"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/icon_notification_bell"
+            app:layout_constraintStart_toStartOf="@+id/textChangeSubscription"
             app:layout_constraintTop_toBottomOf="@+id/textChangeSubscription" />
 
         <TextView
             android:id="@+id/textSupportContact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:drawableStart="@drawable/icon_avatar"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Contact to Support"
+            android:text="@string/contact_to_support"
             android:textColor="#575157"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/icon_avatar"
+            app:layout_constraintStart_toStartOf="@+id/textNotification"
             app:layout_constraintTop_toBottomOf="@+id/textNotification" />
 
         <TextView
             android:id="@+id/textFeedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:drawableStart="@drawable/icon_feedback"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Leave Feedback"
+            android:text="@string/leave_feedback"
             android:textColor="#575157"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/icon_feedback"
+            app:layout_constraintStart_toStartOf="@+id/textSupportContact"
             app:layout_constraintTop_toBottomOf="@+id/textSupportContact" />
 
 
@@ -141,15 +136,15 @@
             android:id="@+id/textShare"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Share with friends"
+            android:text="@string/share_with_friends"
             android:textColor="#575157"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/icon_share_blue"
+            app:layout_constraintStart_toStartOf="@+id/textFeedback"
             app:layout_constraintTop_toBottomOf="@+id/textFeedback" />
 
 
@@ -157,16 +152,16 @@
             android:id="@+id/textLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="2dp"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textColor="#575157"
             android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/icon_logout_blue"
+            app:layout_constraintStart_toStartOf="@+id/textShare"
             app:layout_constraintTop_toBottomOf="@+id/textShare" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
