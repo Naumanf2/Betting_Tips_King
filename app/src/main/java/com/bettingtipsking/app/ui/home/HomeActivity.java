@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.bettingtipsking.app.R;
 
+import com.bettingtipsking.app.ui.home.matches.CoachFragment;
 import com.bettingtipsking.app.ui.home.account.AccountLoginFragment;
 import com.bettingtipsking.app.ui.home.home.HomeFragment;
 import com.bettingtipsking.app.ui.home.news.NewsFragment;
