@@ -10,11 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bettingtipsking.app.Model.InjuryModel;
-import com.bettingtipsking.app.Model.NewsModel;
+import com.bettingtipsking.app.model.InjuryModel;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.adapter.InjuryAdapter;
-import com.bettingtipsking.app.adapter.NewsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

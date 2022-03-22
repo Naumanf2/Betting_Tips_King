@@ -10,6 +10,12 @@
     <color name="whitish">#F1F1F1</color>
     <color name="white_transparency">#C4020202</color>
     <color name="red">#F44336</color>
+    <color name="colorGray">#E6E6E6</color>
+    <color name="colorAccent">#7CCCFC</color>
+    <color name="colorGrayDark">#636363</color>
+    <color name="grey_60">#666666</color>
+    <color name="transparent">#0000</color>
+    <color name="colorGray2">#888888</color>
 
 
     <color name="color1">#ACDDDE</color>

@@ -1,7 +1,6 @@
 package com.bettingtipsking.app.adapter;
 
 import android.content.Context;
-import android.hardware.lights.LightState;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bettingtipsking.app.Model.MainMatchesModel;
+import com.bettingtipsking.app.model.MainMatchesModel;
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.activity.Home.Adapter.AllPredictionsAdapter;
 
 import java.util.List;
 

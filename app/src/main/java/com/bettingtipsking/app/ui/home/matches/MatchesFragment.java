@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bettingtipsking.app.Model.MainMatchesModel;
-import com.bettingtipsking.app.Model.MatchesModel;
+import com.bettingtipsking.app.model.MainMatchesModel;
+import com.bettingtipsking.app.model.MatchesModel;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.adapter.MainMatchesAdapter;
 

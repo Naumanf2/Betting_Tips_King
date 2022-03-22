@@ -9,8 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bettingtipsking.app.Model.InjuryModel;
-import com.bettingtipsking.app.Model.NewsModel;
+import com.bettingtipsking.app.model.InjuryModel;
 import com.bettingtipsking.app.R;
 
 import java.util.ArrayList;

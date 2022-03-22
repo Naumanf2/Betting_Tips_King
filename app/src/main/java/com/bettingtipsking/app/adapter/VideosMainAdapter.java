@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bettingtipsking.app.Model.VideosMainModel;
+import com.bettingtipsking.app.model.VideosMainModel;
 import com.bettingtipsking.app.R;
 
 import java.util.List;

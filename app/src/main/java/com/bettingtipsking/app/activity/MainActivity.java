@@ -27,7 +27,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.bettingtipsking.app.activity.Favourite.FavouriteFragment;
-import com.bettingtipsking.app.activity.Home.HomeFragment;
+import com.bettingtipsking.app.ui.home.home.HomeFragment;
 import com.bettingtipsking.app.activity.fixtures.FixturesFragment;
 import com.bettingtipsking.app.R;
 

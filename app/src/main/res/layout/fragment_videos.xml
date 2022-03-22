@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.home.news.NewsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Watch"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="23sp"
-        android:textColor="#1d2226"
-        android:layout_gravity="center_horizontal"
-        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videosMainRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_videos_main_recyclerview"
-        />
+        tools:listitem="@layout/item_videos_main_recyclerview" />
 
 
 </LinearLayout>
