@@ -24,15 +24,7 @@ public class HomelPredictionsModel {
     String match_timestamp;
     String sport_type;
 
-    public HomelPredictionsModel(int id, String status, String sort,
-                                 String owner, String created_on, String modified_on,
-                                 String league_name, String match_id,
-                                 String home_team, String away_team, String odd_value,
-                                 String team_home_score, String team_away_score,
-                                 String match_minute, String coupon_name,
-                                 String game_prediction, String match_date,
-                                 String match_status, String match_time,
-                                 String match_timestamp, String sport_type) {
+    public HomelPredictionsModel(int id, String status, String sort, String owner, String created_on, String modified_on, String league_name, String match_id, String home_team, String away_team, String odd_value, String team_home_score, String team_away_score, String match_minute, String coupon_name, String game_prediction, String match_date, String match_status, String match_time, String match_timestamp, String sport_type) {
         this.id = id;
         this.status = status;
         this.sort = sort;
@@ -54,7 +46,6 @@ public class HomelPredictionsModel {
         this.match_time = match_time;
         this.match_timestamp = match_timestamp;
         this.sport_type = sport_type;
-        this.favStatus = favStatus;
     }
 
     public int getId() {

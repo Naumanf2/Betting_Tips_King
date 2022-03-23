@@ -10,9 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bettingtipsking.app.Model.MatchesModel;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.adapter.CoachesDetailAdapter;
+import com.bettingtipsking.app.model.MatchesModel;
 
 import java.util.ArrayList;
 import java.util.List;

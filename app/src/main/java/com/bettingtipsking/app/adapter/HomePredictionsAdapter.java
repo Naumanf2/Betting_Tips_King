@@ -29,15 +29,13 @@ import java.util.List;
 public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictionsAdapter.ViewHolder> {
     Context context;
     List<HomelPredictionsModel> list;
-    PredictionsInterface predictionsInterface;
     HomeFragment homeFragment;
     int size = 1;
 
-    public HomePredictionsAdapter(HomeFragment homeFragment, Context context, List<HomelPredictionsModel> list, PredictionsInterface predictionsInterface) {
+    public HomePredictionsAdapter(HomeFragment homeFragment, Context context, List<HomelPredictionsModel> list) {
         this.homeFragment = homeFragment;
         this.context = context;
         this.list = list;
-        this.predictionsInterface = predictionsInterface;
     }
 
     @NonNull

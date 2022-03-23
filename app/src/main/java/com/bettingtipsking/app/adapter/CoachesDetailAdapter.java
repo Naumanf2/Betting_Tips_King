@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bettingtipsking.app.Model.MatchesModel;
 import com.bettingtipsking.app.R;
+import com.bettingtipsking.app.model.MatchesModel;
 
 import java.util.List;
 
