@@ -1,6 +1,5 @@
 package com.bettingtipsking.app.activity.fixtures;
 
-import static com.bettingtipsking.app.Helper.HelperClass.H2H;
 import static com.bettingtipsking.app.Helper.HelperClass.HOST;
 import static com.bettingtipsking.app.Helper.HelperClass.KEY;
 
@@ -9,29 +8,21 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.bettingtipsking.app.Helper.ItemClickListener;
 import com.bettingtipsking.app.Helper.MySingleton;
-import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.activity.fixtures.adapters.FixturesAdapter;
-import com.bettingtipsking.app.activity.fixtures.model.FixturesModel;
-import com.bettingtipsking.app.activity.fixtures.model.MatchDetailsModel;
+import com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel;
+import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
 import com.bettingtipsking.app.databinding.FragmentFixturesH2HBinding;
-import com.bettingtipsking.app.databinding.FragmentPredictionBinding;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,8 +37,8 @@ public class FixturesH2HFragment extends Fragment implements ItemClickListener {
     FixtureDetailsActivity parentContext;
     FragmentFixturesH2HBinding binding;
 
-    FixturesAdapter adapter;
-    List<FixturesModel> fixturesList = new ArrayList<>();
+/*    FixturesAdapter adapter;*/
+    List<FinalFixturesModel> fixturesList = new ArrayList<>();
     Map<Integer, Integer> fixturesMap = new  HashMap<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,9 +56,9 @@ public class FixturesH2HFragment extends Fragment implements ItemClickListener {
     }
 
     public void init(){
-        adapter = new FixturesAdapter(getContext(), fixturesList,this, H2H);
+      /*  adapter = new FixturesAdapter(getContext(), fixturesList,this, H2H);
         binding.fixturesRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.fixturesRv.setAdapter(adapter);
+        binding.fixturesRv.setAdapter(adapter);*/
         getAllH2HFixtures();
     }
 
@@ -153,8 +144,8 @@ public class FixturesH2HFragment extends Fragment implements ItemClickListener {
                                 String scorePenaltyHome = PenaltyJsonObject.getString("home");
                                 String scorePenaltyAway = PenaltyJsonObject.getString("away");
 
-                                FixturesModel fixturesModel = new FixturesModel(id, name, country, logo, flag, season, round, new ArrayList<>());
-                                MatchDetailsModel matchDetailsModel = new MatchDetailsModel(fixtureId, fixtureReferee, fixtureTimezone, fixtureDate, fixtureTimestamp, fixturePeriodsFirst, fixturePeriodsSecond, fixtureVenueId, fixtureVenueName, fixtureVenueCity, fixtureStatusLong, fixtureStatusShort, fixtureStatusElapsed, teamHomeId, teamHomeName, teamHomeLogo, teamAwayId, teamAwayName, teamAwayLogo, goalsHome, goalsAway, scoreHalftimeHome, scoreHalftimeAway, scoreFullTimeHome, scoreFullTimeAway, scoreExtraTimeHome, scoreExtraTimeAway, scorePenaltyHome, scorePenaltyAway);
+                                FinalFixturesModel fixturesModel = new FinalFixturesModel(id, name, country, logo, flag, season, round, new ArrayList<>());
+                                FinalMatchDetailsModel matchDetailsModel = new FinalMatchDetailsModel(fixtureId, fixtureReferee, fixtureTimezone, fixtureDate, fixtureTimestamp, fixturePeriodsFirst, fixturePeriodsSecond, fixtureVenueId, fixtureVenueName, fixtureVenueCity, fixtureStatusLong, fixtureStatusShort, fixtureStatusElapsed, teamHomeId, teamHomeName, teamHomeLogo, teamAwayId, teamAwayName, teamAwayLogo, goalsHome, goalsAway, scoreHalftimeHome, scoreHalftimeAway, scoreFullTimeHome, scoreFullTimeAway, scoreExtraTimeHome, scoreExtraTimeAway, scorePenaltyHome, scorePenaltyAway);
 
                                 if (!fixturesMap.containsKey(id)){
                                     fixturesList.add(fixturesModel);
@@ -168,7 +159,7 @@ public class FixturesH2HFragment extends Fragment implements ItemClickListener {
                             Log.e("fixturesMap::", String.valueOf(fixturesMap.size()));
                             if (fixturesList != null && !fixturesList.isEmpty()) {
                                 binding.txtInfo.setVisibility(View.GONE);
-                                adapter.notifyDataSetChanged();
+                               // adapter.notifyDataSetChanged();
                             } else {
                                 binding.txtInfo.setVisibility(View.VISIBLE);
                             }

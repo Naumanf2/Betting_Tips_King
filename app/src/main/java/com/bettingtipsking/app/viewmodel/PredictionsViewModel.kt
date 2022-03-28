@@ -3,22 +3,23 @@ package com.bettingtipsking.app.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bettingtipsking.app.api.MatchesService
-import com.bettingtipsking.app.model.news.NewsModel
+import com.bettingtipsking.app.api.FixturesService
 import com.bettingtipsking.app.model.predictions.PredictionsModel
-import com.bettingtipsking.app.repository.NewsRepository
+import com.bettingtipsking.app.repository.FixturesRepository
 import com.bettingtipsking.app.repository.PredictionsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PredictionsViewModel(private val predicationRepository: PredictionsRepository) : ViewModel() {
+class PredictionsViewModel(private val fixturesService: FixturesService) : ViewModel() {
 
-    val matches: LiveData<PredictionsModel>
-        get() = predicationRepository.matches
+    private val predicationRepository = PredictionsRepository(fixturesService);
+
+    val predictionsLiveData: LiveData<PredictionsModel>
+        get() = predicationRepository.predictionsLiveData
 
     init {
     }
-    public fun getPredictions(feature: Int) {
+     fun getPredictions(feature: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             predicationRepository.getPredictions(feature)
 

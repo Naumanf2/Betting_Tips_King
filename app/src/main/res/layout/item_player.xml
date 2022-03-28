@@ -9,10 +9,10 @@
         android:id="@+id/iv"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@color/whitish"
-        app:civ_border_width="1dp"
         android:layout_centerHorizontal="true"
-        app:civ_border_color="#FF000000"/>
+        android:src="@color/whitish"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="1dp" />
 
     <TextView
         android:id="@+id/number_tv"

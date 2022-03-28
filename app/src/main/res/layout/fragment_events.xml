@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.matches.fixturedetails.fragment.EventsFragment">
+
+        <TextView
+            android:id="@+id/textALlEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="All Events"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textHomeEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Home"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textALlEvents"
+            app:layout_constraintStart_toEndOf="@+id/textALlEvents"
+            app:layout_constraintTop_toTopOf="@+id/textALlEvents" />
+
+        <TextView
+            android:id="@+id/textAwayEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Away"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textHomeEvents"
+            app:layout_constraintStart_toEndOf="@+id/textHomeEvents"
+            app:layout_constraintTop_toTopOf="@+id/textHomeEvents" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            tools:listitem="@layout/item_events"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textALlEvents" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

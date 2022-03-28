@@ -11,10 +11,10 @@
             type="BindingMethodAdapter" />
         <variable
             name="fixture"
-            type="com.bettingtipsking.app.activity.fixtures.model.FixturesModel" />
+            type="com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel" />
         <variable
             name="matchDetails"
-            type="com.bettingtipsking.app.activity.fixtures.model.MatchDetailsModel" />
+            type="com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

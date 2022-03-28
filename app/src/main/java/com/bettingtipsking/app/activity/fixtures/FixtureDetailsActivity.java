@@ -21,8 +21,8 @@ import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
-import com.bettingtipsking.app.activity.fixtures.model.FixturesModel;
-import com.bettingtipsking.app.activity.fixtures.model.MatchDetailsModel;
+import com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel;
+import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
 import com.bettingtipsking.app.Helper.AppBarStateChangeListener;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ActivityFixtureDetailsBinding;
@@ -42,15 +42,15 @@ public class FixtureDetailsActivity extends AppCompatActivity {
     AnimationSet animation;
     boolean firstEntry;
     Animation animFade;
-    public FixturesModel fixturesModel = new FixturesModel();
-    public MatchDetailsModel matchDetails = new MatchDetailsModel();
+    public FinalFixturesModel fixturesModel = new FinalFixturesModel();
+    public FinalMatchDetailsModel matchDetails = new FinalMatchDetailsModel();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_fixture_details);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_fixture_details);
-        fixturesModel = (FixturesModel)getIntent().getParcelableExtra(FIXTURE_MODEL);
-        matchDetails = (MatchDetailsModel)getIntent().getParcelableExtra(FIXTURE_DETAIL_MODEL);
+        fixturesModel = (FinalFixturesModel)getIntent().getParcelableExtra(FIXTURE_MODEL);
+        matchDetails = (FinalMatchDetailsModel)getIntent().getParcelableExtra(FIXTURE_DETAIL_MODEL);
 
         binding.setMatchDetails(matchDetails);
         binding.setFixture(fixturesModel);

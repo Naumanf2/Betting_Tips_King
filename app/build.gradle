@@ -29,12 +29,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-  /*  dataBinding {
-        enabled = true
-    }
-    viewBinding {
-        enabled = true
-    }*/
 
     buildFeatures {
         dataBinding true
@@ -105,8 +99,4 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version_"
 
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
-
-
-
-
 }

@@ -124,10 +124,10 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/keeper1_rv"
-                    android:layout_centerHorizontal="true"
                     android:layout_width="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/defender1_rv"
@@ -178,11 +178,11 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/forward2_rv"
-                    android:layout_centerHorizontal="true"
-                    android:paddingBottom="270dp"
-                    android:layout_alignParentBottom="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="270dp" />
 
             </RelativeLayout>
 

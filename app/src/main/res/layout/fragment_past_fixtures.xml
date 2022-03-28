@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.matches.fragment.PastFixturesFragment">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:drawableStart="@drawable/icon_search"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/textYesterday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Yesterday"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/editTextSearch"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+
+        <TextView
+            android:id="@+id/textEreyesterday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Ereyesterday"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textYesterday"
+            app:layout_constraintStart_toEndOf="@+id/textYesterday"
+            app:layout_constraintTop_toTopOf="@+id/textYesterday" />
+
+        <TextView
+            android:id="@+id/textCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_searchview"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Custom"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textEreyesterday"
+            app:layout_constraintStart_toEndOf="@+id/textEreyesterday"
+            app:layout_constraintTop_toTopOf="@+id/textEreyesterday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/textYesterday"
+            tools:listitem="@layout/item_fixtures" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

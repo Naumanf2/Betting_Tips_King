@@ -8,7 +8,6 @@ import com.bettingtipsking.app.viewmodel.FixturesByDateViewModel
 
 class FixturesByDateViewModelFactory(private val fixturesByDateRepository: FixturesByDateRepository) : ViewModelProvider.Factory {
 
-
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return FixturesByDateViewModel(fixturesByDateRepository) as T
     }

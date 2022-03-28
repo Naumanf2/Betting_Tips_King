@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:nestedScrollingEnabled="true"
-            tools:listitem="@layout/item_events" />
+            tools:listitem="@layout/item_events_old" />
 
         <TextView
             android:id="@+id/txt_info"

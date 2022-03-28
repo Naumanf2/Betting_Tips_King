@@ -17,7 +17,7 @@
             android:id="@+id/fixtures_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_all_fixtures" />
+            tools:listitem="@layout/item_all_fixture" />
         <TextView
             android:id="@+id/txt_info"
             android:layout_width="wrap_content"

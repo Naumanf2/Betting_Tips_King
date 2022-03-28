@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_margin="1.5dp"
-    app:cardCornerRadius="10dp"
-    android:elevation="2dp"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="10dp">
 
-
-        <ImageView
-            android:id="@+id/imageTeam1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/icon_team1"
-            app:layout_constraintStart_toEndOf="@+id/textTime"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textTeam1name"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Real Madrid"
-            android:layout_marginStart="4dp"
-            android:textColor="#1D2226"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageTeam1"
-            app:layout_constraintStart_toEndOf="@+id/imageTeam1"
-            app:layout_constraintTop_toTopOf="@+id/imageTeam1" />
+            android:layout_margin="7dp">
 
 
-        <ImageView
-            android:id="@+id/imageTeam2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/icon_team2"
-            app:layout_constraintStart_toStartOf="@+id/imageTeam1"
-            app:layout_constraintTop_toBottomOf="@+id/imageTeam1" />
+            <ImageView
+                android:id="@+id/imageTeamHomeLogo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/icon_team_1"
+                app:layout_constraintStart_toEndOf="@+id/textTime"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textTeam2name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="FC Barcelona"
-            android:textColor="#1D2226"
-            android:textSize="12sp"
-            android:layout_marginStart="4dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageTeam2"
-            app:layout_constraintStart_toEndOf="@+id/imageTeam2"
-            app:layout_constraintTop_toTopOf="@+id/imageTeam2" />
-
-        <TextView
-            android:id="@+id/textTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/tinos_regular"
-            android:text="12:20"
-            android:textColor="#1D2226"
-            android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textTeam2name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageTeam1" />
+            <TextView
+                android:id="@+id/textTeamHomeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Real Madrid"
+                android:textColor="#1D2226"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageTeamHomeLogo"
+                app:layout_constraintStart_toEndOf="@+id/imageTeamHomeLogo"
+                app:layout_constraintTop_toTopOf="@+id/imageTeamHomeLogo" />
 
 
-        <TextView
-            android:id="@+id/textTeam1Score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/tinos_regular"
-            android:text="3"
-            android:textColor="#1D2226"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textTeam1name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textTeam1name"
-            app:layout_constraintTop_toTopOf="@+id/textTeam1name" />
+            <ImageView
+                android:id="@+id/imageTeamAwayLogo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/icon_team_2"
+                app:layout_constraintStart_toStartOf="@+id/imageTeamHomeLogo"
+                app:layout_constraintTop_toBottomOf="@+id/imageTeamHomeLogo" />
 
-        <TextView
-            android:id="@+id/textTeam2Score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/tinos_regular"
-            android:text="3"
-            android:textColor="#1D2226"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textTeam2name"
-            app:layout_constraintEnd_toEndOf="@+id/textTeam1Score"
-            app:layout_constraintTop_toTopOf="@+id/textTeam2name" />
+            <TextView
+                android:id="@+id/textTeamAwayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="FC Barcelona"
+                android:textColor="#1D2226"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageTeamAwayLogo"
+                app:layout_constraintStart_toEndOf="@+id/imageTeamAwayLogo"
+                app:layout_constraintTop_toTopOf="@+id/imageTeamAwayLogo" />
 
-        <ImageView
-            android:id="@+id/imageExpand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_expand_less"
-            app:layout_constraintBottom_toBottomOf="@+id/textTeam1name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textTeam1name" />
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tinos_regular"
+                android:text="12:20"
+                android:textColor="#1D2226"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTeamAwayName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageTeamHomeLogo" />
 
-        <ImageView
-            android:id="@+id/imageStar"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/icon_star_border"
-            app:layout_constraintBottom_toBottomOf="@+id/textTeam2name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageExpand"
-            app:layout_constraintTop_toTopOf="@+id/textTeam2name" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textTeamHomeScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="#1D2226"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTeamHomeName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textTeamHomeName"
+                app:layout_constraintTop_toTopOf="@+id/textTeamHomeName" />
 
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textTeamAwayScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="#1D2226"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTeamAwayName"
+                app:layout_constraintEnd_toEndOf="@+id/textTeamHomeScore"
+                app:layout_constraintTop_toTopOf="@+id/textTeamAwayName" />
+
+            <ImageView
+                android:id="@+id/imageExpand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_expand_less"
+                app:layout_constraintBottom_toBottomOf="@+id/textTeamAwayName"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Live"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textTeamHomeName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

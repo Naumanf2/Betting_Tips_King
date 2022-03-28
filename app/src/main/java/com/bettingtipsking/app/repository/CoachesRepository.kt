@@ -2,11 +2,10 @@ package com.bettingtipsking.app.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.bettingtipsking.app.api.MatchesService
+import com.bettingtipsking.app.api.FixturesService
 import com.bettingtipsking.app.model.coach.CoachesModel
-import com.bettingtipsking.app.model.predictions.PredictionsModel
 
-class CoachesRepository(private val matchesService: MatchesService) {
+class CoachesRepository(private val matchesService: FixturesService) {
 
 
     private val LiveData = MutableLiveData<CoachesModel>()

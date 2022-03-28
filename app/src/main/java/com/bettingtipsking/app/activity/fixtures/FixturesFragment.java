@@ -1,11 +1,9 @@
 package com.bettingtipsking.app.activity.fixtures;
 
-import static com.bettingtipsking.app.Helper.HelperClass.FIXTURES;
 import static com.bettingtipsking.app.Helper.HelperClass.FIXTURE_DETAIL_MODEL;
 import static com.bettingtipsking.app.Helper.HelperClass.FIXTURE_MODEL;
 import static com.bettingtipsking.app.Helper.HelperClass.HOST;
 import static com.bettingtipsking.app.Helper.HelperClass.KEY;
-import static com.bettingtipsking.app.Helper.HelperClass.REVIEW_TIME;
 import static com.bettingtipsking.app.Helper.HelperClass.SHARED_PREFERENCE;
 import static com.bettingtipsking.app.Helper.HelperClass.SUBSCRIPTION_DATE;
 import static com.bettingtipsking.app.Helper.HelperClass.SUBSCRIPTION_PACKAGE;
@@ -17,7 +15,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
@@ -39,9 +36,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bettingtipsking.app.Helper.Config;
-import com.bettingtipsking.app.activity.fixtures.adapters.FixturesAdapter;
-import com.bettingtipsking.app.activity.fixtures.model.FixturesModel;
-import com.bettingtipsking.app.activity.fixtures.model.MatchDetailsModel;
+import com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel;
+import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
 import com.bettingtipsking.app.Helper.ItemClickListener;
 import com.bettingtipsking.app.Helper.MySingleton;
 import com.bettingtipsking.app.R;
@@ -65,11 +61,16 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
     ProgressBar progressBar;
     RequestQueue queue;
     TextView txt_info;
+
+
+
     RelativeLayout rlMatches;
     RecyclerView rvFixtures;
+/*
     FixturesAdapter adapter;
-    List<FixturesModel> fixturesList = new ArrayList<>();
-    List<FixturesModel> fixturesListCopy = new ArrayList<>();
+*/
+    List<FinalFixturesModel> fixturesList = new ArrayList<>();
+    List<FinalFixturesModel> fixturesListCopy = new ArrayList<>();
     Map<Integer, Integer> fixturesMap = new  HashMap<>();
     String currentDate = "";
     EditText search_et;
@@ -84,7 +85,7 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fixtures, container, false);
+        return inflater.inflate(R.layout.fragment_fixtures_old, container, false);
     }
 
     @Override
@@ -112,9 +113,11 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
         queue = Volley.newRequestQueue(requireActivity());
         txt_info = view.findViewById(R.id.txt_info);
         rvFixtures = view.findViewById(R.id.fixtures_rv);
+/*
         adapter = new FixturesAdapter(getContext(), fixturesList,this, FIXTURES);
-        rvFixtures.setLayoutManager(new LinearLayoutManager(getContext()));
-        rvFixtures.setAdapter(adapter);
+*/
+     /*   rvFixtures.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvFixtures.setAdapter(adapter);*/
         getAllFixtures();
         search_et.addTextChangedListener(new TextWatcher() {
             @Override
@@ -282,12 +285,13 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
                                 String scorePenaltyHome = PenaltyJsonObject.getString("home");
                                 String scorePenaltyAway = PenaltyJsonObject.getString("away");
 
-                                FixturesModel fixturesModel = new FixturesModel(id, name, country, logo, flag, season, round, new ArrayList<>());
-                                MatchDetailsModel matchDetailsModel = new MatchDetailsModel(fixtureId, fixtureReferee, fixtureTimezone, fixtureDate, fixtureTimestamp, fixturePeriodsFirst, fixturePeriodsSecond, fixtureVenueId, fixtureVenueName, fixtureVenueCity, fixtureStatusLong, fixtureStatusShort, fixtureStatusElapsed, teamHomeId, teamHomeName, teamHomeLogo, teamAwayId, teamAwayName, teamAwayLogo, goalsHome, goalsAway, scoreHalftimeHome, scoreHalftimeAway, scoreFullTimeHome, scoreFullTimeAway, scoreExtraTimeHome, scoreExtraTimeAway, scorePenaltyHome, scorePenaltyAway);
+                                FinalFixturesModel fixturesModel = new FinalFixturesModel(id, name, country, logo, flag, season, round, new ArrayList<>());
+                                FinalMatchDetailsModel matchDetailsModel = new FinalMatchDetailsModel(fixtureId, fixtureReferee, fixtureTimezone, fixtureDate, fixtureTimestamp, fixturePeriodsFirst, fixturePeriodsSecond, fixtureVenueId, fixtureVenueName, fixtureVenueCity, fixtureStatusLong, fixtureStatusShort, fixtureStatusElapsed, teamHomeId, teamHomeName, teamHomeLogo, teamAwayId, teamAwayName, teamAwayLogo, goalsHome, goalsAway, scoreHalftimeHome, scoreHalftimeAway, scoreFullTimeHome, scoreFullTimeAway, scoreExtraTimeHome, scoreExtraTimeAway, scorePenaltyHome, scorePenaltyAway);
 
                                 if (!fixturesMap.containsKey(id)){
                                     fixturesList.add(fixturesModel);
                                     fixturesMap.put(id, fixturesList.indexOf(fixturesModel));
+                                    //  fixturesMap.put(id, postion);
                                 }
                                 fixturesList.get(fixturesMap.get(id)).getMatchesList().add(matchDetailsModel);
 
@@ -298,7 +302,7 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
                             if (fixturesList != null && !fixturesList.isEmpty()) {
                                 fixturesListCopy.addAll(fixturesList);
                                 txt_info.setVisibility(View.GONE);
-                                adapter.notifyDataSetChanged();
+                              //  adapter.notifyDataSetChanged();
                             } else {
                                 txt_info.setVisibility(View.VISIBLE);
                             }
@@ -336,13 +340,13 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
 
     @Override
     public void onItemClicked(String parentPosition, Object obj) {
-        FixturesModel model = fixturesList.get(Integer.parseInt(parentPosition));
-        FixturesModel fixturesModel = new FixturesModel(model.getLeagueId(), model.getLeagueName(), model.getLeagueCountry(), model.getLeagueLogo(), model.getLeagueFlag(), model.getLeagueSeason(), model.getLeagueRound(), new ArrayList<>());
+        FinalFixturesModel model = fixturesList.get(Integer.parseInt(parentPosition));
+        FinalFixturesModel fixturesModel = new FinalFixturesModel(model.getLeagueId(), model.getLeagueName(), model.getLeagueCountry(), model.getLeagueLogo(), model.getLeagueFlag(), model.getLeagueSeason(), model.getLeagueRound(), new ArrayList<>());
         if (isValid){
             startActivity(
                     new Intent(getActivity(), FixtureDetailsActivity.class)
                             .putExtra(FIXTURE_MODEL, fixturesModel)
-                            .putExtra(FIXTURE_DETAIL_MODEL, (MatchDetailsModel)obj)
+                            .putExtra(FIXTURE_DETAIL_MODEL, (FinalMatchDetailsModel)obj)
             );
 
         }else{
@@ -364,24 +368,24 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
                     /*if (fixturesListCopy.get(index).getLeagueName().toLowerCase().contains(searchQuery.toLowerCase())) {
                         fixturesList.add(fixturesListCopy.get(index));
                     }*/
-                    FixturesModel fixturesModelCopy = fixturesListCopy.get(index);
-                    FixturesModel fixturesmodel;
-                    List<MatchDetailsModel> matchesList = new ArrayList<>();
+                    FinalFixturesModel fixturesModelCopy = fixturesListCopy.get(index);
+                    FinalFixturesModel fixturesmodel;
+                    List<FinalMatchDetailsModel> matchesList = new ArrayList<>();
                     for (int ind=0; ind<fixturesModelCopy.getMatchesList().size(); ind++) {
                         if (fixturesModelCopy.getMatchesList().get(ind).getTeamHomeName().toLowerCase().contains(searchQuery.toLowerCase()) || fixturesModelCopy.getMatchesList().get(ind).getTeamAwayName().toLowerCase().contains(searchQuery.toLowerCase())) {
                             matchesList.add(fixturesModelCopy.getMatchesList().get(ind));
                         }
                     }
                     if (matchesList.size() > 0) {
-                        fixturesmodel = new FixturesModel(fixturesModelCopy.getLeagueId(), fixturesModelCopy.getLeagueName(), fixturesModelCopy.getLeagueCountry(), fixturesModelCopy.getLeagueLogo(), fixturesModelCopy.getLeagueFlag(), fixturesModelCopy.getLeagueSeason(), fixturesModelCopy.getLeagueRound(), matchesList);
+                        fixturesmodel = new FinalFixturesModel(fixturesModelCopy.getLeagueId(), fixturesModelCopy.getLeagueName(), fixturesModelCopy.getLeagueCountry(), fixturesModelCopy.getLeagueLogo(), fixturesModelCopy.getLeagueFlag(), fixturesModelCopy.getLeagueSeason(), fixturesModelCopy.getLeagueRound(), matchesList);
                         fixturesList.add(fixturesmodel);
                     }
                 }
-                adapter.notifyDataSetChanged();
+              //  adapter.notifyDataSetChanged();
             }
         } else {
             fixturesList.addAll(fixturesListCopy);
-            adapter.notifyDataSetChanged();
+           // adapter.notifyDataSetChanged();
         }
     }
 
