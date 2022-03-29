@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ItemComparisonBinding;
+import com.bettingtipsking.app.model.FinalPredictionsModel;
 import com.bettingtipsking.app.model.predictions.PredictionsModel;
 import com.bumptech.glide.Glide;
 
@@ -15,9 +16,9 @@ import java.util.List;
 
 public class ComparisonAdapter extends RecyclerView.Adapter<ComparisonAdapter.ViewHolder> {
     Context context;
-    List<PredictionsModel> list;
+    List<FinalPredictionsModel> list;
 
-    public ComparisonAdapter(Context context, List<PredictionsModel> list) {
+    public ComparisonAdapter(Context context, List<FinalPredictionsModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -33,13 +34,14 @@ public class ComparisonAdapter extends RecyclerView.Adapter<ComparisonAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
 
-        holder.binding.textTeamHomeProgress.setText("Home "+list.get(position).getResponse().get(position).getComparison().getForm().getHome());
-        holder.binding.textTeamAwayProgress.setText("Away "+list.get(position).getResponse().get(position).getComparison().getForm().getAway());
-        holder.binding.textTeamHomeName.setText(list.get(position).getResponse().get(position).getTeams().getHome().getName());
-        holder.binding.textTeamHomeName.setText(list.get(position).getResponse().get(position).getTeams().getAway().getName());
+        holder.binding.textTeamHomeProgress.setText("Home ("+list.get(position).getComparisonHomeProgress()+")");
+        holder.binding.textTeamAwayProgress.setText("Away ("+list.get(position).getComparisonAwayProgress()+")");
 
-        Glide.with(context).load(list.get(position).getResponse().get(position).getTeams().getHome().getLogo()).into(holder.binding.imageTeamHomeLogo);
-        Glide.with(context).load(list.get(position).getResponse().get(position).getTeams().getAway().getLogo()).into(holder.binding.imageTeamAwayLogo);
+        holder.binding.textTeamHomeName.setText(list.get(position).getHomeTeamName());
+        holder.binding.textTeamHomeName.setText(list.get(position).getAwayTeamName());
+
+        Glide.with(context).load(list.get(position).getHomeTeamLogo()).into(holder.binding.imageTeamHomeLogo);
+        Glide.with(context).load(list.get(position).getAwayTeamLogo()).into(holder.binding.imageTeamAwayLogo);
 
 
 

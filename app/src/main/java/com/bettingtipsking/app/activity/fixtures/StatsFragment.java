@@ -7,7 +7,6 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -15,21 +14,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.bettingtipsking.app.Helper.MySingleton;
-import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.activity.fixtures.adapters.BindingMethodAdapter;
-import com.bettingtipsking.app.activity.fixtures.adapters.EventsAdapter;
 import com.bettingtipsking.app.activity.fixtures.adapters.StatsAdapter;
 import com.bettingtipsking.app.activity.fixtures.model.StatsModel;
-import com.bettingtipsking.app.activity.fixtures.model.TeamWithEventsModel;
-import com.bettingtipsking.app.activity.fixtures.model.TeamWithPlayers;
-import com.bettingtipsking.app.databinding.FragmentLinupPlayersBinding;
 import com.bettingtipsking.app.databinding.FragmentStatsBinding;
 
 import org.json.JSONArray;

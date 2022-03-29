@@ -36,8 +36,7 @@ public class FixturePredictionsFragment extends Fragment {
     FragmentFixturePredictionsBinding binding;
     PredictionsViewModel viewModel;
     ComparisonAdapter adapter;
-    List<PredictionsModel> list;
-    List<FinalPredictionsModel> finalPredictionsModelList;
+    List<FinalPredictionsModel> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,23 +47,35 @@ public class FixturePredictionsFragment extends Fragment {
         viewModel.getPredictions(839509);
 
         list = new ArrayList<>();
-        finalPredictionsModelList = new ArrayList<>();
 
         adapter = new ComparisonAdapter(getContext(), list);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
 
         viewModel.getPredictionsLiveData().observe(getViewLifecycleOwner(), predictionsModel -> {
-            list.add(predictionsModel);
 
             List<Response> responses = predictionsModel.getResponse();
 
+            String homeTeamName = responses.get(0).getTeams().getHome().getName();
+            String homeTeamLogo = responses.get(0).getTeams().getHome().getLogo();
+            String awayTeamName = responses.get(0).getTeams().getAway().getName();
+            String awayTeamLogo = responses.get(0).getTeams().getAway().getLogo();
 
-            for (int i = 0; i < list.size(); i++) {
-              Comparison comparison = responses.get(i).component1();
-                System.out.println("SISIS "+ comparison.component1() );
+            FinalPredictionsModel model1 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "Form", responses.get(0).getComparison().getForm().getHome(), responses.get(0).getComparison().getForm().getAway());
+            FinalPredictionsModel model2 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "Att", responses.get(0).getComparison().getAtt().getHome(), responses.get(0).getComparison().getAtt().getAway());
+            FinalPredictionsModel model3 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "Def", responses.get(0).getComparison().getDef().getHome(), responses.get(0).getComparison().getDef().getAway());
+            FinalPredictionsModel model4 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "Poisson Distribution", responses.get(0).getComparison().getPoisson_distribution().getHome(), responses.get(0).getComparison().getPoisson_distribution().getAway());
+            FinalPredictionsModel model5 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "H2H", responses.get(0).getComparison().getH2h().getHome(), responses.get(0).getComparison().getH2h().getAway());
+            FinalPredictionsModel model6 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "Goals", responses.get(0).getComparison().getGoals().getHome(), responses.get(0).getComparison().getGoals().getAway());
+            FinalPredictionsModel model7 = new FinalPredictionsModel(homeTeamName, homeTeamLogo, awayTeamName, awayTeamLogo, "Total", responses.get(0).getComparison().getTotal().getHome(), responses.get(0).getComparison().getTotal().getAway());
 
-            }
+            list.add(model1);
+            list.add(model2);
+            list.add(model3);
+            list.add(model4);
+            list.add(model5);
+            list.add(model6);
+            list.add(model7);
             adapter.notifyDataSetChanged();
         });
         return binding.getRoot();

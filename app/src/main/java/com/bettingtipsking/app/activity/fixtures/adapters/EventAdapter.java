@@ -11,22 +11,19 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.activity.fixtures.model.EventsModel;
-import com.bettingtipsking.app.activity.fixtures.model.TeamWithEventsModel;
-import com.bumptech.glide.Glide;
+import com.bettingtipsking.app.activity.fixtures.model.EventsModelold;
 
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
 
     Context context;
-    List<EventsModel> list;
+    List<EventsModelold> list;
 
-    public EventAdapter(Context context, List<EventsModel> list) {
+    public EventAdapter(Context context, List<EventsModelold> list) {
         this.context = context;
         this.list = list;
 
@@ -42,7 +39,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
-        EventsModel model = list.get(position);
+        EventsModelold model = list.get(position);
         if (model.getType().equals(context.getString(R.string.card))){
             holder.rl1.setVisibility(View.VISIBLE);
             holder.ll2.setVisibility(View.GONE);

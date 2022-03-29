@@ -6,9 +6,9 @@ public class TeamWithEventsModel {
     String id;
     String name;
     String logo;
-    List<EventsModel> eventsList;
+    List<EventsModelold> eventsList;
 
-    public TeamWithEventsModel(String id, String name, String logo, List<EventsModel> eventsList) {
+    public TeamWithEventsModel(String id, String name, String logo, List<EventsModelold> eventsList) {
         this.id = id;
         this.name = name;
         this.logo = logo;
@@ -39,11 +39,11 @@ public class TeamWithEventsModel {
         this.logo = logo;
     }
 
-    public List<EventsModel> getEventsList() {
+    public List<EventsModelold> getEventsList() {
         return eventsList;
     }
 
-    public void setEventsList(List<EventsModel> eventsList) {
+    public void setEventsList(List<EventsModelold> eventsList) {
         this.eventsList = eventsList;
     }
 }

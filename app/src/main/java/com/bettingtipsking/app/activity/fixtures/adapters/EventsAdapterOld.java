@@ -17,12 +17,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsViewHolder> {
+public class EventsAdapterOld extends RecyclerView.Adapter<EventsAdapterOld.EventsViewHolder> {
 
     Context context;
     List<TeamWithEventsModel> list;
 
-    public EventsAdapter(Context context, List<TeamWithEventsModel> list) {
+    public EventsAdapterOld(Context context, List<TeamWithEventsModel> list) {
         this.context = context;
         this.list = list;
     }

@@ -1,6 +1,6 @@
 package com.bettingtipsking.app.activity.fixtures.model;
 
-public class EventsModel {
+public class EventsModelold {
     String type;
     String timeElapsed;
     String playerId;
@@ -9,7 +9,7 @@ public class EventsModel {
     String assistName;
     String details;
 
-    public EventsModel(String type, String timeElapsed, String playerId, String playerName, String assistId, String assistName, String details) {
+    public EventsModelold(String type, String timeElapsed, String playerId, String playerName, String assistId, String assistName, String details) {
         this.type = type;
         this.timeElapsed = timeElapsed;
         this.playerId = playerId;

@@ -1,6 +1,5 @@
 package com.bettingtipsking.app.activity.fixtures;
 
-import static com.bettingtipsking.app.Helper.HelperClass.H2H;
 import static com.bettingtipsking.app.Helper.HelperClass.HOST;
 import static com.bettingtipsking.app.Helper.HelperClass.KEY;
 
@@ -15,15 +14,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.bettingtipsking.app.Helper.MySingleton;
-import com.bettingtipsking.app.activity.fixtures.adapters.EventsAdapter;
-import com.bettingtipsking.app.activity.fixtures.model.EventsModel;
+import com.bettingtipsking.app.activity.fixtures.adapters.EventsAdapterOld;
+import com.bettingtipsking.app.activity.fixtures.model.EventsModelold;
 import com.bettingtipsking.app.activity.fixtures.model.TeamWithEventsModel;
 import com.bettingtipsking.app.databinding.FragmentFixtureEventsBinding;
 
@@ -39,7 +37,7 @@ public class FixtureEventsFragment extends Fragment {
 
     FixtureDetailsActivity parentContext;
     FragmentFixtureEventsBinding binding;
-    EventsAdapter adapter;
+    EventsAdapterOld adapter;
     List<TeamWithEventsModel> teamsWithEventsList = new ArrayList<>();
     Map<Integer, Integer> teamsWithEventsMap = new  HashMap<>();
     @Override
@@ -58,7 +56,7 @@ public class FixtureEventsFragment extends Fragment {
     }
 
     public void init(){
-        adapter = new EventsAdapter(getContext(), teamsWithEventsList);
+        adapter = new EventsAdapterOld(getContext(), teamsWithEventsList);
         binding.eventsRv.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.eventsRv.setAdapter(adapter);
         getEvents();
@@ -92,7 +90,7 @@ public class FixtureEventsFragment extends Fragment {
                                 String assistName = indexedJsonObject.getJSONObject("assist").getString("name");
                                 String details = indexedJsonObject.getString("detail");
 
-                                EventsModel eventsModel = new EventsModel(type, timeElapsed, playerId, playerName, assistId, assistName, details);
+                                EventsModelold eventsModel = new EventsModelold(type, timeElapsed, playerId, playerName, assistId, assistName, details);
 
                                 String id = indexedJsonObject.getJSONObject("team").getString("id");
                                 String name = indexedJsonObject.getJSONObject("team").getString("name");

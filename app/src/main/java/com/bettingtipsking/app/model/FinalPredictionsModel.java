@@ -6,17 +6,17 @@ public class FinalPredictionsModel {
     String awayTeamName;
     String awayTeamLogo;
     String comparisonTitle;
-    String comparisonHome;
-    String comparisonAway;
+    String comparisonHomeProgress;
+    String comparisonAwayProgress;
 
-    public FinalPredictionsModel(String homeTeamName, String homeTeamLogo, String awayTeamName, String awayTeamLogo, String comparisonTitle, String comparisonHome, String comparisonAway) {
+    public FinalPredictionsModel(String homeTeamName, String homeTeamLogo, String awayTeamName, String awayTeamLogo, String comparisonTitle, String comparisonHomeProgress, String comparisonAwayProgress) {
         this.homeTeamName = homeTeamName;
         this.homeTeamLogo = homeTeamLogo;
         this.awayTeamName = awayTeamName;
         this.awayTeamLogo = awayTeamLogo;
         this.comparisonTitle = comparisonTitle;
-        this.comparisonHome = comparisonHome;
-        this.comparisonAway = comparisonAway;
+        this.comparisonHomeProgress = comparisonHomeProgress;
+        this.comparisonAwayProgress = comparisonAwayProgress;
     }
 
     public String getHomeTeamName() {
@@ -59,19 +59,19 @@ public class FinalPredictionsModel {
         this.comparisonTitle = comparisonTitle;
     }
 
-    public String getComparisonHome() {
-        return comparisonHome;
+    public String getComparisonHomeProgress() {
+        return comparisonHomeProgress;
     }
 
-    public void setComparisonHome(String comparisonHome) {
-        this.comparisonHome = comparisonHome;
+    public void setComparisonHomeProgress(String comparisonHomeProgress) {
+        this.comparisonHomeProgress = comparisonHomeProgress;
     }
 
-    public String getComparisonAway() {
-        return comparisonAway;
+    public String getComparisonAwayProgress() {
+        return comparisonAwayProgress;
     }
 
-    public void setComparisonAway(String comparisonAway) {
-        this.comparisonAway = comparisonAway;
+    public void setComparisonAwayProgress(String comparisonAwayProgress) {
+        this.comparisonAwayProgress = comparisonAwayProgress;
     }
 }

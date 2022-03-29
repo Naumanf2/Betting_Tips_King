@@ -8,6 +8,7 @@ import com.bettingtipsking.app.R;
 
 import com.bettingtipsking.app.activity.fixtures.PredictionFragment;
 import com.bettingtipsking.app.ui.home.matches.FixturesFragment;
+import com.bettingtipsking.app.ui.home.matches.fixturedetails.fragment.EventsFragment;
 import com.bettingtipsking.app.ui.home.matches.fixturedetails.fragment.FixturePredictionsFragment;
 import com.bettingtipsking.app.ui.home.matches.fixturedetails.fragment.H2HFragment;
 import com.bettingtipsking.app.ui.home.matches.fragment.ComingFixturesFragment;
@@ -27,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frameLayout, new FixturePredictionsFragment())
+                .add(R.id.frameLayout, new EventsFragment())
                 .disallowAddToBackStack()
                 .commit();
     }
