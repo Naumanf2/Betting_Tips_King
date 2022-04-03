@@ -4,7 +4,9 @@ import com.bettingtipsking.app.activity.fixtures.model.EventsModelold
 import com.bettingtipsking.app.model.coach.CoachesModel
 import com.bettingtipsking.app.model.events.EventsModel
 import com.bettingtipsking.app.model.fixtures.FixturesModel
+import com.bettingtipsking.app.model.league.LeagueModel
 import com.bettingtipsking.app.model.predictions.PredictionsModel
+import com.bettingtipsking.app.model.teamsInfo.TeamsInfoModel
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
@@ -53,4 +55,14 @@ interface FixturesService {
     suspend fun getCoach(@Query("team") team: Int): retrofit2.Response<CoachesModel>
 
 
+    @Headers(value = ["content-type: application/json","x-rapidapi-host: api-football-v1.p.rapidapi.com","x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
+    @GET("/v3/leagues")
+    suspend fun getLeague(): retrofit2.Response<LeagueModel>
+
+    @Headers(value = ["content-type: application/json", "x-rapidapi-host: api-football-v1.p.rapidapi.com", "x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
+    @GET("/v3/teams")
+    suspend fun getTeamsInfo(
+        @Query("league") id: Int,
+        @Query("season") season: Int
+    ): retrofit2.Response<TeamsInfoModel>
 }
