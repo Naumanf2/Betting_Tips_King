@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="18dp"
     tools:context=".ui.favorite.FavouriteLeaguesActivity">
     <ImageView
-        android:id="@+id/imageBackbtn"
+        android:id="@+id/imageBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_arrow_back_24"
@@ -22,8 +28,8 @@
         android:text="Favourites Leagues"
         android:textColor="#000000"
         android:textSize="31sp"
-        app:layout_constraintStart_toStartOf="@+id/imageBackbtn"
-        app:layout_constraintTop_toBottomOf="@+id/imageBackbtn" />
+        app:layout_constraintStart_toStartOf="@+id/imageBackBtn"
+        app:layout_constraintTop_toBottomOf="@+id/imageBackBtn" />
 
     <TextView
         android:id="@+id/textView4"
@@ -108,3 +114,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

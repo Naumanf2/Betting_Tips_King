@@ -35,6 +35,7 @@ public class EventsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentEventsBinding.inflate(inflater, container, false);
+
         viewModel = new ViewModelProvider(this, new EventsViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(EventsViewModel.class);
         viewModel.getEventsByFixture(830349);
 

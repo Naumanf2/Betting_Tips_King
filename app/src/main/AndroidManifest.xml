@@ -29,7 +29,13 @@
 
         <activity
             android:name=".ui.favorite.FavouriteLeaguesActivity"
-            android:exported="false" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.follow.FollowTeamActivity"
             android:exported="false" />
@@ -45,14 +51,14 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.auth.LogInActivity"
-            android:exported="false" />
+            android:exported="true">
+
+
+        </activity>
         <activity
             android:name=".ui.auth.ConfirmEmailActivity"
             android:exported="true">
