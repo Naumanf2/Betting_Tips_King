@@ -86,7 +86,6 @@ public class PaidTipsFragment extends Fragment implements PurchasesUpdatedListen
                             mPaymentProductModels.addAll(skuDetailsList);
                             mPaymentProductModels.add(skuDetailsList.get(0));
 
-
                         } else {
                             //Something is wrong
                             Toast.makeText(getContext(), "Something is wrong", Toast.LENGTH_SHORT).show();

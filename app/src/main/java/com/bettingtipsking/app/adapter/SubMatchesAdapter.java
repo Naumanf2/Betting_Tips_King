@@ -35,7 +35,7 @@ public class SubMatchesAdapter extends RecyclerView.Adapter<SubMatchesAdapter.vi
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         MatchesModel model= list.get(position);
-        holder.txt.setText(model.getText());
+       /* holder.txt.setText(model.getText());*/
 
     }
 
@@ -45,10 +45,8 @@ public class SubMatchesAdapter extends RecyclerView.Adapter<SubMatchesAdapter.vi
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
-        TextView txt;
-        public viewHolder(@NonNull View itemView) {
+      public viewHolder(@NonNull View itemView) {
             super(itemView);
-            txt=itemView.findViewById(R.id.textTeam1name);
         }
     }
 }

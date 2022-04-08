@@ -13,17 +13,24 @@ import kotlinx.coroutines.launch
 
 class LeagueViewModel(private val fixturesService: FixturesService) : ViewModel() {
 
-    private val leagueRepository= LeagueRepository(fixturesService)
+    private val leagueRepository = LeagueRepository(fixturesService)
 
     val data: LiveData<LeagueModel>
         get() = leagueRepository.data
 
-    init {
-    }
+
+    val leagueByIdLiveData: LiveData<LeagueModel>
+        get() = leagueRepository.leagueByIdLiveData
 
     public fun getLeague() {
         viewModelScope.launch(Dispatchers.IO) {
             leagueRepository.getLeague()
+        }
+    }
+
+    public fun getLeagueById(id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            leagueRepository.getLeagueById(id)
         }
     }
 }

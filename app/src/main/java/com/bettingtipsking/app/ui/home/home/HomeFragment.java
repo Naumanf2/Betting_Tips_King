@@ -70,6 +70,8 @@ public class HomeFragment extends Fragment implements DatePickerListener {
         binding.horizontalPicker.setListener(this).init();
 
         dateCheck = false;
+
+
         return binding.getRoot();
     }
 

@@ -130,7 +130,7 @@
                 android:background="@drawable/bg_button_rounded_blue"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/login"
-                android:onClick="@{()->loginAuthViewModel.loginWithEmailPassword(textInputLayoutEmail.getEditText().getText().toString(),textInputLayoutPassword.getEditText().getText().toString())}"
+                android:onClick="@{()->loginAuthViewModel.loginWithEmailPassword(textInputLayoutEmail.getEditText().getText().toString().trim(),textInputLayoutPassword.getEditText().getText().toString())}"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

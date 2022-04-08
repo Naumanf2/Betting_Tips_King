@@ -8,16 +8,17 @@ import android.view.View;
 
 import com.bettingtipsking.app.R;
 
-import com.bettingtipsking.app.activity.fixtures.PredictionFragment;
+import com.bettingtipsking.app.model.fixtures.Home;
+import com.bettingtipsking.app.ui.home.home.HomeFragment;
 import com.bettingtipsking.app.api.FixturesRetrofitHelper;
 import com.bettingtipsking.app.api.FixturesService;
 import com.bettingtipsking.app.databinding.FragmentEventsBinding;
 import com.bettingtipsking.app.ui.home.matches.FixturesFragment;
-import com.bettingtipsking.app.ui.home.matches.fixturedetails.fragment.EventsFragment;
-import com.bettingtipsking.app.ui.home.matches.fixturedetails.fragment.FixturePredictionsFragment;
-import com.bettingtipsking.app.ui.home.matches.fixturedetails.fragment.H2HFragment;
-import com.bettingtipsking.app.ui.home.matches.fragment.ComingFixturesFragment;
-import com.bettingtipsking.app.ui.home.matches.fragment.LiveFixturesFragment;
+import com.bettingtipsking.app.ui.home.matches.details.fragment.CoachsFragment;
+import com.bettingtipsking.app.ui.home.matches.details.fragment.EventsFragment;
+import com.bettingtipsking.app.ui.home.matches.details.fragment.FixturePredictionsFragment;
+import com.bettingtipsking.app.ui.home.matches.details.fragment.H2HFragment;
+import com.bettingtipsking.app.ui.home.matches.details.fragment.SquadFragment;
 import com.bettingtipsking.app.viewmodel.EventsViewModel;
 import com.bettingtipsking.app.viewmodel.LeagueViewModel;
 import com.bettingtipsking.app.viewmodel.viewmodelfactory.EventsViewModelFactory;
@@ -40,7 +41,7 @@ LeagueViewModel viewModel;
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frameLayout, new EventsFragment())
+                .add(R.id.frameLayout, new FixturesFragment())
                 .disallowAddToBackStack()
                 .commit();
     }

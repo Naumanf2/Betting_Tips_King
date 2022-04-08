@@ -26,6 +26,7 @@ import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
 import com.bettingtipsking.app.Helper.AppBarStateChangeListener;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ActivityFixtureDetailsBinding;
+import com.bettingtipsking.app.ui.home.matches.details.fragment.LineupPlayersFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
@@ -133,7 +134,7 @@ class MatchDetailsPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment;
         if (position == 0) {
-            fragment = new PredictionFragment();
+          //  fragment = new PredictionFragment();
         }else if (position == 1) {
             fragment = new FixtureEventsFragment();
         }
@@ -141,7 +142,7 @@ class MatchDetailsPagerAdapter extends FragmentStatePagerAdapter {
             fragment = new StatsFragment();
         }*/
         else if (position == 2) {
-            fragment = new LineupPlayersFragment();
+         //   fragment = new LineupPlayersFragment();
         }else if (position == 3) {
             fragment = new FixturesH2HFragment();
         }else {
@@ -150,7 +151,7 @@ class MatchDetailsPagerAdapter extends FragmentStatePagerAdapter {
 //        Bundle args = new Bundle();
 //        args.putInt(DemoObjectFragment.ARG_OBJECT, i + 1);
 //        fragment.setArguments(args);
-        return fragment;
+        return null;
     }
 
     @Override

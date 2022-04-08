@@ -42,6 +42,7 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.LineupViewHo
         holder.type_tv.setText(list.get(position).getTitle());
         holder.teamAScore_tv.setText(list.get(position).getTeamAScore());
         holder.teamBScore_tv.setText(list.get(position).getTeamBScore());
+
         float scoreA= Float.parseFloat(list.get(position).getTeamAScore().replace("%", ""));
         float scoreB= Float.parseFloat(list.get(position).getTeamBScore().replace("%", ""));
         holder.pbHome.setProgress((int) Math.min(scoreA, 100));

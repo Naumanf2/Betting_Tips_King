@@ -1,18 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.matches.fixturedetails.fragment.FixturePredictionsFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <data>
+        <variable
+            name="predictions"
+            type="com.bettingtipsking.app.model.predictions.PredictionsModel" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:listitem="@layout/item_comparison"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+       >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.matches.details.fragment.FixturePredictionsFragment">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:weightSum="3"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ProgressBar
+                    android:id="@+id/progressBarHome"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="30"
+                    android:progressBackgroundTint="#f5e2ec"
+                    android:rotation="180" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarDraw"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="50"
+                    android:progressBackgroundTint="#f5e2ec"
+                    android:rotation="180" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarAway"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="10"
+                    android:progressBackgroundTint="#f5e2ec"
+                    android:rotation="180" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/playfairdisplay_bold"
+                android:text="Predictions"
+                android:layout_marginTop="10dp"
+                android:textColor="#111111"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Winner name: `+predictions.response.get(0).predictions.winner.name}"
+                android:textColor="#111111"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@{`Comment: `+predictions.response.get(0).predictions.winner.comment}"
+                android:textColor="#111111"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textView22"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="@{`Under Over: `+String.valueOf(predictions.response.get(0).predictions.under_over)}"
+                android:textColor="#111111"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textView23"
+                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:text="@{`Advice: `+predictions.response.get(0).predictions.advice}"
+                android:textColor="#111111"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView24"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Goals"
+                android:textColor="#111111"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/textView25"
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@{`Away: `+String.valueOf(predictions.response.get(0).predictions.goals.away)}"
+                android:textColor="#111111"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView27"
+                app:layout_constraintStart_toEndOf="@+id/textView27"
+                app:layout_constraintTop_toTopOf="@+id/textView27" />
+
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{`Home: `+String.valueOf(predictions.response.get(0).predictions.goals.home)}"
+                android:textColor="#111111"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView27"
+                tools:listitem="@layout/item_comparison" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -13,7 +13,6 @@ public class TeamWithPlayers {
     List<TeamWithPlayers> defender;
     List<TeamWithPlayers> midfielder;
     List<TeamWithPlayers> forward;
-
     String playerId;
     String playerName;
     String playerNumber;

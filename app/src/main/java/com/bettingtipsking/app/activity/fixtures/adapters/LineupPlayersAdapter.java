@@ -38,6 +38,8 @@ public class LineupPlayersAdapter extends RecyclerView.Adapter<LineupPlayersAdap
     @Override
     public void onBindViewHolder(@NonNull LineupViewHolder holder, int position) {
         holder.tvName.setText(list.get(position).getPlayerNumber() +"-"+list.get(position).getPlayerName());
+
+        System.out.println("player photo is "+list.get(position).getPlayerPhoto());
         Glide.with(context)
                 .load(list.get(position).getPlayerPhoto())
                 .into(holder.ivPlayer);

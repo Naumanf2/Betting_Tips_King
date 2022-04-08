@@ -56,7 +56,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
-public class FixturesFragment extends Fragment implements ItemClickListener, DatePickerListener {
+public class FixturesFragment extends Fragment  {
 
     ProgressBar progressBar;
     RequestQueue queue;
@@ -108,7 +108,9 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
         search_et = view.findViewById(R.id.search_et);
         HorizontalPicker picker = (HorizontalPicker) view.findViewById(R.id.datePicker);
         // initialize it and attach a listener
+/*
         picker.setListener(this).init();
+*/
         progressBar = view.findViewById(R.id.progressBar);
         queue = Volley.newRequestQueue(requireActivity());
         txt_info = view.findViewById(R.id.txt_info);
@@ -338,7 +340,8 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
         MySingleton.getmInstance(getActivity()).addToRequestQueue(postRequest);
     }
 
-    @Override
+
+    /*@Override
     public void onItemClicked(String parentPosition, Object obj) {
         FinalFixturesModel model = fixturesList.get(Integer.parseInt(parentPosition));
         FinalFixturesModel fixturesModel = new FinalFixturesModel(model.getLeagueId(), model.getLeagueName(), model.getLeagueCountry(), model.getLeagueLogo(), model.getLeagueFlag(), model.getLeagueSeason(), model.getLeagueRound(), new ArrayList<>());
@@ -350,15 +353,23 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
             );
 
         }else{
-            startActivity(new Intent(getActivity(), SubscriptionsActivity.class));
-            /*startActivity(
+            startActivity(new Intent(getActivity(), SubscriptionsActivity.class));*/
+
+/*startActivity(
                     new Intent(getActivity(), FixtureDetailsActivity.class)
                             .putExtra(FIXTURE_MODEL, fixturesModel)
                             .putExtra(FIXTURE_DETAIL_MODEL, (MatchDetailsModel)obj)
-            );*/
+            );*//*
+
         }
 
     }
+
+
+    /*@Override
+    public void onH2HIconClick(int teamHomeId, int teamAwayId) {
+
+    }*/
 
     public void sortProductsListBySearch(String searchQuery){
         fixturesList.clear();
@@ -389,12 +400,12 @@ public class FixturesFragment extends Fragment implements ItemClickListener, Dat
         }
     }
 
-    @Override
+   /* @Override
     public void onDateSelected(DateTime dateSelected) {
         int year = dateSelected.getYear();
         int month = dateSelected.getMonthOfYear();
         int day = dateSelected.getDayOfMonth();
         currentDate = year + "-" + String.format("%02d", month) + "-" + String.format("%02d", day);
         getAllFixtures();
-    }
+    }*/
 }

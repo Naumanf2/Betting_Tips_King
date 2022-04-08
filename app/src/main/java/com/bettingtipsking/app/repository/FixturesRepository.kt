@@ -3,30 +3,40 @@ package com.bettingtipsking.app.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bettingtipsking.app.api.FixturesService
+import com.bettingtipsking.app.model.fixture_by_fixture_id.FixtureByFixtureId
 import com.bettingtipsking.app.model.fixtures.FixturesModel
 
 class FixturesRepository(private val fixturesService: FixturesService) {
 
     private val mutableLiveFixturesData = MutableLiveData<FixturesModel>()
-    private val mutablePastFixturesData = MutableLiveData<FixturesModel>()
+    val mutablePastFixturesData = MutableLiveData<FixturesModel>()
     private val mutableTodayFixturesData = MutableLiveData<FixturesModel>()
     private val mutableComingFixturesData = MutableLiveData<FixturesModel>()
     private val mutableHeadToHeadFixturesData = MutableLiveData<FixturesModel>()
+    private val mutableMatchDetailsFixturesData = MutableLiveData<FixtureByFixtureId>()
 
     val liveMatchLiveData: LiveData<FixturesModel>
         get() = mutableLiveFixturesData
 
-    val pastMatchLiveData: LiveData<FixturesModel>
+    val pastMatchLiveData: MutableLiveData<FixturesModel>
         get() = mutablePastFixturesData
 
     val todayMatchLiveData: LiveData<FixturesModel>
         get() = mutableTodayFixturesData
+
+
+
+
 
     val comingMatchLiveData: LiveData<FixturesModel>
         get() = mutableComingFixturesData
 
     val headToHeadLiveData: LiveData<FixturesModel>
         get() = mutableHeadToHeadFixturesData
+
+
+    val matchDetailsLiveData: LiveData<FixtureByFixtureId>
+        get() = mutableMatchDetailsFixturesData
 
     suspend fun getLiveFixtures(live: String) {
         val result = fixturesService.getLiveMatches(live);
@@ -55,7 +65,15 @@ class FixturesRepository(private val fixturesService: FixturesService) {
     suspend fun getPastFixtures(date: String) {
         val result = fixturesService.getFixturesByDate(date);
         if (result?.body() != null)
-            mutableComingFixturesData.postValue(result.body())
+            mutablePastFixturesData.postValue(result.body())
+        else
+            showException(result.errorBody().toString())
+    }
+
+    suspend fun getFixturesBYFixtureId(id: Int) {
+        val result = fixturesService.getFixturesByFixtureId(id);
+        if (result?.body() != null)
+            mutableMatchDetailsFixturesData.postValue(result.body())
         else
             showException(result.errorBody().toString())
     }

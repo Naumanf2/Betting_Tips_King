@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bettingtipsking.app">
+
     <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -17,24 +18,18 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.auth.ConfirmationActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".ui.auth.CountryActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.matches.MatchDetailsActivity"
+            android:name=".ui.home.matches.details.MatchDetailsActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.favorite.FavouriteLeaguesActivity"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.follow.FollowTeamActivity"
@@ -47,27 +42,28 @@
             android:exported="true" />
         <activity
             android:name=".ui.auth.ResetPasswordActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.auth.LogInActivity"
             android:exported="true">
 
-
         </activity>
         <activity
             android:name=".ui.auth.ConfirmEmailActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="false"/>
         <activity
             android:name=".ui.home.notification.NotificationSettingsActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".ui.home.news.NewsDetailsActivity"
             android:exported="false" />

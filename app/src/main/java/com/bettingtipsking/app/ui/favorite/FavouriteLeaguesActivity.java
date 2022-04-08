@@ -33,16 +33,6 @@ public class FavouriteLeaguesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_favourite_leagues);
 
-        viewModel = new ViewModelProvider(this, new LeagueViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(LeagueViewModel.class);
-        viewModel.getLeague();
-
-        viewModel.getData().observe(this, leagueModel -> {
-            list = leagueModel.getResponse();
-
-            //list.get(postion).getLeague().getLogo();
-
-
-        });
 
     }
 }

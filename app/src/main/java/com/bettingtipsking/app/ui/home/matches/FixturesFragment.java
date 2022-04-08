@@ -35,7 +35,6 @@ import java.util.List;
 public class FixturesFragment extends Fragment {
     FragmentFixturesBinding binding;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentFixturesBinding.inflate(inflater, container, false);
@@ -55,22 +54,18 @@ public class FixturesFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 binding.viewpager2.setCurrentItem(tab.getPosition());
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
-
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
 
         binding.viewpager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                binding.tabLayout.selectTab(  binding.tabLayout.getTabAt(position));
+                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position));
             }
         });
 

@@ -33,17 +33,21 @@ public class ComparisonAdapter extends RecyclerView.Adapter<ComparisonAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-
         holder.binding.textTeamHomeProgress.setText("Home ("+list.get(position).getComparisonHomeProgress()+")");
         holder.binding.textTeamAwayProgress.setText("Away ("+list.get(position).getComparisonAwayProgress()+")");
 
         holder.binding.textTeamHomeName.setText(list.get(position).getHomeTeamName());
         holder.binding.textTeamHomeName.setText(list.get(position).getAwayTeamName());
+        holder.binding.textViewTitle.setText(list.get(position).getComparisonTitle());
 
         Glide.with(context).load(list.get(position).getHomeTeamLogo()).into(holder.binding.imageTeamHomeLogo);
         Glide.with(context).load(list.get(position).getAwayTeamLogo()).into(holder.binding.imageTeamAwayLogo);
 
+        float scoreA= Float.parseFloat(list.get(position).getComparisonHomeProgress().replace("%", ""));
+        float scoreB= Float.parseFloat(list.get(position).getComparisonAwayProgress().replace("%", ""));
 
+        holder.binding.progressBarHome.setProgress((int) Math.min(scoreA, 100));
+        holder.binding.progressBarAway.setProgress((int) Math.min(scoreB, 100));
 
     }
 

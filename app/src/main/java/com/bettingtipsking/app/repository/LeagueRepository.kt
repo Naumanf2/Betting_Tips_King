@@ -10,9 +10,13 @@ class LeagueRepository(private val fixturesService: FixturesService) {
 
 
     private val liveData = MutableLiveData<LeagueModel>()
+    private val leagueByIdMutableLiveData = MutableLiveData<LeagueModel>()
 
     val data: LiveData<LeagueModel>
         get() = liveData
+
+    val leagueByIdLiveData: LiveData<LeagueModel>
+        get() = leagueByIdMutableLiveData
 
     suspend fun getLeague() {
         val result = fixturesService.getLeague();
@@ -20,6 +24,13 @@ class LeagueRepository(private val fixturesService: FixturesService) {
             liveData.postValue(result.body())
 
             println("League is" + result.body())
+        }
+    }
+
+    suspend fun getLeagueById(id:Int) {
+        val result = fixturesService.getLeagueById(id);
+        if (result?.body() != null) {
+            leagueByIdMutableLiveData.postValue(result.body())
         }
     }
 }

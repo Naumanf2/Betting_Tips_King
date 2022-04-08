@@ -48,6 +48,10 @@ public class PredictionFragment extends Fragment {
     FixtureDetailsActivity parentContext;
     List<StatsModel> statsModelList = new ArrayList<>();
     StatsAdapter adapter;
+
+    public PredictionFragment(int fixture_id, int league_id, int team_home_id, int team_away_id) {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

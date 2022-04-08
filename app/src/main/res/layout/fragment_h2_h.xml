@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.matches.fixturedetails.fragment.H2HFragment">
+        tools:context=".ui.home.matches.details.fragment.H2HFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -13,5 +14,5 @@
             android:layout_height="match_parent"
             tools:listitem="@layout/item_fixtures" />
 
-    </FrameLayout>
+    </RelativeLayout>
 </layout>

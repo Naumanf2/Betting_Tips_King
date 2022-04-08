@@ -1,156 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.matches.MatchDetailsActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="matchDetail"
+            type="com.bettingtipsking.app.model.fixture_by_fixture_id.FixtureByFixtureId" />
+    </data>
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="296dp"
-        android:layout_margin="5dp"
-        android:background="#92DDEE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textLocation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Estadio Guillermo Briceno Rpsamedina, Julica"
-        android:textColor="#212C2E"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <TextView
-        android:id="@+id/textMatchStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Finished"
-        android:textColor="@color/red"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textLocation" />
-
-
-    <ImageView
-        android:id="@+id/imageLeagueIcon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textMatchStatus"
-        app:srcCompat="@drawable/icon_team3" />
-
-    <TextView
-        android:id="@+id/textLeagueName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Brazil Acreano"
-        android:textColor="#ffffff"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageLeagueIcon"
-        app:layout_constraintTop_toTopOf="@+id/imageLeagueIcon" />
-
-    <TextView
-        android:id="@+id/textPhase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/tinos_regular"
-        android:text="1st Phase-2"
-        android:textColor="#ffffff"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/textLeagueName"
-        app:layout_constraintTop_toBottomOf="@+id/textLeagueName" />
-
-    <ImageView
-        android:id="@+id/imageTeam1"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textTeam1name"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="@+id/textTeam1name"
-        app:layout_constraintTop_toBottomOf="@+id/textPhase"
-        app:srcCompat="@drawable/icon_team2" />
-
-    <TextView
-        android:id="@+id/textTeam1name"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text="Central Cordoba de Santiago"
-        android:textColor="#232020"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/imageTeam1" />
-
-
-    <ImageView
-        android:id="@+id/imageTeam2"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textTeam2name"
-        app:layout_constraintStart_toStartOf="@+id/textTeam2name"
-        app:layout_constraintTop_toBottomOf="@+id/textPhase"
-        app:srcCompat="@drawable/icon_team2" />
-
-    <TextView
-        android:id="@+id/textTeam2name"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text="Central Cordoba de Santiago"
-        android:textColor="#232020"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/imageTeam2" />
-
-    <TextView
-        android:id="@+id/textGoles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/tinos_bold"
-        android:text="0 - 1"
-        android:textColor="#ffffff"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/textMatchStatus"
-        app:layout_constraintEnd_toStartOf="@+id/imageTeam2"
-        app:layout_constraintStart_toEndOf="@+id/imageTeam1"
-        app:layout_constraintTop_toBottomOf="@+id/textPhase" />
-
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/frameLayout"
-        app:layout_constraintTop_toBottomOf="@id/view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:layout_height="match_parent"
+        tools:context=".ui.home.matches.details.MatchDetailsActivity">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/textLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="5dp"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@{matchDetail.response.get(0).fixture.venue.name}"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textStatus"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@{matchDetail.response.get(0).fixture.date.substring(0,12)}"
+            android:textSize="12sp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintStart_toStartOf="@+id/textLocation"
+            app:layout_constraintTop_toBottomOf="@+id/textLocation" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Live"
+            android:textColor="@color/color11"
+            android:textSize="15sp"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spinKitWave"
+            style="@style/SpinKitView.Wave"
+            android:layout_width="22dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@+id/textStatus"
+            app:layout_constraintTop_toBottomOf="@+id/textStatus" />
+
+
+        <TextView
+            android:id="@+id/textLeagueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@{matchDetail.response.get(0).league.name}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="@+id/textDate"
+            app:layout_constraintTop_toBottomOf="@+id/textDate" />
+
+
+        <TextView
+            android:id="@+id/textRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@{matchDetail.response.get(0).league.round}"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textLeagueName"
+            app:layout_constraintTop_toBottomOf="@+id/textLeagueName" />
+
+
+        <ImageView
+            android:id="@+id/imageHomeTeam"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_team_1"
+            loadImage="@{matchDetail.response.get(0).teams.home.logo}"
+            app:layout_constraintBottom_toTopOf="@+id/textHomeTeamName"
+            app:layout_constraintEnd_toEndOf="@+id/textHomeTeamName"
+            app:layout_constraintStart_toStartOf="@+id/textHomeTeamName"
+            app:layout_constraintTop_toBottomOf="@+id/textRound" />
+
+        <TextView
+            android:id="@+id/textHomeTeamName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@{matchDetail.response.get(0).teams.home.name}"
+            android:textSize="14sp"
+            android:layout_marginStart="7dp"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/imageHomeTeam" />
+
+
+        <ImageView
+            android:id="@+id/imageAwayTeam"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_team_1"
+            loadImage="@{matchDetail.response.get(0).teams.away.logo}"
+
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/textAwayTeamName"
+            app:layout_constraintStart_toStartOf="@+id/textAwayTeamName"
+            app:layout_constraintTop_toBottomOf="@+id/textRound" />
+
+        <TextView
+            android:id="@+id/textAwayTeamName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@{matchDetail.response.get(0).teams.away.name}"
+            android:textSize="14sp"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/imageAwayTeam" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="- - -"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageAwayTeam"
+            app:layout_constraintStart_toEndOf="@+id/imageHomeTeam"
+            app:layout_constraintTop_toTopOf="@+id/imageHomeTeam" />
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabLayout
+               android:id="@+id/tabLayout"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               app:tabGravity="fill"
+               app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+               app:tabIndicatorColor="@color/colorPrimary"
+               app:tabMode="scrollable"
+               app:tabPaddingStart="0dp"
+               app:layout_constraintEnd_toEndOf="@+id/view"
+               app:layout_constraintStart_toStartOf="@+id/view"
+               app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

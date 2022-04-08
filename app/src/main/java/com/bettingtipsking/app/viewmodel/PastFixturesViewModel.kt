@@ -1,6 +1,7 @@
 package com.bettingtipsking.app.viewmodel
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bettingtipsking.app.api.FixturesService
@@ -13,8 +14,8 @@ class PastFixturesViewModel(private val fixturesService: FixturesService) : View
 
     private val fixturesRepository = FixturesRepository(fixturesService)
 
-    val pastMatchLiveData: LiveData<FixturesModel>
-        get() = fixturesRepository.pastMatchLiveData
+    val pastMatchLiveData: MutableLiveData<FixturesModel>
+        get() = fixturesRepository.mutablePastFixturesData
 
     init {
     }

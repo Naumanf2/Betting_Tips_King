@@ -26,15 +26,14 @@ public class CoachesDetailAdapter extends RecyclerView.Adapter<CoachesDetailAdap
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_coachesdetail, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_coaches, parent, false);
         return new viewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 
-        MatchesModel model= list.get(position);
-        holder.cname.setText(model.getText());
+
 
     }
 
@@ -44,10 +43,8 @@ public class CoachesDetailAdapter extends RecyclerView.Adapter<CoachesDetailAdap
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
-        TextView cname;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            cname=itemView.findViewById(R.id.textClubName);
         }
     }
 }

@@ -14,3 +14,4 @@ data class Response(
     val team: TeamX,
     val weight: Any
 )
+

@@ -23,6 +23,7 @@ import com.bettingtipsking.app.Helper.MySingleton;
 import com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel;
 import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
 import com.bettingtipsking.app.databinding.FragmentFixturesH2HBinding;
+import com.bettingtipsking.app.model.FinalMatchesModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -202,7 +203,12 @@ public class FixturesH2HFragment extends Fragment implements ItemClickListener {
     }
 
     @Override
-    public void onItemClicked(String position, Object obj) {
+    public void onItemClicked(int position, FinalMatchesModel finalFixturesModel) {
+
+    }
+
+    @Override
+    public void onH2HIconClick(int teamHomeId, int teamAwayId) {
 
     }
 }
