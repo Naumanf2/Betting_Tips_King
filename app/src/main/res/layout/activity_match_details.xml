@@ -107,7 +107,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/icon_team_1"
+            android:src="@drawable/icon_team1"
             loadImage="@{matchDetail.response.get(0).teams.home.logo}"
             app:layout_constraintBottom_toTopOf="@+id/textHomeTeamName"
             app:layout_constraintEnd_toEndOf="@+id/textHomeTeamName"
@@ -132,7 +132,7 @@
             android:id="@+id/imageAwayTeam"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/icon_team_1"
+            android:src="@drawable/icon_team2"
             loadImage="@{matchDetail.response.get(0).teams.away.logo}"
 
             android:layout_marginTop="15dp"

@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_favourite_leagues.xml" value="0.25" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_log_in.xml" value="0.25" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_match_details.xml" value="0.18" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_phone_login.xml" value="0.209375" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/activity_sign_up.xml" value="0.209375" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/fragment_events.xml" value="0.209375" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_events.xml" value="0.209375" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_followteams.xml" value="0.22" />
+        <entry key="..\:/AndroidIntershipProjects/Betting_Tips_King-1/app/src/main/res/layout/item_matches.xml" value="0.1" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-mdpi/inputs_background.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-mdpi/save_btn_background.xml" value="0.156" />
         <entry key="..\:/Users/DELL/Desktop/Betting Tips King/Betting Tips King/Source Code/BettingTipsKing/app/src/main/res/drawable-xxxhdpi/bg_edit_text_join.xml" value="0.165" />
