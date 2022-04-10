@@ -5,10 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="18dp"
+    android:layout_margin="10dp"
     tools:context=".ui.favorite.FavouriteLeaguesActivity">
     <ImageView
         android:id="@+id/imageBackBtn"
@@ -79,18 +80,18 @@
         app:layout_constraintTop_toBottomOf="@+id/SearchView" />
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFollowTeams"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        android:layout_alignParentTop="true"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_followteams"
+        app:layout_constraintTop_toBottomOf="@id/textView9"
+        app:layout_constraintBottom_toTopOf="@id/appCompatButtonSend"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:listitem="@layout/item_followteams" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
 
 
 
