@@ -23,7 +23,7 @@
         <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
             android:id="@+id/horizontalPicker"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
@@ -33,23 +33,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/horizontalPicker"
             tools:listitem="@layout/item_home_predication" />
 
-        <com.github.ybq.android.spinkit.SpinKitView
-            android:id="@+id/spinKitView"
-            style="@style/SpinKitView.FadingCircle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:SpinKit_Color="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalPicker" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

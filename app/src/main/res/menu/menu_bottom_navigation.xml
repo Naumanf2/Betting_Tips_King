@@ -9,21 +9,21 @@
     <item
         android:id="@+id/navMatch"
         android:icon="@drawable/icon_football"
-        android:title="Home" />
+        android:title="Matches" />
 
     <item
         android:id="@+id/navNews"
-        android:icon="@drawable/icon_football"
+        android:icon="@drawable/icon_news"
         android:title="News" />
 
     <item
-        android:id="@+id/navNotification"
-        android:icon="@drawable/icon_notification_bell"
-        android:title="News" />
+        android:id="@+id/navVideo"
+        android:icon="@drawable/icon_video"
+        android:title="Videos" />
 
     <item
         android:id="@+id/navAccount"
-        android:icon="@drawable/icon_notification_bell"
+        android:icon="@drawable/icon_account"
         android:title="Account" />
 
 </menu>

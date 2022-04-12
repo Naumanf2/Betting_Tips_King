@@ -12,24 +12,27 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class AuthSignupViewModel extends AndroidViewModel {
 
-    Application application;
-    AuthSignupRepository authRepository;
-    MutableLiveData<FirebaseUser> userMutableLiveData;
+    private Application application;
+    private AuthSignupRepository authSignupRepository;
+    private MutableLiveData<FirebaseUser> userMutableLiveData;
+    private MutableLiveData<Integer> progressMutableLiveData;
 
     public AuthSignupViewModel(@NonNull Application application) {
         super(application);
         this.application = application;
-        authRepository = new AuthSignupRepository(application);
-        userMutableLiveData = authRepository.getUserMutableLiveData();
+        authSignupRepository = new AuthSignupRepository(application);
+        userMutableLiveData = authSignupRepository.getUserMutableLiveData();
+        progressMutableLiveData = authSignupRepository.getProgressMutableLiveData();
 
     }
 
-    public void signup(String name, String email, String password){
-        authRepository.Signup(name, email,password);
+    public void signup(String name, String email, String password) {
+        authSignupRepository.Signup(name, email, password);
     }
-
 
     public MutableLiveData<FirebaseUser> getUserMutableLiveData() {
         return userMutableLiveData;
     }
+
+    public MutableLiveData<Integer> getProgressMutableLiveData() { return progressMutableLiveData; }
 }

@@ -14,19 +14,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ResetPasswordRepository {
-    Application application;
-    FirebaseAuth mAuth;
+    private Application application;
+    private FirebaseAuth mAuth;
     private MutableLiveData<Integer> mutableLiveData;
+    private MutableLiveData<Integer> progressMutableLiveData;
     String TAG = "ResetPasswordRepository:";
 
     public ResetPasswordRepository(Application application) {
         this.application = application;
         mAuth = FirebaseAuth.getInstance();
         mutableLiveData = new MutableLiveData<>();
+        progressMutableLiveData = new MutableLiveData<>();
     }
 
     public MutableLiveData<Integer> getMutableLiveData() {
         return mutableLiveData;
+    }
+
+    public MutableLiveData<Integer> getProgressMutableLiveData() {
+        return progressMutableLiveData;
     }
 
     public void resetPassword(String email) {
@@ -47,10 +53,12 @@ public class ResetPasswordRepository {
     }
 
     private void repositoryResetPassword(String email) {
+        progressMutableLiveData.postValue(0);
         mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
+                    progressMutableLiveData.postValue(1);
                     mutableLiveData.postValue(0);
                     Log.d(TAG, "Email sent.");
                 } else {

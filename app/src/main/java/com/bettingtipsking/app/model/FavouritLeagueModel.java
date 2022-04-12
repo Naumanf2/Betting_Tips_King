@@ -1,11 +1,11 @@
-package com.bettingtipsking.app.Room.favLeague;
+package com.bettingtipsking.app.model;
 
 import com.bettingtipsking.app.model.league.Response;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavLeagueModel {
+public class FavouritLeagueModel {
     public int id;
     String name;
     String type;
@@ -13,7 +13,7 @@ public class FavLeagueModel {
     String country;
     int favStatus;
 
-    public FavLeagueModel(int id, String name, String type, String logo,String country, int favStatus) {
+    public FavouritLeagueModel(int id, String name, String type, String logo, String country, int favStatus) {
         this.id = id;
         this.name = name;
         this.type = type;

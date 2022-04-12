@@ -5,12 +5,10 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.bettingtipsking.app.Room.MyLocalDatabase;
+import com.bettingtipsking.app.Room.database.MyLocalDatabase;
 import com.bettingtipsking.app.Room.PendingPredictions;
 import com.bettingtipsking.app.Room.Predictions;
 import com.bettingtipsking.app.Room.PredictionsDao;
-import com.bettingtipsking.app.Room.favLeague.FavLeagues;
-import com.bettingtipsking.app.Room.favLeague.FavLeaguesDao;
 
 import java.util.List;
 

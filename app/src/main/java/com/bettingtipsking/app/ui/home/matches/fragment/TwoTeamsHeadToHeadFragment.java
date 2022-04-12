@@ -14,18 +14,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.bettingtipsking.app.Helper.ItemClickListener;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.adapter.FixturesAdapter;
 import com.bettingtipsking.app.api.FixturesRetrofitHelper;
 import com.bettingtipsking.app.api.FixturesService;
-import com.bettingtipsking.app.databinding.FragmentLiveFixturesBinding;
-import com.bettingtipsking.app.databinding.FragmentTwoTeamsHeadToHeadBinding;
 import com.bettingtipsking.app.model.FinalFixturesModel;
 import com.bettingtipsking.app.model.FinalMatchesModel;
 import com.bettingtipsking.app.model.fixtures.Fixture;
@@ -36,9 +31,7 @@ import com.bettingtipsking.app.model.fixtures.Score;
 import com.bettingtipsking.app.model.fixtures.Teams;
 import com.bettingtipsking.app.ui.home.matches.details.MatchDetailsActivity;
 import com.bettingtipsking.app.viewmodel.HeadToHeadBetweenTwoTeamsMainViewModel;
-import com.bettingtipsking.app.viewmodel.LiveFixturesViewModel;
 import com.bettingtipsking.app.viewmodel.viewmodelfactory.HeadToHeadBetweenTwoTeamsModelFactory;
-import com.bettingtipsking.app.viewmodel.viewmodelfactory.LiveFixturesViewModelFactory;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;

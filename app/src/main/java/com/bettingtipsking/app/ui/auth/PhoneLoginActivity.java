@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.TargetApi;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -30,8 +28,7 @@ import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.adapter.others.CountriesFetcher;
 import com.bettingtipsking.app.databinding.ActivityPhoneLoginBinding;
 import com.bettingtipsking.app.ui.home.HomeActivity;
-import com.bettingtipsking.app.viewmodel.AuthLoginViewModel;
-import com.google.android.material.internal.TextWatcherAdapter;
+import com.bettingtipsking.app.viewmodel.AuthMobileViewModel;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -47,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 public class PhoneLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityPhoneLoginBinding binding;
-    private AuthLoginViewModel viewModel;
+    private AuthMobileViewModel viewModel;
     private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
     private String mCountryIso;
     private String mCountryName;
@@ -67,7 +64,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_phone_login);
-        viewModel = new ViewModelProvider(this).get(AuthLoginViewModel.class);
+        viewModel = new ViewModelProvider(this).get(AuthMobileViewModel.class);
 
         if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
@@ -81,7 +78,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
                 Log.d("PHONE_LOGIN", "onVerificationCompleted:" + credential);
                 mVerificationInProgress = false;
                 updateUI(credential);
-                viewModel.loginWithCredentials(credential);
+                viewModel.loginWithCredentials(credential,mPhoneNumber);
             }
 
             @Override
@@ -322,7 +319,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
 
     private void verifyPhoneNumberWithCode(String verificationId, String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        viewModel.loginWithCredentials(credential);
+        viewModel.loginWithCredentials(credential,mPhoneNumber);
 
     }
 

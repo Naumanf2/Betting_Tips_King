@@ -89,7 +89,7 @@
         android:layout_alignParentTop="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:listitem="@layout/item_followteams" />
+        tools:listitem="@layout/item_favourit_league" />
 
 
 

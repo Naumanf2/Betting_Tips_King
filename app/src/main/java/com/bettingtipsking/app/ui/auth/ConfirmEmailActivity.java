@@ -4,17 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.bettingtipsking.app.Helper.QuickHelp;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ActivityConfirmEmailBinding;
 
 public class ConfirmEmailActivity extends AppCompatActivity {
-
     ActivityConfirmEmailBinding binding;
 
     @Override

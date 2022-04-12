@@ -1,28 +1,18 @@
 package com.bettingtipsking.app.adapter;
 
-import static com.bettingtipsking.app.Helper.HelperClass.H2H;
-
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bettingtipsking.app.activity.fixtures.FixtureDetailsActivity;
-import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
 import com.bettingtipsking.app.Helper.ItemClickListener;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ItemMatchesBinding;
 import com.bettingtipsking.app.model.FinalMatchesModel;
-import com.bettingtipsking.app.ui.home.matches.details.MatchDetailsActivity;
-import com.bettingtipsking.app.ui.home.matches.fragment.LiveFixturesFragment;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

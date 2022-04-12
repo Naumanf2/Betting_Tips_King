@@ -1,22 +1,24 @@
-package com.bettingtipsking.app.Room.favLeague;
+package com.bettingtipsking.app.Room.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class FavLeagues {
+public class FavouritLeaguesEntity {
     @PrimaryKey
     public int id;
     String name;
     String type;
     String logo;
 
-    public FavLeagues(int id, String name, String type, String logo) {
+    public FavouritLeaguesEntity(int id, String name, String type, String logo) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.logo = logo;
     }
+
+
 
     public int getId() {
         return id;

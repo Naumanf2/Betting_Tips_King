@@ -1,39 +1,21 @@
 package com.bettingtipsking.app.ui.home.matches.details.fragment;
 
-import static com.bettingtipsking.app.Helper.HelperClass.HOST;
-import static com.bettingtipsking.app.Helper.HelperClass.KEY;
-
-import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.bettingtipsking.app.Helper.MySingleton;
 import com.bettingtipsking.app.activity.fixtures.FixtureDetailsActivity;
 import com.bettingtipsking.app.activity.fixtures.adapters.LineupPlayersAdapter;
 import com.bettingtipsking.app.activity.fixtures.model.TeamWithPlayers;
-import com.bettingtipsking.app.api.FixturesRetrofitHelper;
-import com.bettingtipsking.app.api.FixturesService;
 import com.bettingtipsking.app.databinding.FragmentLinupPlayersBinding;
-import com.bettingtipsking.app.viewmodel.H2HViewModel;
 import com.bettingtipsking.app.viewmodel.LineupViewModel;
-import com.bettingtipsking.app.viewmodel.viewmodelfactory.H2HModelFactory;
 import com.bumptech.glide.Glide;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
