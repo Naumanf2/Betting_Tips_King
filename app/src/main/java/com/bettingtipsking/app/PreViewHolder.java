@@ -7,8 +7,8 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.bettingtipsking.app.repository.Repository;
-import com.bettingtipsking.app.Room.PendingPredictions;
-import com.bettingtipsking.app.Room.Predictions;
+import com.bettingtipsking.app.room.PendingPredictions;
+import com.bettingtipsking.app.room.Predictions;
 
 import java.util.List;
 

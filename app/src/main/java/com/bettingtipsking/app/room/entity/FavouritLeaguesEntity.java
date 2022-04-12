@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.Room.entity;
+package com.bettingtipsking.app.room.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

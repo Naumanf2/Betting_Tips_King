@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.Room.entity.FavouritLeaguesEntity;
+import com.bettingtipsking.app.room.entity.FavouritLeaguesEntity;
 import com.bettingtipsking.app.Helper.callback.FavouritLeagueInterfaceCallBack;
 import com.bettingtipsking.app.model.FavouritLeagueModel;
 import com.bettingtipsking.app.adapter.FavouriteLeaguesAdapter;

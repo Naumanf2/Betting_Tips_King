@@ -14,7 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.Room.Predictions;
+import com.bettingtipsking.app.room.Predictions;
 
 import java.util.List;
 

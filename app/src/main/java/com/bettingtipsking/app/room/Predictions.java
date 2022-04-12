@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.Room;
+package com.bettingtipsking.app.room;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

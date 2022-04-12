@@ -6,9 +6,9 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.bettingtipsking.app.Room.database.MyLocalDatabase;
-import com.bettingtipsking.app.Room.entity.FavouritLeaguesEntity;
-import com.bettingtipsking.app.Room.dao.FavouritLeaguesDao;
+import com.bettingtipsking.app.room.database.MyLocalDatabase;
+import com.bettingtipsking.app.room.entity.FavouritLeaguesEntity;
+import com.bettingtipsking.app.room.dao.FavouritLeaguesDao;
 
 import java.util.List;
 

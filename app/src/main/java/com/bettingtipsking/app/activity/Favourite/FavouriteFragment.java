@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.bettingtipsking.app.activity.Favourite.Adapter.FavouriteAdapter;
 import com.bettingtipsking.app.PreViewHolder;
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.Room.Predictions;
+import com.bettingtipsking.app.room.Predictions;
 
 import java.util.ArrayList;
 import java.util.List;

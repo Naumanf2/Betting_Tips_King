@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.Room.dao;
+package com.bettingtipsking.app.room.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,7 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.bettingtipsking.app.Room.entity.FavouritLeaguesEntity;
+import com.bettingtipsking.app.room.entity.FavouritLeaguesEntity;
 
 import java.util.List;
 

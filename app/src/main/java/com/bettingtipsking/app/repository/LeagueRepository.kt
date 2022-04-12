@@ -1,10 +1,7 @@
 package com.bettingtipsking.app.repository
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.bettingtipsking.app.Room.dao.FavouritLeaguesDao
-import com.bettingtipsking.app.Room.database.MyLocalDatabase
 import com.bettingtipsking.app.api.FixturesService
 import com.bettingtipsking.app.model.league.LeagueModel
 

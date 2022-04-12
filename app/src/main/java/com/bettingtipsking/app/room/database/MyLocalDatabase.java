@@ -1,4 +1,4 @@
-package com.bettingtipsking.app.Room.database;
+package com.bettingtipsking.app.room.database;
 
 import android.content.Context;
 
@@ -6,11 +6,11 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.bettingtipsking.app.Room.PendingPredictions;
-import com.bettingtipsking.app.Room.Predictions;
-import com.bettingtipsking.app.Room.PredictionsDao;
-import com.bettingtipsking.app.Room.entity.FavouritLeaguesEntity;
-import com.bettingtipsking.app.Room.dao.FavouritLeaguesDao;
+import com.bettingtipsking.app.room.PendingPredictions;
+import com.bettingtipsking.app.room.Predictions;
+import com.bettingtipsking.app.room.PredictionsDao;
+import com.bettingtipsking.app.room.entity.FavouritLeaguesEntity;
+import com.bettingtipsking.app.room.dao.FavouritLeaguesDao;
 
 @Database(entities = {Predictions.class, PendingPredictions.class, FavouritLeaguesEntity.class}, version = 2)
 public abstract class MyLocalDatabase extends RoomDatabase {

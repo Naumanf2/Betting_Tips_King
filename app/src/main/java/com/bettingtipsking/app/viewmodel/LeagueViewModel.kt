@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.bettingtipsking.app.Room.entity.FavouritLeaguesEntity
+import com.bettingtipsking.app.room.entity.FavouritLeaguesEntity
 import com.bettingtipsking.app.api.FixturesService
 import com.bettingtipsking.app.model.league.LeagueModel
 import com.bettingtipsking.app.repository.LeagueRepository
