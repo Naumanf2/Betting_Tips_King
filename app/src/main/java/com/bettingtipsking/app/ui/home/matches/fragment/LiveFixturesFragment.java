@@ -55,7 +55,6 @@ public class LiveFixturesFragment extends Fragment implements ItemClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentLiveFixturesBinding.inflate(inflater, container, false);
 
-
         viewModel = new ViewModelProvider(this, new LiveFixturesViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(LiveFixturesViewModel.class);
         viewModel.getLiveFixtures("all");
 

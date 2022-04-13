@@ -1,7 +1,5 @@
 package com.bettingtipsking.app.activity.fixtures;
 
-import static com.bettingtipsking.app.Helper.HelperClass.FIXTURE_DETAIL_MODEL;
-import static com.bettingtipsking.app.Helper.HelperClass.FIXTURE_MODEL;
 import static com.bettingtipsking.app.Helper.HelperClass.HOST;
 import static com.bettingtipsking.app.Helper.HelperClass.KEY;
 import static com.bettingtipsking.app.Helper.HelperClass.SHARED_PREFERENCE;
@@ -9,7 +7,6 @@ import static com.bettingtipsking.app.Helper.HelperClass.SUBSCRIPTION_DATE;
 import static com.bettingtipsking.app.Helper.HelperClass.SUBSCRIPTION_PACKAGE;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -38,13 +35,10 @@ import com.android.volley.toolbox.Volley;
 import com.bettingtipsking.app.Helper.Config;
 import com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel;
 import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
-import com.bettingtipsking.app.Helper.ItemClickListener;
 import com.bettingtipsking.app.Helper.MySingleton;
 import com.bettingtipsking.app.R;
-import com.github.jhonnyx2012.horizontalpicker.DatePickerListener;
 import com.github.jhonnyx2012.horizontalpicker.HorizontalPicker;
 
-import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

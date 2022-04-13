@@ -10,17 +10,15 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.bettingtipsking.app.Helper.Config;
 import com.bettingtipsking.app.Helper.QuickHelp;
+import com.bettingtipsking.app.Helper.SharedSharedPreferencesUtils;
 import com.bettingtipsking.app.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class AuthSignupRepository {
 
@@ -28,19 +26,24 @@ public class AuthSignupRepository {
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
     private MutableLiveData<FirebaseUser> userMutableLiveData;
+    private MutableLiveData<Integer> progressMutableLiveData;
     private String TAG = "AuthSignupRepository:";
+    private SharedSharedPreferencesUtils preferencesUtils;
 
     public AuthSignupRepository(Application application) {
         this.application = application;
         mAuth = FirebaseAuth.getInstance();
+        preferencesUtils = new SharedSharedPreferencesUtils();
         firebaseFirestore = FirebaseFirestore.getInstance();
         userMutableLiveData = new MutableLiveData<>();
+        progressMutableLiveData = new MutableLiveData<>();
+
     }
 
     public void Signup(String name, String email, String password) {
-        if (email.isEmpty() || TextUtils.isEmpty(email)){
+        if (email.isEmpty() || TextUtils.isEmpty(email)) {
             QuickHelp.showSimpleToast(application, "Name is required");
-        }else {
+        } else {
             if (email.isEmpty() || TextUtils.isEmpty(email)) {
                 QuickHelp.showSimpleToast(application, "Email is required");
             } else {
@@ -52,11 +55,10 @@ public class AuthSignupRepository {
                     } else {
                         if (QuickHelp.validateEmail(email)) {
                             if (QuickHelp.isInternetAvailable(application)) {
-                                signupWithEmailPassword(name,email, password);
+                                signupWithEmailPassword(name, email, password);
                             } else {
                                 QuickHelp.showSimpleToast(application, "Internet not available");
                             }
-
                         } else {
                             QuickHelp.showSimpleToast(application, "Email is not valid");
                         }
@@ -71,43 +73,39 @@ public class AuthSignupRepository {
         return userMutableLiveData;
     }
 
+    public MutableLiveData<Integer> getProgressMutableLiveData() {
+        return progressMutableLiveData;
+    }
+
     private void signupWithEmailPassword(String name, String email, String password) {
+        progressMutableLiveData.postValue(0);
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Log.d(TAG, "createUserWithEmail:success");
                     FirebaseUser user = mAuth.getCurrentUser();
-                    saveUserInfoToFireStore(Config.ACCOUNT_TYPE_EMAIL_PASSWORD, user.getUid(), name, email, password);
+                    saveUserInfoToFireStore(user.getUid(), name, email);
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                    progressMutableLiveData.postValue(1);
                     userMutableLiveData.postValue(mAuth.getCurrentUser());
                 }
             }
         });
     }
 
-/*
-    public void checkUserDatabase(String accountType, String uid, String name, String email, String password) {
-        firebaseFirestore.collection(Config.USER).document(mAuth.getCurrentUser().getUid()).get().addOnSuccessListener(command -> {
-            if (command.exists()) {
-                Log.i(TAG, "user already exits");
-            } else {
-                Log.i(TAG, "user not exits");
-                saveUserInfoToFireStore( accountType,  uid,  name,  email,  password);
-            }
-        });
-
-    }
-*/
-
-    public void saveUserInfoToFireStore(String accountType, String uid, String name, String email, String password) {
+    public void saveUserInfoToFireStore(String uid, String name, String email) {
         CollectionReference dbUser = firebaseFirestore.collection(Config.USER);
-        User user = new User( uid, name, email, "", "", password, "", "");
-        dbUser.add(user).addOnCompleteListener(command -> {
+        User user = new User(uid, name, email, "", "", "", "");
+        dbUser.document(uid).set(user).addOnCompleteListener(command -> {
             if (command.isSuccessful()) {
+                progressMutableLiveData.postValue(1);
+                preferencesUtils.setBoolean(Config.USER_SHARED_SUBSCRIPTION_STATUS,false);
+                preferencesUtils.setBoolean(Config.SHARED_USER_DATA_SAVE_STATUS,true);
                 userMutableLiveData.postValue(mAuth.getCurrentUser());
             } else {
+                progressMutableLiveData.postValue(1);
                 userMutableLiveData.postValue(null);
             }
         });

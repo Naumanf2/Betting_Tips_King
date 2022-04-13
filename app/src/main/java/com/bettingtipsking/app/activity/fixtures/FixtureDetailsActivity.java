@@ -1,5 +1,6 @@
 package com.bettingtipsking.app.activity.fixtures;
 
+
 import static com.bettingtipsking.app.Helper.HelperClass.FIXTURE_DETAIL_MODEL;
 import static com.bettingtipsking.app.Helper.HelperClass.FIXTURE_MODEL;
 
@@ -23,10 +24,8 @@ import android.widget.LinearLayout;
 
 import com.bettingtipsking.app.activity.fixtures.model.FinalFixturesModel;
 import com.bettingtipsking.app.activity.fixtures.model.FinalMatchDetailsModel;
-import com.bettingtipsking.app.Helper.AppBarStateChangeListener;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ActivityFixtureDetailsBinding;
-import com.bettingtipsking.app.ui.home.matches.details.fragment.LineupPlayersFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
@@ -71,7 +70,7 @@ public class FixtureDetailsActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         firstEntry = true;
 
-        appBarLayout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
+        appBarLayout.addOnOffsetChangedListener(new com.bettingtipsking.app.Helper.AppBarStateChangeListener() {
             @Override
             public void onStateChanged(AppBarLayout appBarLayout, State state, int i) {
                 if (!firstEntry) {

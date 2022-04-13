@@ -13,9 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bettingtipsking.app.Helper.PredictionsInterface;
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.Room.Predictions;
+import com.bettingtipsking.app.room.Predictions;
 
 import java.util.List;
 
@@ -23,10 +22,10 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.View
 
     Context context;
     List<Predictions> list;
-    PredictionsInterface predictionsInterface;
+    com.bettingtipsking.app.Helper.PredictionsInterface predictionsInterface;
 
 
-    public FavouriteAdapter(Context context, List<Predictions> list,PredictionsInterface predictionsInterface) {
+    public FavouriteAdapter(Context context, List<Predictions> list, com.bettingtipsking.app.Helper.PredictionsInterface predictionsInterface) {
         this.context = context;
         this.list = list;
         this.predictionsInterface = predictionsInterface;

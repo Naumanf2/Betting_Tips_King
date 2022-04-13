@@ -61,7 +61,6 @@ public class MatchDetailsActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_match_details);
 
         viewModel = new ViewModelProvider(this, new MatchDetailsViewViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(MatchDetailsViewModel.class);
-        leagueViewModel = new ViewModelProvider(this, new LeagueViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(LeagueViewModel.class);
 
         list = new ArrayList<>();
         fixture_id = getIntent().getIntExtra("fixture_id", 00);

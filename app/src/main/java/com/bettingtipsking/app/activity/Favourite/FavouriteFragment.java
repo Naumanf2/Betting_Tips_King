@@ -14,16 +14,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bettingtipsking.app.activity.Favourite.Adapter.FavouriteAdapter;
-import com.bettingtipsking.app.Helper.PredictionsInterface;
 import com.bettingtipsking.app.PreViewHolder;
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.Room.Predictions;
+import com.bettingtipsking.app.room.Predictions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class FavouriteFragment extends Fragment implements PredictionsInterface {
+public class FavouriteFragment extends Fragment implements com.bettingtipsking.app.Helper.PredictionsInterface {
 
     RecyclerView recyclerView;
     TextView txt_info;

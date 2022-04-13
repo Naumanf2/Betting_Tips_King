@@ -6,7 +6,6 @@ import static com.bettingtipsking.app.Helper.HelperClass.KEY;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,17 +17,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.bettingtipsking.app.Helper.MySingleton;
-import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.activity.fixtures.adapters.BindingMethodAdapter;
 import com.bettingtipsking.app.activity.fixtures.adapters.StatsAdapter;
 import com.bettingtipsking.app.activity.fixtures.model.StatsModel;

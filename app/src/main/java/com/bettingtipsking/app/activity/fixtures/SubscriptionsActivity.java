@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,9 +24,12 @@ import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.Purchase;
+import com.android.billingclient.api.PurchaseHistoryRecord;
+import com.android.billingclient.api.PurchaseHistoryResponseListener;
 import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
+import com.android.billingclient.api.SkuDetailsResponseListener;
 import com.bettingtipsking.app.Helper.Config;
 import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ActivitySubscriptionsBinding;
@@ -145,6 +147,7 @@ public class SubscriptionsActivity extends AppCompatActivity implements Purchase
 
 
     }
+
 
 
     public void initSKUPurchase() {
@@ -266,4 +269,9 @@ public class SubscriptionsActivity extends AppCompatActivity implements Purchase
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
 }

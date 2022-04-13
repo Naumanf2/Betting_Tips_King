@@ -14,17 +14,24 @@ import com.bettingtipsking.app.repository.ResetPasswordRepository;
 import java.util.List;
 
 public class ResetPasswordViewModel extends AndroidViewModel {
-    ResetPasswordRepository repository;
+    private ResetPasswordRepository repository;
     private MutableLiveData<Integer> mutableLiveData;
+    private MutableLiveData<Integer> progressMutableLiveData;
+
 
     public ResetPasswordViewModel(@NonNull Application application) {
         super(application);
         repository = new ResetPasswordRepository(application);
         mutableLiveData = repository.getMutableLiveData();
+        progressMutableLiveData = repository.getProgressMutableLiveData();
     }
 
     public MutableLiveData<Integer> getMutableLiveData() {
         return mutableLiveData;
+    }
+
+    public MutableLiveData<Integer> getProgressMutableLiveData() {
+        return progressMutableLiveData;
     }
 
     public void resetPassword(String email) {

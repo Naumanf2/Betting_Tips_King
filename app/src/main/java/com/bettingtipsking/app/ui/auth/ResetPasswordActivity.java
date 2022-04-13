@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -29,6 +28,14 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 QuickHelp.goToActivityWithNoClean(ResetPasswordActivity.this, ConfirmEmailActivity.class);
             }else {
                 QuickHelp.showSimpleToast(getApplication(),"Something is wrong");
+            }
+        });
+
+        viewModel.getProgressMutableLiveData().observe(this,integer -> {
+            if (integer==0){
+                binding.progressBar.setVisibility(View.VISIBLE);
+            }else if (integer==1){
+                binding.progressBar.setVisibility(View.GONE);
             }
         });
     }

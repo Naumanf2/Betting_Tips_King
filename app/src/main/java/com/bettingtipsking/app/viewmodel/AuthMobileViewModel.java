@@ -1,9 +1,6 @@
 package com.bettingtipsking.app.viewmodel;
 
-import android.app.Activity;
 import android.app.Application;
-import android.content.Intent;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -13,8 +10,7 @@ import com.bettingtipsking.app.repository.AuthLoginRepository;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseUser;
 
-
-public class AuthLoginViewModel extends AndroidViewModel {
+public class AuthMobileViewModel extends AndroidViewModel {
     Application application;
     AuthLoginRepository repository;
     private MutableLiveData<FirebaseUser> userMutableLiveData;
@@ -28,7 +24,7 @@ public class AuthLoginViewModel extends AndroidViewModel {
         return progressMutableLiveData;
     }
 
-    public AuthLoginViewModel(@NonNull Application application) {
+    public AuthMobileViewModel(@NonNull Application application) {
         super(application);
         this.application = application;
         repository = new AuthLoginRepository(application);
@@ -36,13 +32,7 @@ public class AuthLoginViewModel extends AndroidViewModel {
         progressMutableLiveData = repository.getProgressMutableLiveData();
     }
 
-    public void loginWithEmailPassword(String email, String password) {
-        repository.loginWithEmailPassword(email, password);
-    }
-
     public void loginWithCredentials(AuthCredential credential, String mobileNumber) {
-        repository.loginWithCredentials(credential,mobileNumber);
+        repository.loginWithCredentials(credential, mobileNumber);
     }
-
-
 }

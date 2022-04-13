@@ -1,116 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="18dp"
-    tools:context=".ui.favorite.FavouriteLeaguesActivity">
-    <ImageView
-        android:id="@+id/imageBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Favourites Leagues"
-        android:textColor="#000000"
-        android:textSize="31sp"
-        app:layout_constraintStart_toStartOf="@+id/imageBackBtn"
-        app:layout_constraintTop_toBottomOf="@+id/imageBackBtn" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/calibri_regular"
-        android:maxWidth="300dp"
-        android:text="Tap * to follow one or more teams. These will appear in your Favourites tab."
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textGameName"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_rounded_skyblue_txt"
-        android:fontFamily="@font/calibri_bold"
-        android:gravity="center"
-        android:padding="@dimen/size_8"
-        android:text="FootBall"
-        android:textColor="#1D2226"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <SearchView
-        android:id="@+id/SearchView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-
-        android:background="@drawable/bg_light_back_ground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textGameName" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/calibri_regular"
-        android:text="Popular"
-        android:layout_marginStart="3dp"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/SearchView"
-        app:layout_constraintTop_toBottomOf="@+id/SearchView" />
+        android:layout_height="match_parent">
 
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewFollowTeams"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        tools:context=".ui.favorite.FavouriteLeaguesActivity">
 
-        android:layout_alignParentTop="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:listitem="@layout/item_followteams" />
+        <ImageView
+            android:id="@+id/imageBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Favourites Leagues"
+            android:textColor="#000000"
+            android:textSize="31sp"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="@+id/imageBackBtn"
+            app:layout_constraintTop_toBottomOf="@+id/imageBackBtn" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri_regular"
+            android:maxWidth="300dp"
+            android:text="Tap * to follow one or more teams. These will appear in your Favourites tab."
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textGameName"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_rounded_skyblue_txt"
+            android:fontFamily="@font/calibri_bold"
+            android:gravity="center"
+            android:padding="@dimen/size_8"
+            android:text="FootBall"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <SearchView
+            android:id="@+id/SearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_light_back_ground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textGameName" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="All leagues"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/SearchView"
+            app:layout_constraintTop_toBottomOf="@+id/SearchView" />
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFollowTeams"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/appCompatButtonSend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView9"
+            tools:listitem="@layout/item_favourit_league" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButtonSend"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/bg_button_rounded_blue"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Next"
-        android:textColor="@color/white"
-        android:textSize="19sp"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButtonSend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_button_rounded_blue"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

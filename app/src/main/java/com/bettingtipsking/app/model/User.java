@@ -7,17 +7,15 @@ public class User {
     private String email;
     private String mobile_number;
     private String image;
-    private String password;
     private String subscription_date;
     private String subscription_package;
 
-    public User(String uid, String name, String email, String mobile_number, String image, String password, String subscription_date, String subscription_package) {
+    public User(String uid, String name, String email, String mobile_number, String image, String subscription_date, String subscription_package) {
         this.uid = uid;
         this.name = name;
         this.email = email;
         this.mobile_number = mobile_number;
         this.image = image;
-        this.password = password;
         this.subscription_date = subscription_date;
         this.subscription_package = subscription_package;
     }
@@ -62,13 +60,7 @@ public class User {
         this.image = image;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getSubscription_date() {
         return subscription_date;

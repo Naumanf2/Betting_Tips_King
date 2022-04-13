@@ -2,6 +2,9 @@ package com.bettingtipsking.app.Helper;
 
 public class Config {
 
+    public static String USER_SHARED_PREFERENCE = "";
+    public static String USER_SHARED_SUBSCRIPTION_STATUS = "";
+    public static String SHARED_USER_DATA_SAVE_STATUS = "";
 
 
     //Google Play In-app Subscription IDs

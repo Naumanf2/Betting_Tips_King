@@ -3,10 +3,8 @@ package com.bettingtipsking.app.adapter;
 import static com.bettingtipsking.app.Helper.HelperClass.getCurrentDate;
 import static com.bettingtipsking.app.Helper.HelperClass.isSubValid;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bettingtipsking.app.ui.home.home.HomeFragment;
-import com.bettingtipsking.app.Helper.PredictionsInterface;
 import com.bettingtipsking.app.model.HomelPredictionsModel;
 import com.bettingtipsking.app.R;
-import com.bettingtipsking.app.activity.fixtures.SubscriptionsActivity;
 
 import java.util.List;
 

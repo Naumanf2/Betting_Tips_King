@@ -5,10 +5,10 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.bettingtipsking.app.Room.MyLocalDatabase;
-import com.bettingtipsking.app.Room.PendingPredictions;
-import com.bettingtipsking.app.Room.Predictions;
-import com.bettingtipsking.app.Room.PredictionsDao;
+import com.bettingtipsking.app.room.database.MyLocalDatabase;
+import com.bettingtipsking.app.room.PendingPredictions;
+import com.bettingtipsking.app.room.Predictions;
+import com.bettingtipsking.app.room.PredictionsDao;
 
 import java.util.List;
 
@@ -32,6 +32,7 @@ public class Repository {
             return -1;
         }
     }
+
 
 
     public LiveData<List<Predictions>> getAllPredictions() {

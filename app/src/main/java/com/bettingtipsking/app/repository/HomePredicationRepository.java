@@ -29,7 +29,7 @@ public class HomePredicationRepository {
     public HomePredicationRepository(Application application) {
         this.application = application;
         queue = Volley.newRequestQueue(application);
-        list = new ArrayList<HomelPredictionsModel>();
+        list = new ArrayList<>();
         listMutableLiveData = new MutableLiveData<>();
     }
 
@@ -43,7 +43,6 @@ public class HomePredicationRepository {
                     @Override
                     public void onResponse(String response) {
                         try {
-
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray array = jsonObject.getJSONArray("data");
                             for (int i = 0; i < array.length(); i++) {
@@ -72,7 +71,6 @@ public class HomePredicationRepository {
                                 list.add(new HomelPredictionsModel(id, status, sort,owner, created_on, modified_on, league_name, match_id, home_team, away_team, odd_value, team_home_score, team_away_score, match_minute, coupon_name, game_prediction, match_date, match_status, match_time, match_timestamp, sport_type));
 
                             }
-
                             listMutableLiveData.postValue(list);
 
                         } catch (Exception e) {
@@ -84,7 +82,7 @@ public class HomePredicationRepository {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        //todo error responce
+                        //todo error Response
                     }
                 }
         ) {

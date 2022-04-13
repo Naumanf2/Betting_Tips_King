@@ -72,7 +72,6 @@ public class H2HFragment extends Fragment implements ItemClickListener {
                     Goals goals = fixturesModel.getResponse().get(i).getGoals();
                     Score score = fixturesModel.getResponse().get(i).getScore();
                     Teams teams = fixturesModel.getResponse().get(i).getTeams();
-
                     com.bettingtipsking.app.model.FinalFixturesModel finalFixturesModel = new com.bettingtipsking.app.model.FinalFixturesModel(league, new ArrayList<>());
                     FinalMatchesModel finalMatchDetailsModel = new FinalMatchesModel(fixture, league, goals, score, teams);
                     if (!map.containsKey(league.getId())) {

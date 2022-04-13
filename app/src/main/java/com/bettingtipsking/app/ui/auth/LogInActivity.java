@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.bettingtipsking.app.Helper.QuickHelp;
@@ -58,19 +59,36 @@ public class LogInActivity extends AppCompatActivity {
         createFacebookRequest();
         googleActivityResultLauncher();
 
-        binding.buttonCreateAccount.setOnClickListener(v -> {QuickHelp.goToActivityWithNoClean(LogInActivity.this, SignUpActivity.class); });
-        binding.textForgetPassword.setOnClickListener(v -> {QuickHelp.goToActivityWithNoClean(this,ResetPasswordActivity.class); });
-        binding.googleLogin.setOnClickListener(v -> {googleIntentActivityResultLauncher.launch(mGoogleSignInClient.getSignInIntent()); });
-        binding.facebookLogin.setOnClickListener(v -> {facebookRequest(); });
-        binding.phoneLogin.setOnClickListener(v -> {QuickHelp.goToActivityWithNoClean(LogInActivity.this, PhoneLoginActivity.class);});
+        binding.buttonCreateAccount.setOnClickListener(v -> {
+            QuickHelp.goToActivityWithNoClean(LogInActivity.this, SignUpActivity.class);
+        });
+        binding.textForgetPassword.setOnClickListener(v -> {
+            QuickHelp.goToActivityWithNoClean(this, ResetPasswordActivity.class);
+        });
+        binding.googleLogin.setOnClickListener(v -> {
+            googleIntentActivityResultLauncher.launch(mGoogleSignInClient.getSignInIntent());
+        });
+        binding.facebookLogin.setOnClickListener(v -> {
+            facebookRequest();
+        });
+        binding.phoneLogin.setOnClickListener(v -> {
+            QuickHelp.goToActivityWithNoClean(LogInActivity.this, PhoneLoginActivity.class);
+        });
 
         viewModel.getUserMutableLiveData().observe(this, firebaseUser -> {
             if (firebaseUser != null) {
                 startActivity(new Intent(LogInActivity.this, HomeActivity.class));
                 Toast.makeText(this, "login success", Toast.LENGTH_SHORT).show();
             } else {
-                startActivity(new Intent(LogInActivity.this, HomeActivity.class));
                 QuickHelp.showSimpleToast(getApplication(), "Something is wrong");
+            }
+        });
+
+        viewModel.getProgressMutableLiveData().observe(this, integer -> {
+            if (integer == 0) {
+                binding.progressBar.setVisibility(View.VISIBLE);
+            } else {
+                binding.progressBar.setVisibility(View.GONE);
             }
         });
     }
@@ -80,7 +98,9 @@ public class LogInActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-    private void createFacebookRequest() {callbackManager = CallbackManager.Factory.create();}
+    private void createFacebookRequest() {
+        callbackManager = CallbackManager.Factory.create();
+    }
 
     private void googleActivityResultLauncher() {
         googleIntentActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -94,9 +114,9 @@ public class LogInActivity extends AppCompatActivity {
                     } catch (ApiException e) {
                         e.printStackTrace();
                     }
-                    viewModel.loginWithCredentials(GoogleAuthProvider.getCredential(account.getIdToken(), null));
+                    viewModel.loginWithCredentials(GoogleAuthProvider.getCredential(account.getIdToken(), null), "");
                 } else {
-                    QuickHelp.showSimpleToast(getApplication(),"Something is wrong");
+                    QuickHelp.showSimpleToast(getApplication(), "Something is wrong");
                 }
             }
         });
@@ -109,16 +129,18 @@ public class LogInActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, " success facebook login");
                 AuthCredential credential = FacebookAuthProvider.getCredential(loginResult.getAccessToken().getToken());
-                viewModel.loginWithCredentials(credential);
+                viewModel.loginWithCredentials(credential, "");
             }
+
             @Override
             public void onCancel() {
-                QuickHelp.showSimpleToast(getApplication(),"Facebook Login Cancel");
+                QuickHelp.showSimpleToast(getApplication(), "Facebook Login Cancel");
                 Log.d(TAG, " cancel facebook login");
             }
+
             @Override
             public void onError(FacebookException error) {
-                QuickHelp.showSimpleToast(getApplication(),"error facebook login" + error.toString());
+                QuickHelp.showSimpleToast(getApplication(), "error facebook login" + error.toString());
                 Log.d(TAG, "error facebook login" + error.toString());
             }
         });
