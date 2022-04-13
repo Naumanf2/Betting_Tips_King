@@ -79,6 +79,7 @@ public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictions
             holder.img_like.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_favorite_blue_24));
 
         }*/
+/*
 
         if (list.get(position).getSport_type().equals("football")){
            holder.txt_predications.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_football, 0, 0, 0);
@@ -86,6 +87,7 @@ public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictions
         }else if (list.get(position).getSport_type().equals("basketball")){
             holder.txt_predications.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_basketball, 0, 0, 0);
         }
+*/
 
 
         if (list.get(position).getMatch_status().equals("won")){

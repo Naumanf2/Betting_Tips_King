@@ -68,7 +68,10 @@ public class HomePredicationRepository {
                                 String match_time = arrayJSONObject.getString("match_time");
                                 String match_timestamp = arrayJSONObject.getString("match_timestamp");
                                 String sport_type = arrayJSONObject.getString("sport_type");
-                                list.add(new HomelPredictionsModel(id, status, sort,owner, created_on, modified_on, league_name, match_id, home_team, away_team, odd_value, team_home_score, team_away_score, match_minute, coupon_name, game_prediction, match_date, match_status, match_time, match_timestamp, sport_type));
+
+                                if (sport_type.equalsIgnoreCase("football")) {
+                                    list.add(new HomelPredictionsModel(id, status, sort, owner, created_on, modified_on, league_name, match_id, home_team, away_team, odd_value, team_home_score, team_away_score, match_minute, coupon_name, game_prediction, match_date, match_status, match_time, match_timestamp, sport_type));
+                                }
 
                             }
                             listMutableLiveData.postValue(list);

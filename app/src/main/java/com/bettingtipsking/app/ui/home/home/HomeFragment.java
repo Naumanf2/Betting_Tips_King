@@ -1,5 +1,6 @@
 package com.bettingtipsking.app.ui.home.home;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
 
 import com.bettingtipsking.app.adapter.HomePredictionsAdapter;
@@ -24,24 +26,25 @@ import org.joda.time.DateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements DatePickerListener {
+public class HomeFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
 
     private FragmentHomeBinding binding;
     private HomePredicationViewModel viewModel;
     private List<HomelPredictionsModel> list;
     private HomePredictionsAdapter adapter;
     public boolean dateCheck = false;
-
     public String finalDate;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(this).get(HomePredicationViewModel.class);
-
         list = new ArrayList<>();
 
-        viewModel.getAllPredictions("https://daily-betting-tips.p.rapidapi.com/daily-betting-tip-api/items/daily_betting_tips?sort=-id");
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), this, 2019, 01, 01);
+
+        sendRequest("https://daily-betting-tips.p.rapidapi.com/daily-betting-tip-api/items/daily_betting_tips?sort=-id");
 
         viewModel.getListMutableLiveData().observe(getViewLifecycleOwner(), homePredictionsModels -> {
             list = homePredictionsModels;
@@ -50,9 +53,13 @@ public class HomeFragment extends Fragment implements DatePickerListener {
             binding.recyclerView.setAdapter(adapter);
         });
 
-        // Listener
-        binding.horizontalPicker.setListener(this).init();
-        dateCheck = false;
+        binding.textAll.setOnClickListener(v -> {
+
+        });
+
+        binding.textCustom.setOnClickListener(v -> {
+            datePickerDialog.show();
+        });
 
 
         return binding.getRoot();
@@ -66,24 +73,15 @@ public class HomeFragment extends Fragment implements DatePickerListener {
 
 
     @Override
-    public void onDateSelected(DateTime dateSelected) {
+    public void onDateSet(DatePicker view, int year, int month, int day) {
+        month++;
+        String customDate = (day<10?("0"+day):(day)+"-" +(month<10?("0"+month):(month)) + "-" +year);
+        sendRequest("https://daily-betting-tips.p.rapidapi.com/daily-betting-tip-api/items/daily_betting_tips?q=" + customDate + "&sort=-id");
 
-        if (dateSelected != null) {
-            dateCheck = true;
-            // txt_filter.setVisibility(View.VISIBLE);
-            String year = String.valueOf(dateSelected.getYear());
-            String month = String.valueOf(dateSelected.getMonthOfYear());
-            String day = String.valueOf(dateSelected.getDayOfMonth());
-            if (Integer.valueOf(month) < 10) {
-                month = "0" + month;
-            }
-            if (Integer.valueOf(day) < 10) {
-                day = "0" + day;
-            }
-            finalDate = day + "." + month + "." + year;
-
-        }
     }
 
+    private void sendRequest(String url){
+        viewModel.getAllPredictions(url);
 
+    }
 }

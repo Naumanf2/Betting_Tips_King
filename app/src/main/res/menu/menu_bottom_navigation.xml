@@ -22,8 +22,10 @@
         android:title="Videos" />
 
     <item
-        android:id="@+id/navAccount"
-        android:icon="@drawable/icon_account"
-        android:title="Account" />
+        android:id="@+id/navNotification"
+        android:icon="@drawable/icon_notification_bell"
+        android:title="Notification" />
+
+
 
 </menu>

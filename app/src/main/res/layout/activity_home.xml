@@ -22,20 +22,23 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/txtHomeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/app_name"
                     android:textColor="@color/white"
-                    android:layout_centerVertical="true"
                     android:textSize="19sp" />
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImageProfile"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/icon_notification_bell" />
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/icon_account" />
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>

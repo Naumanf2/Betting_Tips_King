@@ -20,26 +20,24 @@ import java.util.List;
 public class NotificationsFragment extends Fragment {
 
 
-
-List<NotificationsModel> list = new ArrayList<>();
-NotificationsAdapter adapter;
-RecyclerView recyclerView;
+    List<NotificationsModel> list = new ArrayList<>();
+    NotificationsAdapter adapter;
+    RecyclerView recyclerView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_notifications, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         recyclerView = view.findViewById(R.id.rcl_notification);
-        // Inflate the layout for this fragment
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
-list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
+        list.add(new NotificationsModel("Your password  has been successfully changes thank you"));
 
         adapter = new NotificationsAdapter(getContext(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

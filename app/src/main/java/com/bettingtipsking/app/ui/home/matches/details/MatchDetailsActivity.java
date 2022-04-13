@@ -59,7 +59,6 @@ public class MatchDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_match_details);
-
         viewModel = new ViewModelProvider(this, new MatchDetailsViewViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(MatchDetailsViewModel.class);
 
         list = new ArrayList<>();
@@ -73,33 +72,41 @@ public class MatchDetailsActivity extends AppCompatActivity {
 
             fixture = fixturesModel;
             List<Response> responses = fixturesModel.getResponse();
+
+            if (!String.valueOf(responses.get(0).getGoals().getHome()).equals("null")) {
+                binding.textMatchScore.setText(responses.get(0).getGoals().getHome() + " - " + responses.get(0).getGoals().getAway());
+            } else {
+                binding.textMatchScore.setText("--");
+            }
+
             binding.setMatchDetail(fixturesModel);
+
 
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Predication"));
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText("H2H"));
 
-            list.add(new FixturePredictionsFragment(fixture_id,league_id,team_home_id,team_away_id));
-            list.add(new H2HFragment(fixture_id,league_id,team_home_id,team_away_id));
+            list.add(new FixturePredictionsFragment(fixture_id, league_id, team_home_id, team_away_id));
+            list.add(new H2HFragment(fixture_id, league_id, team_home_id, team_away_id));
 
             if (responses.get(0).getLineups() != null && !responses.get(0).getLineups().isEmpty()) {
                 binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Line up"));
-                list.add(new LineupPlayersFragment(fixture_id,league_id,team_home_id,team_away_id));
+                list.add(new LineupPlayersFragment(fixture_id, league_id, team_home_id, team_away_id));
             }
             if (responses.get(0).getEvents() != null && !responses.get(0).getEvents().isEmpty()) {
                 binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Events"));
-                list.add(new EventsFragment(fixture_id,league_id,team_home_id,team_away_id));
+                list.add(new EventsFragment(fixture_id, league_id, team_home_id, team_away_id));
             }
             if (responses.get(0).getPlayers() != null && !responses.get(0).getPlayers().isEmpty()) {
                 binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Squad"));
-                list.add(new SquadFragment(fixture_id,league_id,team_home_id,team_away_id));
+                list.add(new SquadFragment(fixture_id, league_id, team_home_id, team_away_id));
             }
             if (responses.get(0).getStatistics() != null && !responses.get(0).getStatistics().isEmpty()) {
                 binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Statistics"));
-                list.add(new StatisticsFragment(fixture_id,league_id,team_home_id,team_away_id));
+                list.add(new StatisticsFragment(fixture_id, league_id, team_home_id, team_away_id));
             }
 
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Coaches"));
-            list.add(new CoachsFragment(fixture_id,league_id,team_home_id,team_away_id));
+            list.add(new CoachsFragment(fixture_id, league_id, team_home_id, team_away_id));
 
             FragmentManager fm = getSupportFragmentManager();
             ViewStateAdapter sa = new ViewStateAdapter(fm, getLifecycle(), list);

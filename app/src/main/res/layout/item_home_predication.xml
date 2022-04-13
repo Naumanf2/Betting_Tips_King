@@ -78,12 +78,11 @@
             android:layout_width="17dp"
             android:layout_height="13dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="2dp"
+            android:layout_marginEnd="125dp"
             android:fontFamily="@font/vistolsans_semibold"
             android:text="212"
             app:layout_constraintBottom_toBottomOf="@+id/txt_home_team"
-            app:layout_constraintEnd_toStartOf="@+id/img_predictions"
-            app:layout_constraintStart_toEndOf="@+id/txt_home_team"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txt_home_team" />
 
         <TextView
@@ -100,13 +99,12 @@
             android:id="@+id/txt_away_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:fontFamily="@font/vistolsans_semibold"
             android:text="114"
             app:layout_constraintBottom_toBottomOf="@+id/txt_away_team"
             app:layout_constraintEnd_toEndOf="@+id/txt_home_score"
             app:layout_constraintStart_toStartOf="@+id/txt_home_score"
-            app:layout_constraintTop_toBottomOf="@+id/txt_home_team" />
+            app:layout_constraintTop_toTopOf="@+id/txt_away_team" />
 
 
         <ImageView
@@ -159,12 +157,14 @@
             android:id="@+id/txt_predications"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:drawableStart="@drawable/ic_football"
+
             android:drawablePadding="10dp"
             android:text="2.5 over"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/view8"
-            app:layout_constraintEnd_toStartOf="@+id/img_share"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="@+id/view8"
             app:layout_constraintTop_toTopOf="@+id/view8" />
 
 
@@ -173,11 +173,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_baseline_share_blue_24"
-            app:layout_constraintBottom_toBottomOf="@+id/view8"
-            app:layout_constraintEnd_toEndOf="@+id/view8"
-            app:layout_constraintTop_toTopOf="@+id/view8" />
+            android:src="@drawable/ic_baseline_more_horiz_24"
+            app:layout_constraintEnd_toEndOf="@+id/txt_time"
+            app:layout_constraintTop_toTopOf="@+id/txt_league" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -15,9 +15,6 @@ class NewsViewModel(private val newsRepository: NewsRepository) : ViewModel() {
     val news: LiveData<NewsModel>
         get() = newsRepository.news
 
-    init {
-    }
-
     public fun news(apiKey: String, page: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             newsRepository.getNews(apiKey, page )
