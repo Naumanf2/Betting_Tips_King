@@ -3,26 +3,35 @@ package com.bettingtipsking.app.ui.favorite;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.bettingtipsking.app.R;
+import com.bettingtipsking.app.api.FixturesRetrofitHelper;
+import com.bettingtipsking.app.api.FixturesService;
+import com.bettingtipsking.app.databinding.ActivityFavouriteLeaguesBinding;
+import com.bettingtipsking.app.databinding.FragmentEventsBinding;
+import com.bettingtipsking.app.model.league.LeagueModel;
+import com.bettingtipsking.app.model.league.Response;
+import com.bettingtipsking.app.viewmodel.LeagueViewModel;
+import com.bettingtipsking.app.viewmodel.LiveFixturesViewModel;
+import com.bettingtipsking.app.viewmodel.TeamsInfoViewModel;
+import com.bettingtipsking.app.viewmodel.viewmodelfactory.LeagueViewModelFactory;
+import com.bettingtipsking.app.viewmodel.viewmodelfactory.LiveFixturesViewModelFactory;
+import com.bettingtipsking.app.viewmodel.viewmodelfactory.TeamsInfoViewModelFactory;
 
+import java.util.List;
 
 public class FavouriteLeaguesActivity extends AppCompatActivity {
 
-   com.bettingtipsking.app.databinding.ActivityFavouriteLeaguesBinding binding;
+    ActivityFavouriteLeaguesBinding binding;
+    LeagueViewModel viewModel;
+    List<Response> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_favourite_leagues);
-
-
-
-
 
 
     }
