@@ -8,37 +8,48 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textFilter"
+            android:id="@+id/textAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:drawablePadding="10dp"
-            android:fontFamily="@font/vistolsans_semibold"
-            android:gravity="center"
-            android:text="Clear filter"
-            android:textColor="#03A9F4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.github.jhonnyx2012.horizontalpicker.HorizontalPicker
-            android:id="@+id/horizontalPicker"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_ground"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="15dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="5dp"
+            android:text="All Matches"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textFilter" />
+             />
+
+        <TextView
+            android:id="@+id/textCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_light_back_ground"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="15dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="5dp"
+            android:text="Custom"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textAll"
+            app:layout_constraintStart_toEndOf="@+id/textAll"
+            app:layout_constraintTop_toTopOf="@+id/textAll" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalPicker"
+            app:layout_constraintTop_toBottomOf="@+id/textAll"
             tools:listitem="@layout/item_home_predication" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

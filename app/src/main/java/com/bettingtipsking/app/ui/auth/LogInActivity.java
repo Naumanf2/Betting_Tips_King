@@ -20,6 +20,7 @@ import com.bettingtipsking.app.Helper.QuickHelp;
 import com.bettingtipsking.app.R;
 
 import com.bettingtipsking.app.databinding.ActivityLogInBinding;
+import com.bettingtipsking.app.ui.favorite.FavouriteLeaguesActivity;
 import com.bettingtipsking.app.ui.home.HomeActivity;
 import com.bettingtipsking.app.viewmodel.AuthLoginViewModel;
 import com.facebook.CallbackManager;
@@ -77,7 +78,7 @@ public class LogInActivity extends AppCompatActivity {
 
         viewModel.getUserMutableLiveData().observe(this, firebaseUser -> {
             if (firebaseUser != null) {
-                startActivity(new Intent(LogInActivity.this, HomeActivity.class));
+                startActivity(new Intent(LogInActivity.this, FavouriteLeaguesActivity.class));
                 Toast.makeText(this, "login success", Toast.LENGTH_SHORT).show();
             } else {
                 QuickHelp.showSimpleToast(getApplication(), "Something is wrong");

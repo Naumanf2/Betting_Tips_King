@@ -172,30 +172,33 @@
 
     <TextView
         android:id="@+id/VideoNotificationTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/videos_notification_title"
-        android:textSize="@dimen/textSizeH5"
-        android:textColor="@color/black"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginTop="@dimen/size_10"
         android:layout_marginStart="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_10"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/videos_notification_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeH5"
+        app:layout_constraintEnd_toStartOf="@+id/switch2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <TextView
         android:id="@+id/VideoNotificationDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_2"
+        android:fontFamily="@font/poppins_regular"
         android:text="@string/videos_notification_description"
         android:textSize="@dimen/textSizeP2"
-        android:fontFamily="@font/poppins_regular"
-        android:layout_marginTop="@dimen/size_2"
-        android:layout_marginStart="@dimen/size_30"
+        app:layout_constraintEnd_toEndOf="@+id/VideoNotificationTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/VideoNotificationTitle" />
 
     <Switch
+        android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
@@ -203,52 +206,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/VideoNotificationTitle" />
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/size_0.7"
-        android:layout_marginStart="@dimen/size_30"
-        android:layout_marginTop="@dimen/size_10"
-        android:layout_marginEnd="@dimen/size_30"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/VideoNotificationDescription" />
 
-    <TextView
-        android:id="@+id/importantNotificationTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_30"
-        android:layout_marginTop="@dimen/size_10"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/important_notification_title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/textSizeH5"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_30"
-        android:layout_marginTop="@dimen/size_2"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/important_notification_description"
-        android:textSize="@dimen/textSizeP2"
-        app:layout_constraintEnd_toEndOf="@+id/importantNotificationTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/importantNotificationTitle" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/importantNotificationTitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

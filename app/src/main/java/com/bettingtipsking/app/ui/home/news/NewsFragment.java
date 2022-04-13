@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.bettingtipsking.app.Helper.QuickHelp;
 import com.bettingtipsking.app.api.NewsService;
 import com.bettingtipsking.app.api.RetrofitHelper;
 import com.bettingtipsking.app.R;
@@ -58,7 +59,6 @@ public class NewsFragment extends Fragment {
         binding.nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-
                 if (scrollY == v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()) {
                     if (page <= 3) {
                         page++;
@@ -70,10 +70,15 @@ public class NewsFragment extends Fragment {
         });
 
         viewModel.getNews().observe(getViewLifecycleOwner(), newsModel -> {
-            for (Data data : newsModel.getData()) {
-                dataList.add(data);
+
+            if (newsModel!=null){
+                for (Data data : newsModel.getData()) {
+                    dataList.add(data);
+                }
+                adapter.notifyDataSetChanged();
+            }else {
+                QuickHelp.showSimpleToast(getActivity().getApplication(), "Something is wrong");
             }
-            adapter.notifyDataSetChanged();
 
         });
 

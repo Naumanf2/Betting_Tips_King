@@ -1,6 +1,7 @@
 package com.bettingtipsking.app.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.bettingtipsking.app.R;
 import com.bettingtipsking.app.databinding.ItemFavouritLeagueBinding;
 import com.bettingtipsking.app.Helper.callback.FavouritLeagueInterfaceCallBack;
 import com.bettingtipsking.app.model.FavouritLeagueModel;
+import com.bettingtipsking.app.ui.follow.FollowTeamActivity;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -41,6 +43,16 @@ public class FavouriteLeaguesAdapter extends RecyclerView.Adapter<FavouriteLeagu
         holder.binding.textTeamName.setText(favouritLeagueModel.getName());
         holder.binding.textCountry.setText(favouritLeagueModel.getCountry());
         Glide.with(context).load(favouritLeagueModel.getLogo()).into(holder.binding.imgProfile);
+
+        holder.binding.textTeamName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(context, FollowTeamActivity.class);
+                myIntent.putExtra("LeagueID", list.get(holder.getAdapterPosition()).getId());
+                System.out.println("League ID"+list.get(holder.getAdapterPosition()).getId());
+                context.startActivity(myIntent);
+            }
+        });
 
         if (favouritLeagueModel.getFavStatus() == 0)
             holder.binding.imageStar.setImageDrawable(context.getDrawable(R.drawable.icon_star_border));

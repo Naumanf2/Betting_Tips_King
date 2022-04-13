@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.account.AccountActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:alpha="0.6"
+                android:background="#A7DFEB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imagePerson"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/icon_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Talha Shahab"
+                android:textColor="#050608"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagePerson" />
+
+            <TextView
+                android:id="@+id/textEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibri_bold"
+                android:text="@string/support_email"
+                android:textColor="#171D1E"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/textName"
+                app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+
+            <TextView
+                android:id="@+id/textProfileSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/profile_setting"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_edit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+            <TextView
+                android:id="@+id/textChangeSubscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/change_subscription"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_subscription"
+                app:layout_constraintStart_toStartOf="@+id/textProfileSetting"
+                app:layout_constraintTop_toBottomOf="@+id/textProfileSetting" />
+
+
+            <TextView
+                android:id="@+id/textNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/notification"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_notification_bell"
+                app:layout_constraintStart_toStartOf="@+id/textChangeSubscription"
+                app:layout_constraintTop_toBottomOf="@+id/textChangeSubscription" />
+
+            <TextView
+                android:id="@+id/textSupportContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/contact_to_support"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_avatar"
+                app:layout_constraintStart_toStartOf="@+id/textNotification"
+                app:layout_constraintTop_toBottomOf="@+id/textNotification" />
+
+            <TextView
+                android:id="@+id/textFeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/leave_feedback"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_feedback"
+                app:layout_constraintStart_toStartOf="@+id/textSupportContact"
+                app:layout_constraintTop_toBottomOf="@+id/textSupportContact" />
+
+
+            <TextView
+                android:id="@+id/textShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/share_with_friends"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_share_blue"
+                app:layout_constraintStart_toStartOf="@+id/textFeedback"
+                app:layout_constraintTop_toBottomOf="@+id/textFeedback" />
+
+
+            <TextView
+                android:id="@+id/textLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="2dp"
+                android:text="@string/logout"
+                android:textColor="#575157"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/icon_logout_blue"
+                app:layout_constraintStart_toStartOf="@+id/textShare"
+                app:layout_constraintTop_toBottomOf="@+id/textShare" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

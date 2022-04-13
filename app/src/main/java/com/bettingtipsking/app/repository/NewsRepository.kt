@@ -16,6 +16,8 @@ class NewsRepository(private val newsService: NewsService) {
         val result = newsService.getNews(apiKey, page);
         if (result?.body() != null) {
             newsLiveData.postValue(result.body())
+        } else {
+            newsLiveData.postValue(null)
         }
     }
 }

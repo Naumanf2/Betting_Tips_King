@@ -11,11 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.bettingtipsking.app.Helper.ItemClickListener;
+import com.bettingtipsking.app.Helper.QuickHelp;
 import com.bettingtipsking.app.R;
 
 import com.bettingtipsking.app.databinding.ActivityHomeBinding;
 import com.bettingtipsking.app.model.FinalMatchesModel;
 import com.bettingtipsking.app.model.fixtures.Home;
+import com.bettingtipsking.app.ui.home.account.AccountActivity;
 import com.bettingtipsking.app.ui.home.account.AccountLoginFragment;
 import com.bettingtipsking.app.ui.home.home.HomeFragment;
 import com.bettingtipsking.app.api.FixturesRetrofitHelper;
@@ -40,7 +42,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     ActivityHomeBinding binding;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +51,13 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         binding.bottomNavigationView.setItemIconTintList(null);
         binding.bottomNavigationView.setOnItemSelectedListener(this);
 
+        binding.circleImageProfile.setOnClickListener(v -> {
+            QuickHelp.goToActivityWithNoClean(this, AccountActivity.class);
+        });
 
     }
 
     private boolean loadFragment(Fragment fragment) {
-        //switching fragment
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -72,22 +75,24 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (item.getItemId()) {
             case R.id.navHome:
+                binding.txtHomeTitle.setText("Home Predication");
                 fragment = new HomeFragment();
                 break;
-
             case R.id.navMatch:
+                binding.txtHomeTitle.setText("Fixtures");
                 fragment = new FixturesFragment();
                 break;
-
             case R.id.navNews:
+                binding.txtHomeTitle.setText("News");
                 fragment = new NewsFragment();
                 break;
-
             case R.id.navVideo:
+                binding.txtHomeTitle.setText("Videos");
                 fragment = new VideosFragment();
                 break;
-            case R.id.navAccount:
-                fragment = new AccountLoginFragment();
+            case R.id.navNotification:
+                binding.txtHomeTitle.setText("Notifications");
+                fragment = new NotificationsFragment();
                 break;
         }
 
