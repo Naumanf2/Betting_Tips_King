@@ -47,16 +47,16 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".ui.auth.LogInActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.auth.LogInActivity"
+            android:exported="true">
+
         </activity>
 
         <activity
@@ -91,7 +91,7 @@
             android:exported="false"
             tools:ignore="WrongManifestParent" /> <!-- Fireabse Service -->
         <service
-            android:name=".Services.MyFirebaseMessagingService"
+            android:name=".services.MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="WrongManifestParent">
             <intent-filter>

@@ -3,67 +3,90 @@ package com.bettingtipsking.app.ui.home.matches.details.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bettingtipsking.app.R;
+import com.bettingtipsking.app.adapter.FixturesAdapter;
+import com.bettingtipsking.app.adapter.StatisticsAdapter;
+import com.bettingtipsking.app.api.FixturesRetrofitHelper;
+import com.bettingtipsking.app.api.FixturesService;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StatisticsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.bettingtipsking.app.databinding.FragmentStatisticsBinding;
+import com.bettingtipsking.app.databinding.FragmentStatsBinding;
+import com.bettingtipsking.app.model.StatisticsModel;
+import com.bettingtipsking.app.model.statistics.Statistic;
+import com.bettingtipsking.app.viewmodel.FixturesStatisticsViewModel;
+import com.bettingtipsking.app.viewmodel.PastFixturesViewModel;
+import com.bettingtipsking.app.viewmodel.viewmodelfactory.FixturesStatisticsViewModelFactory;
+import com.bettingtipsking.app.viewmodel.viewmodelfactory.PastFixturesViewModelFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class StatisticsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    FragmentStatisticsBinding binding;
+    FixturesStatisticsViewModel viewModel;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    StatisticsAdapter adapterTeamHome;
+    StatisticsAdapter adapterTeamAway;
+
+    List<StatisticsModel> listTeamHome;
+    List<StatisticsModel> listTeamAway;
 
     public StatisticsFragment() {
-        // Required empty public constructor
     }
 
     public StatisticsFragment(int fixture_id, int league_id, int team_home_id, int team_away_id) {
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StatisticsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static StatisticsFragment newInstance(String param1, String param2) {
-        StatisticsFragment fragment = new StatisticsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentStatisticsBinding.inflate(inflater, container, false);
+        viewModel = new ViewModelProvider(this, new FixturesStatisticsViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(FixturesStatisticsViewModel.class);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statistics, container, false);
+
+        listTeamHome = new ArrayList<>();
+        listTeamAway = new ArrayList<>();
+
+        viewModel.getLiveFixtures(215662);
+
+        adapterTeamHome = new StatisticsAdapter(getContext(), listTeamHome);
+        binding.recyclerViewTeamHome.setLayoutManager(new GridLayoutManager(getContext(),2));
+        binding.recyclerViewTeamHome.setAdapter(adapterTeamHome);
+
+        adapterTeamAway = new StatisticsAdapter(getContext(), listTeamAway);
+        binding.recyclerViewTeamAway.setLayoutManager(new GridLayoutManager(getContext(),3));
+        binding.recyclerViewTeamAway.setAdapter(adapterTeamAway);
+
+        viewModel.getLiveMatchLiveData().observe(getViewLifecycleOwner(), fixturesStatistics -> {
+
+
+
+           List<Statistic> list1 = fixturesStatistics.getResponse().get(0).getStatistics();
+            List<Statistic> list2 = fixturesStatistics.getResponse().get(1).getStatistics();
+
+            for (int i = 0; i < list1.size(); i++) {
+                listTeamHome.add(new StatisticsModel(fixturesStatistics.getResponse().get(0).getTeam().getId(), fixturesStatistics.getResponse().get(0).getTeam().getName(), fixturesStatistics.getResponse().get(0).getTeam().getLogo(), list1.get(i).getType(), "" + list1.get(i).getValue()));
+            }
+
+            for (int i = 0; i < list2.size(); i++) {
+                listTeamHome.add(new StatisticsModel(fixturesStatistics.getResponse().get(1).getTeam().getId(), fixturesStatistics.getResponse().get(1).getTeam().getName(), fixturesStatistics.getResponse().get(1).getTeam().getLogo(), list2.get(i).getType(), "" + list2.get(i).getValue()));
+            }
+
+            adapterTeamHome.notifyDataSetChanged();
+            adapterTeamAway.notifyDataSetChanged();
+        });
+
+
+        return binding.getRoot();
+
     }
 }

@@ -53,15 +53,6 @@ public class FollowTeamActivity extends AppCompatActivity implements MatchesNoti
         adapter = new TeamsNotificationAdapter(FollowTeamActivity.this, matchesNotificationModels,this);
         binding.recyclerViewFollowTeams.setLayoutManager(new LinearLayoutManager(FollowTeamActivity.this, LinearLayoutManager.VERTICAL, false));
         binding.recyclerViewFollowTeams.setAdapter(adapter);
-
-       /* viewModel.getData().observe(this, teamsInfoModel -> {
-            responseList = teamsInfoModel.getResponse();
-            adapter = new TeamsNotificationAdapter(FollowTeamActivity.this, responseList);
-            binding.recyclerViewFollowTeams.setLayoutManager(new LinearLayoutManager(FollowTeamActivity.this, LinearLayoutManager.VERTICAL, false));
-            binding.recyclerViewFollowTeams.setAdapter(adapter);
-
-        });*/
-
         viewModel.getAllNotifiedMatches().observe(this,matchesNotificationEntities -> {
 
             for (MatchesNotificationEntity model : matchesNotificationEntities) {

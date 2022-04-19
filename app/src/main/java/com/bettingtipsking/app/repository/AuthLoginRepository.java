@@ -151,10 +151,11 @@ public class AuthLoginRepository {
                         System.out.println("User is already available");
 
                         //todo need to change the subscription value
-                        preferencesUtils.setBoolean(Config.USER_SHARED_SUBSCRIPTION_STATUS, true);
+                        preferencesUtils.setBoolean("abc", true);
                         preferencesUtils.setBoolean(Config.SHARED_USER_DATA_SAVE_STATUS, true);
                         progressMutableLiveData.postValue(1);
                         userMutableLiveData.postValue(mAuth.getCurrentUser());
+
                     } else {
                         Log.d(TAG, "No such document");
                         if (TextUtils.isEmpty(name)|| name.equals(""))

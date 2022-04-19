@@ -16,8 +16,9 @@ class ComingFixturesViewModel(private val fixturesService: FixturesService) : Vi
     val comingMatchLiveData: LiveData<FixturesModel>
         get() = fixturesRepository.comingMatchLiveData
 
-    init {
-    }
+    val mutableProgressComingFixturesData: LiveData<Int>
+        get() = fixturesRepository.mutableProgressComingFixturesData
+
 
     fun getComingFixtures(data: String) {
         viewModelScope.launch(Dispatchers.IO) {

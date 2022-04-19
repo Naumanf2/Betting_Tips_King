@@ -87,6 +87,14 @@ public class H2HFragment extends Fragment implements ItemClickListener {
             }
         });
 
+        viewModel.getMutableProgressHeadToHeadFixturesData().observe(getViewLifecycleOwner(),integer -> {
+            if (integer==0)
+                binding.progressBar.setVisibility(View.VISIBLE);
+            else if (integer==1)
+                binding.progressBar.setVisibility(View.GONE);
+
+        });
+
         return binding.getRoot();
 
     }

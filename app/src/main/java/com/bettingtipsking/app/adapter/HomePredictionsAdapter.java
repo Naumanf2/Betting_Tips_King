@@ -43,11 +43,6 @@ public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictions
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-     /*   if (homeFragment.dateCheck && !homeFragment.isSubValid && homeFragment.finalDate.equals(getCurrentDate()) && position==(size-1)){
-            holder.subscription_cv.setVisibility(View.VISIBLE);
-        }else{
-            holder.subscription_cv.setVisibility(View.GONE);
-        }*/
 
         holder.txt_league.setText(list.get(position).getLeague_name());
         holder.txt_date.setText(list.get(position).getMatch_date());
@@ -73,22 +68,6 @@ public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictions
 
 
 
-        /*if (list.get(position).isFavStatus()) {
-            holder.img_like.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_favorite_fill_blue_24));
-        } else {
-            holder.img_like.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_favorite_blue_24));
-
-        }*/
-/*
-
-        if (list.get(position).getSport_type().equals("football")){
-           holder.txt_predications.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_football, 0, 0, 0);
-
-        }else if (list.get(position).getSport_type().equals("basketball")){
-            holder.txt_predications.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_basketball, 0, 0, 0);
-        }
-*/
-
 
         if (list.get(position).getMatch_status().equals("won")){
             holder.img_predictions.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_check_24));
@@ -100,17 +79,7 @@ public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictions
         }
 
 
-    /*    holder.img_like.setOnClickListener(v -> {
-            if (list.get(position).isFavStatus()) {
-                list.get(position).setFavStatus(false);
-                notifyItemChanged(position);
-                predictionsInterface.DeteteCall(holder.getAdapterPosition());
-            } else {
-                list.get(position).setFavStatus(true);
-                notifyItemChanged(position);
-                predictionsInterface.insertCall(holder.getAdapterPosition());
-            }
-        });*/
+
 
         holder.img_share.setOnClickListener(v -> {
 
@@ -129,42 +98,6 @@ public class HomePredictionsAdapter extends RecyclerView.Adapter<HomePredictions
             context.startActivity(Intent.createChooser(intent2, "Share via"));
         });
 
-       /* holder.img_cloud.setOnClickListener(v -> {
-            String urlString = "https://cloudbet.com/en/best-odds?af_token=dd210c96809ec8182996d6779d5a960f";
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setPackage("com.android.chrome");
-            try {
-                context.startActivity(intent);
-            } catch (ActivityNotFoundException ex) {
-                // Chrome browser presumably not installed so allow user to choose instead
-                intent.setPackage(null);
-                context.startActivity(intent);
-            }
-        });*/
-
-     /*   if (homeFragment.isBetEnabled)
-            holder.txt_bitnow.setVisibility(View.VISIBLE);
-        else
-            holder.txt_bitnow.setVisibility(View.INVISIBLE);
-
-        holder.txt_bitnow.setOnClickListener(v -> {
-            String urlString = homeFragment.betLink;
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setPackage("com.android.chrome");
-            try {
-                context.startActivity(intent);
-            } catch (ActivityNotFoundException ex) {
-                // Chrome browser presumably not installed so allow user to choose instead
-                intent.setPackage(null);
-                context.startActivity(intent);
-            }
-        });*/
-
-       /* holder.subscription_cv.setOnClickListener(v -> {
-            context.startActivity(new Intent(context, SubscriptionsActivity.class));
-        });*/
     }
 
 

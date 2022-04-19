@@ -8,21 +8,38 @@ import com.bettingtipsking.app.model.coach.CoachesModel
 class CoachesRepository(private val matchesService: FixturesService) {
 
 
-    private val coachesMutableLiveData = MutableLiveData<CoachesModel>()
+    private val coachesMutableLiveDataA = MutableLiveData<CoachesModel>()
+    private val coachesMutableLiveDataB = MutableLiveData<CoachesModel>()
 
-    val coachesLiveData: LiveData<CoachesModel>
-        get() = coachesMutableLiveData
+    val coachesLiveDataA: LiveData<CoachesModel>
+        get() = coachesMutableLiveDataA
 
-    suspend fun getCoach(team: Int) {
-        val result = matchesService.getCoach(team);
-        if (result?.body() != null)
-            coachesMutableLiveData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+    val coachesLiveDataB: LiveData<CoachesModel>
+        get() = coachesMutableLiveDataB
+
+    suspend fun getCoachA(team: Int) {
+
+        try {
+            val result = matchesService.getCoach(team);
+            if (result?.body() != null)
+                coachesMutableLiveDataA.postValue(result.body())
+        } catch (exception: Exception) {
+            //todo exception
+        }
 
     }
 
-    private fun showException(exception: String) {
+    suspend fun getCoachB(team: Int) {
+        try {
+            val result = matchesService.getCoach(team);
+            if (result?.body() != null)
+                coachesMutableLiveDataB.postValue(result.body())
+        } catch (exception: Exception) {
+            //todo exception
+        }
+
 
     }
+
+
 }

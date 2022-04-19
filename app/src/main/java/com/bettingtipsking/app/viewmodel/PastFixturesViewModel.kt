@@ -17,8 +17,9 @@ class PastFixturesViewModel(private val fixturesService: FixturesService) : View
     val pastMatchLiveData: MutableLiveData<FixturesModel>
         get() = fixturesRepository.mutablePastFixturesData
 
-    init {
-    }
+    val mutableProgressPastFixturesData: MutableLiveData<Int>
+        get() = fixturesRepository.mutableProgressPastFixturesData
+
 
     fun getPastFixtures(data: String) {
         viewModelScope.launch(Dispatchers.IO) {

@@ -1,6 +1,7 @@
 package com.bettingtipsking.app.viewmodel
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bettingtipsking.app.activity.fixtures.model.EventsModelold
@@ -14,11 +15,11 @@ class EventsViewModel(private val fixturesService: FixturesService) : ViewModel(
 
     private val eventsRepository = EventRepository(fixturesService);
 
-    val eventsLiveData: LiveData<EventsModel>
-        get() = eventsRepository.eventsLiveData
+    val eventsLiveData: MutableLiveData<EventsModel>
+        get() = eventsRepository.mutableEventData
+    val progressMutableEventData: LiveData<Int>
+        get() = eventsRepository.progressMutableEventData
 
-    init {
-    }
 
     fun getEventsByFixture(fixture: Int) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -26,9 +27,9 @@ class EventsViewModel(private val fixturesService: FixturesService) : ViewModel(
         }
     }
 
-    fun getEventsByTeam(fixture: Int,id: Int) {
+    fun getEventsByTeam(fixture: Int, id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            eventsRepository.getEventsByTeam(fixture,id)
+            eventsRepository.getEventsByTeam(fixture, id)
         }
     }
 }

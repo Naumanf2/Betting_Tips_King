@@ -16,15 +16,22 @@ class CoachesViewModel(private val fixturesService: FixturesService) : ViewModel
 
     private val coachesRepository = CoachesRepository(fixturesService);
 
-    val coachesLiveData: LiveData<CoachesModel>
-        get() = coachesRepository.coachesLiveData
+    val coachesLiveDataA: LiveData<CoachesModel>
+        get() = coachesRepository.coachesLiveDataA
 
-    init {
+    val coachesLiveDataB: LiveData<CoachesModel>
+        get() = coachesRepository.coachesLiveDataB
+
+
+    public fun getCoachA(team: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            coachesRepository.getCoachA(team)
+        }
     }
 
-    public fun getCoach(team: Int) {
+    public fun getCoachB(team: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            coachesRepository.getCoach(team)
+            coachesRepository.getCoachB(team)
         }
     }
 }

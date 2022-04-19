@@ -81,9 +81,11 @@ public class ComingFixturesFragment extends Fragment implements ItemClickListene
         binding.matchesRecyclerView.setAdapter(matchesAdapter);
 
         viewModel.getComingMatchLiveData().observe(getViewLifecycleOwner(), fixturesModel -> {
-            if (fixturesModel != null) {
-                for (int i = 0; i < fixturesModel.getResponse().size(); i++) {
+            map.clear();
+            list.clear();
+            matchesModelList.clear();
 
+                for (int i = 0; i < fixturesModel.getResponse().size(); i++) {
                     List<Response> response = fixturesModel.getResponse();
                     Fixture fixture = fixturesModel.getResponse().get(i).getFixture();
                     League league = response.get(i).getLeague();
@@ -100,7 +102,6 @@ public class ComingFixturesFragment extends Fragment implements ItemClickListene
                     list.get(map.get(league.getId())).getMatches().add(finalMatchDetailsModel);
                     matchesModelList.add(finalMatchDetailsModel);
 
-                }
 
                 if (list != null && !list.isEmpty()) {
                     binding.recyclerView.setVisibility(View.VISIBLE);
@@ -109,6 +110,13 @@ public class ComingFixturesFragment extends Fragment implements ItemClickListene
                     matchesAdapter.notifyDataSetChanged();
                 }
             }
+        });
+
+        viewModel.getMutableProgressComingFixturesData().observe(getViewLifecycleOwner(),integer -> {
+            if (integer==0)
+                binding.progressBar.setVisibility(View.VISIBLE);
+            else if (integer==1)
+                binding.progressBar.setVisibility(View.GONE);
         });
 
         binding.textOvermorrow.setOnClickListener(v -> {

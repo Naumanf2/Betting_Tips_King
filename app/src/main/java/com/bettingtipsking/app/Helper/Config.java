@@ -10,6 +10,12 @@ public class Config {
     //Google Play In-app Subscription IDs
     public static final String USER = "USER";
 
+    public static  String CLOSE_ALL_NOTIFICATION = "close_all_notification";
+    public static  String MATCHES_NOTIFICATION = "matches_notification";
+    public static  String NEWS_NOTIFICATION = "news-notification";
+    public static  String VIDEOS_NOTIFICATION = "videos_notification";
+    public static String IMPORTANT_NOTIFICATION = "important_notification";
+
     public static String ACCOUNT_TYPE_EMAIL_PASSWORD = "emailPassword";
     public static String ACCOUNT_TYPE_GOOGLE = "emailPassword";
     public static String USER_UID = "USER_UID";

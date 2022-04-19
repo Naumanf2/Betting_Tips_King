@@ -65,16 +65,18 @@ public class LiveFixturesFragment extends Fragment implements ItemClickListener 
 
         binding.recyclerView.setVisibility(View.VISIBLE);
 
-        adapter = new FixturesAdapter(getContext(), list, this,false);
+        adapter = new FixturesAdapter(getContext(), list, this, false);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
 
-        matchesAdapter = new MatchesAdapter(getContext(), matchesModelList, this,false);
+        matchesAdapter = new MatchesAdapter(getContext(), matchesModelList, this, false);
         binding.matchesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.matchesRecyclerView.setAdapter(matchesAdapter);
 
         viewModel.getLiveMatchLiveData().observe(getViewLifecycleOwner(), fixturesModel -> {
-            if (fixturesModel != null) {
+            List<Response> responses = fixturesModel.getResponse();
+
+            if (!responses.isEmpty() && responses.size()>0){
                 for (int i = 0; i < fixturesModel.getResponse().size(); i++) {
                     List<Response> response = fixturesModel.getResponse();
                     Fixture fixture = fixturesModel.getResponse().get(i).getFixture();
@@ -94,14 +96,24 @@ public class LiveFixturesFragment extends Fragment implements ItemClickListener 
                     listCopy.get(map.get(league.getId())).getMatches().add(finalMatchDetailsModel);
                     matchesModelList.add(finalMatchDetailsModel);
                 }
-
-                if (list != null && !list.isEmpty()) {
-                    binding.recyclerView.setVisibility(View.VISIBLE);
-                    binding.matchesRecyclerView.setVisibility(View.GONE);
-                    adapter.notifyDataSetChanged();
-                    matchesAdapter.notifyDataSetChanged();
-                }
             }
+
+
+            if (list != null && !list.isEmpty()) {
+                binding.recyclerView.setVisibility(View.VISIBLE);
+                binding.matchesRecyclerView.setVisibility(View.GONE);
+                adapter.notifyDataSetChanged();
+                matchesAdapter.notifyDataSetChanged();
+            }
+
+        });
+
+        viewModel.getMutableProgressLiveFixturesData().observe(getViewLifecycleOwner(), integer -> {
+            if (integer == 0)
+                binding.progressBar.setVisibility(View.VISIBLE);
+            else if (integer == 1)
+                binding.progressBar.setVisibility(View.GONE);
+
         });
 
         binding.editTextSearch.addTextChangedListener(new TextWatcher() {
@@ -136,8 +148,8 @@ public class LiveFixturesFragment extends Fragment implements ItemClickListener 
                 }
 
                 List<FinalMatchesModel> filterMatchesModelList = new ArrayList<>();
-                for (int i=0; i<matchesModelList.size();i++){
-                    if (matchesModelList.get(i).getTeams().getHome().getName().toLowerCase().contains(toString) ||matchesModelList.get(i).getTeams().getAway().getName().toLowerCase().contains(toString)){
+                for (int i = 0; i < matchesModelList.size(); i++) {
+                    if (matchesModelList.get(i).getTeams().getHome().getName().toLowerCase().contains(toString) || matchesModelList.get(i).getTeams().getAway().getName().toLowerCase().contains(toString)) {
                         filterMatchesModelList.add(matchesModelList.get(i));
                     }
                 }

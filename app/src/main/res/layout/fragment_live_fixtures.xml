@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_fixtures"
+            android:layout_below="@+id/editTextSearch"
             android:layout_marginTop="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -41,7 +42,15 @@
             android:layout_height="match_parent"
             tools:listitem="@layout/item_matches"
             android:visibility="gone"
+            android:layout_below="@+id/editTextSearch"
             android:layout_marginTop="5dp"/>
 
-    </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
 </layout>

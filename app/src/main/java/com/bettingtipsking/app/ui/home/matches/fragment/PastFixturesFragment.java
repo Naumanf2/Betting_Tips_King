@@ -50,7 +50,7 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
     PastFixturesViewModel viewModel;
     FixturesAdapter adapter;
     MatchesAdapter matchesAdapter;
-    Map<Integer,Integer> map;
+    Map<Integer, Integer> map;
     List<FinalFixturesModel> list;
     List<FinalMatchesModel> matchesModelList;
     boolean vis = false;
@@ -68,50 +68,57 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
 
         binding.recyclerView.setVisibility(View.VISIBLE);
 
-        adapter = new FixturesAdapter(getContext(),list,this,false);
+        adapter = new FixturesAdapter(getContext(), list, this, false);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
 
-        matchesAdapter = new MatchesAdapter(getContext(), matchesModelList, this,false);
+        matchesAdapter = new MatchesAdapter(getContext(), matchesModelList, this, false);
         binding.matchesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.matchesRecyclerView.setAdapter(matchesAdapter);
 
         viewModel.getPastFixtures(getPreviousDate(getTodayDate()));
         viewModel.getPastMatchLiveData().observe(getViewLifecycleOwner(), fixturesModel -> {
-            if (fixturesModel != null) {
-                System.out.println("call time");
-                list.clear();
-                matchesModelList.clear();
-                for (int i = 0; i < fixturesModel.getResponse().size(); i++) {
-                    List<Response> response = fixturesModel.getResponse();
-                    Fixture fixture = fixturesModel.getResponse().get(i).getFixture();
-                    League league = response.get(i).getLeague();
-                    Goals goals = fixturesModel.getResponse().get(i).getGoals();
-                    Score score = fixturesModel.getResponse().get(i).getScore();
-                    Teams teams = fixturesModel.getResponse().get(i).getTeams();
+            map.clear();
+            list.clear();
+            matchesModelList.clear();
 
-                    com.bettingtipsking.app.model.FinalFixturesModel finalFixturesModel = new com.bettingtipsking.app.model.FinalFixturesModel(league,new ArrayList<>());
-                    FinalMatchesModel finalMatchDetailsModel = new FinalMatchesModel(fixture,league,goals,score,teams);
-                    if (!map.containsKey(league.getId())){
-                        list.add(finalFixturesModel);
-                        map.put(league.getId(),list.indexOf(finalFixturesModel));
-                    }
-                    list.get(map.get(league.getId())).getMatches().add(finalMatchDetailsModel);
-                    matchesModelList.add(finalMatchDetailsModel);
-                }
+            for (int i = 0; i < fixturesModel.getResponse().size(); i++) {
+                List<Response> response = fixturesModel.getResponse();
+                Fixture fixture = fixturesModel.getResponse().get(i).getFixture();
+                League league = response.get(i).getLeague();
+                Goals goals = fixturesModel.getResponse().get(i).getGoals();
+                Score score = fixturesModel.getResponse().get(i).getScore();
+                Teams teams = fixturesModel.getResponse().get(i).getTeams();
 
-                if (list != null && !list.isEmpty()) {
-                    binding.recyclerView.setVisibility(View.VISIBLE);
-                    binding.matchesRecyclerView.setVisibility(View.GONE);
-                    adapter.notifyDataSetChanged();
-                    matchesAdapter.notifyDataSetChanged();
+                com.bettingtipsking.app.model.FinalFixturesModel finalFixturesModel = new com.bettingtipsking.app.model.FinalFixturesModel(league, new ArrayList<>());
+                FinalMatchesModel finalMatchDetailsModel = new FinalMatchesModel(fixture, league, goals, score, teams);
+                if (!map.containsKey(league.getId())) {
+                    list.add(finalFixturesModel);
+                    map.put(league.getId(), list.indexOf(finalFixturesModel));
                 }
+                list.get(map.get(league.getId())).getMatches().add(finalMatchDetailsModel);
+                matchesModelList.add(finalMatchDetailsModel);
             }
+
+            if (list != null && !list.isEmpty()) {
+                binding.recyclerView.setVisibility(View.VISIBLE);
+                binding.matchesRecyclerView.setVisibility(View.GONE);
+                adapter.notifyDataSetChanged();
+                matchesAdapter.notifyDataSetChanged();
+            }
+
+        });
+
+        viewModel.getMutableProgressPastFixturesData().observe(getViewLifecycleOwner(), integer -> {
+            if (integer == 0)
+                binding.progressBar.setVisibility(View.VISIBLE);
+            else if (integer == 1)
+                binding.progressBar.setVisibility(View.GONE);
         });
 
 
         binding.textYesterday.setOnClickListener(v -> {
-                viewModel.getPastFixtures(getPreviousDate(getTodayDate()));
+            viewModel.getPastFixtures(getPreviousDate(getTodayDate()));
         });
 
         binding.textEreyesterday.setOnClickListener(v -> {
@@ -152,8 +159,8 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
                 }
 
                 List<FinalMatchesModel> filterMatchesModelList = new ArrayList<>();
-                for (int i=0; i<matchesModelList.size();i++){
-                    if (matchesModelList.get(i).getTeams().getHome().getName().toLowerCase().contains(toString) ||matchesModelList.get(i).getTeams().getAway().getName().toLowerCase().contains(toString)){
+                for (int i = 0; i < matchesModelList.size(); i++) {
+                    if (matchesModelList.get(i).getTeams().getHome().getName().toLowerCase().contains(toString) || matchesModelList.get(i).getTeams().getAway().getName().toLowerCase().contains(toString)) {
                         filterMatchesModelList.add(matchesModelList.get(i));
                     }
                 }
@@ -181,17 +188,17 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
     @Override
     public void onH2HIconClick(int teamHomeId, int teamAwayId) {
         TwoTeamsHeadToHeadFragment twoTeamsHeadToHeadFragment = new TwoTeamsHeadToHeadFragment();
-        twoTeamsHeadToHeadFragment.setTaskId(new ComingFixturesFragment(),teamHomeId+"-"+teamAwayId);
+        twoTeamsHeadToHeadFragment.setTaskId(new ComingFixturesFragment(), teamHomeId + "-" + teamAwayId);
         twoTeamsHeadToHeadFragment.show(getActivity().getSupportFragmentManager(), twoTeamsHeadToHeadFragment.getTag());
     }
 
-    private String getTodayDate(){
+    private String getTodayDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    private String getPreviousDate(String inputDate){
+    private String getPreviousDate(String inputDate) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date = format.parse(inputDate);
@@ -200,18 +207,18 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
 
             c.add(Calendar.DATE, -1);
             inputDate = format.format(c.getTime());
-            Log.d("asd", "selected date : "+inputDate);
+            Log.d("asd", "selected date : " + inputDate);
 
             System.out.println(date);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            inputDate ="";
+            inputDate = "";
         }
         return inputDate;
     }
 
-    private String getEreyesterday(String inputDate){
+    private String getEreyesterday(String inputDate) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date = format.parse(inputDate);
@@ -220,13 +227,13 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
 
             c.add(Calendar.DATE, -2);
             inputDate = format.format(c.getTime());
-            Log.d("asd", "selected date : "+inputDate);
+            Log.d("asd", "selected date : " + inputDate);
 
             System.out.println(date);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            inputDate ="";
+            inputDate = "";
         }
         return inputDate;
 
@@ -235,7 +242,7 @@ public class PastFixturesFragment extends Fragment implements ItemClickListener,
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
         month++;
-        String customDate = year+"-" +(month<10?("0"+month):(month)) + "-" + (day<10?("0"+day):(day));
+        String customDate = year + "-" + (month < 10 ? ("0" + month) : (month)) + "-" + (day < 10 ? ("0" + day) : (day));
         viewModel.getPastFixtures(customDate);
     }
 

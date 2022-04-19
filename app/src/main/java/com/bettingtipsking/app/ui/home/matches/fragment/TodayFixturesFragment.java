@@ -103,6 +103,14 @@ public class TodayFixturesFragment extends Fragment implements ItemClickListener
             }
         });
 
+        viewModel.getMutableProgressTodayFixturesData().observe(getViewLifecycleOwner(),integer -> {
+            if (integer==0)
+                binding.progressBar.setVisibility(View.VISIBLE);
+            else if (integer==1)
+                binding.progressBar.setVisibility(View.GONE);
+
+        });
+
         binding.editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

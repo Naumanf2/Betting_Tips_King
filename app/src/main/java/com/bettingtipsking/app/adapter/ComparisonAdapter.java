@@ -37,7 +37,7 @@ public class ComparisonAdapter extends RecyclerView.Adapter<ComparisonAdapter.Vi
         holder.binding.textTeamAwayProgress.setText("Away ("+list.get(position).getComparisonAwayProgress()+")");
 
         holder.binding.textTeamHomeName.setText(list.get(position).getHomeTeamName());
-        holder.binding.textTeamHomeName.setText(list.get(position).getAwayTeamName());
+        holder.binding.textTeamAwayName.setText(list.get(position).getAwayTeamName());
         holder.binding.textViewTitle.setText(list.get(position).getComparisonTitle());
 
         Glide.with(context).load(list.get(position).getHomeTeamLogo()).into(holder.binding.imageTeamHomeLogo);

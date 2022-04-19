@@ -6,8 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:elevation="5dp"
-        app:cardElevation="5dp">
+        android:elevation="1dp"
+        app:cardElevation="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -17,8 +17,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imagePlayerProfile"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:layout_margin="15dp"
                 android:src="@drawable/icon_person"
                 app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
                 android:fontFamily="@font/calibri_bold"
                 android:text="Talha Shahab"
                 android:textSize="17sp"
@@ -41,7 +41,7 @@
                 android:id="@+id/textPosition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:fontFamily="@font/calibri_regular"
                 android:text="Midfielder Position"
                 android:textColor="@color/black"
