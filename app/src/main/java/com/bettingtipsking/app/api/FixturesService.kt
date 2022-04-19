@@ -6,8 +6,10 @@ import com.bettingtipsking.app.model.events.EventsModel
 import com.bettingtipsking.app.model.fixture_by_fixture_id.FixtureByFixtureId
 import com.bettingtipsking.app.model.fixtures.FixturesModel
 import com.bettingtipsking.app.model.league.LeagueModel
+import com.bettingtipsking.app.model.leaguebyleague.LeagueByLeague
 import com.bettingtipsking.app.model.predictions.PredictionsModel
 import com.bettingtipsking.app.model.squad.SquadModel
+import com.bettingtipsking.app.model.statistics.FixturesStatistics
 import com.bettingtipsking.app.model.teamsInfo.TeamsInfoModel
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -64,16 +66,19 @@ interface FixturesService {
 
     @Headers(value = ["content-type: application/json", "x-rapidapi-host: api-football-v1.p.rapidapi.com", "x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
     @GET("/v3/players/squads")
-    suspend fun getSquad(@Query("team") team: String): retrofit2.Response<SquadModel>
+    suspend fun getSquad(@Query("team") team: Int): retrofit2.Response<SquadModel>
 
 
     @Headers(value = ["content-type: application/json", "x-rapidapi-host: api-football-v1.p.rapidapi.com", "x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
     @GET("/v3/leagues")
     suspend fun getLeague(): retrofit2.Response<LeagueModel>
 
+
+
     @Headers(value = ["content-type: application/json", "x-rapidapi-host: api-football-v1.p.rapidapi.com", "x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
     @GET("/v3/leagues")
-    suspend fun getLeagueById(@Query("id") id: Int): retrofit2.Response<LeagueModel>
+    suspend fun getLeaguesBYLeagueId(@Query("id") id: Int): retrofit2.Response<LeagueByLeague>
+
 
     @Headers(value = ["content-type: application/json", "x-rapidapi-host: api-football-v1.p.rapidapi.com", "x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
     @GET("/v3/teams")
@@ -81,4 +86,9 @@ interface FixturesService {
         @Query("league") id: Int,
         @Query("season") season: Int
     ): retrofit2.Response<TeamsInfoModel>
+
+
+    @Headers(value = ["content-type: application/json", "x-rapidapi-host: api-football-v1.p.rapidapi.com", "x-rapidapi-key: 1006731426msh719f2a4da8f9a28p1d7ef2jsn1bc8d19faa8f"])
+    @GET("/v3/fixtures/statistics")
+    suspend fun getFixturesStatistics(@Query("fixture") id: Int): retrofit2.Response<FixturesStatistics>
 }

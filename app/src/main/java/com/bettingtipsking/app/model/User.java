@@ -5,9 +5,23 @@ public class User {
     private String uid;
     private String name;
     private String email;
+
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
     private String mobile_number;
     private String image;
     private String subscription_date;
+
+    public User(String name, String email, String mobile_number,String uid) {
+        this.name = name;
+        this.email = email;
+        this.mobile_number = mobile_number;
+        this.uid=uid;
+    }
+
     private String subscription_package;
 
     public User(String uid, String name, String email, String mobile_number, String image, String subscription_date, String subscription_package) {

@@ -1,222 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="25dp"
-    android:orientation="vertical"
-    tools:context=".ui.contact.ContactActivity">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:orientation="vertical"
+        tools:context=".ui.contact.ContactActivity">
 
-        <ImageView
-            android:id="@+id/imageEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/icon_email"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textContactUs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/contact_us"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageEmail"
-            app:layout_constraintStart_toEndOf="@+id/imageEmail"
-            app:layout_constraintTop_toTopOf="@+id/imageEmail" />
-
-        <ImageView
-            android:id="@+id/imageClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageEmail" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/white"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:hintTextColor="#1D2226"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageEmail">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageEmail"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_rounded_corner_white"
-                android:elevation="10dp"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="@string/your_name"
-                android:textColor="#1D2226"
-                android:textSize="14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:elevation="10dp"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:hintTextColor="#1D2226"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutName"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayoutName"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textContactUs"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_rounded_corner_white"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/contact_us"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageEmail"
+                app:layout_constraintStart_toEndOf="@+id/imageEmail"
+                app:layout_constraintTop_toTopOf="@+id/imageEmail" />
+
+            <ImageView
+                android:id="@+id/imageClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageEmail" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintTextColor="#1D2226"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageEmail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_corner_white"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/your_name"
+                    android:textColor="#1D2226"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:elevation="10dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintTextColor="#1D2226"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutName"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutName"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_corner_white"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/your_email"
+                    android:textColor="#1D2226"
+                    android:textColorHint="#1D2226"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                android:layout_width="0dp"
+                android:layout_height="181dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rounded_corner_white"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="@string/your_email"
+                android:gravity="start"
+                android:hint="@string/enter_your_message"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:textColor="#1D2226"
-                android:textColorHint="#1D2226"
-                android:textSize="14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <EditText
-            android:id="@+id/editTextMessage"
-            android:layout_width="0dp"
-            android:layout_height="181dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_rounded_corner_white"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="start"
-            android:hint="@string/enter_your_message"
-            android:paddingStart="15dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:textColor="#1D2226"
-            android:textSize="14sp"
-            app:hintTextColor="#1D2226"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutEmail"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayoutEmail"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail" />
+                android:textSize="14sp"
+                app:hintTextColor="#1D2226"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutEmail"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutEmail"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonSend"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/bg_button_rounded_blue"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/send"
-            android:textColor="@color/white"
-            android:textSize="19sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextMessage" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/bg_button_rounded_blue"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/send"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMessage" />
 
-        <TextView
-            android:id="@+id/textEmailTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/official_email"
-            android:textColor="#1D2226"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSend" />
+            <TextView
+                android:id="@+id/textEmailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/official_email"
+                android:textColor="#1D2226"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSend" />
 
-        <TextView
-            android:id="@+id/textEmailInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/support_email"
-            android:textColor="#1D2226"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textEmailTitle"
-            app:layout_constraintTop_toBottomOf="@+id/textEmailTitle" />
+            <TextView
+                android:id="@+id/textEmailInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/support_email"
+                android:textColor="#1D2226"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textEmailTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textEmailTitle" />
 
-        <TextView
-            android:id="@+id/textWebsiteTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/official_website"
-            android:textColor="#1D2226"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/textEmailInfo"
-            app:layout_constraintTop_toBottomOf="@+id/textEmailInfo" />
+            <TextView
+                android:id="@+id/textWebsiteTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/official_website"
+                android:textColor="#1D2226"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textEmailInfo"
+                app:layout_constraintTop_toBottomOf="@+id/textEmailInfo" />
 
-        <TextView
-            android:id="@+id/textWebsiteInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/support_website"
-            android:textColor="#1D2226"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textWebsiteTitle"
-            app:layout_constraintTop_toBottomOf="@+id/textWebsiteTitle" />
+            <TextView
+                android:id="@+id/textWebsiteInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/support_website"
+                android:textColor="#1D2226"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textWebsiteTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textWebsiteTitle" />
 
 
-        <TextView
-            android:id="@+id/textViaSocialMedia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/via_social_media"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textWebsiteInfo" />
+            <TextView
+                android:id="@+id/textViaSocialMedia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/via_social_media"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textWebsiteInfo" />
 
-        <ImageView
-            android:id="@+id/imageGoogle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:src="@drawable/icon_gmail"
-            app:layout_constraintStart_toStartOf="@+id/textViaSocialMedia"
-            app:layout_constraintTop_toBottomOf="@+id/textViaSocialMedia" />
+            <ImageView
+                android:id="@+id/imageGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/icon_gmail"
+                app:layout_constraintStart_toStartOf="@+id/textViaSocialMedia"
+                app:layout_constraintTop_toBottomOf="@+id/textViaSocialMedia" />
 
-        <ImageView
-            android:id="@+id/ImageFacebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:src="@drawable/icon_facebook"
-            app:layout_constraintBottom_toBottomOf="@+id/imageGoogle"
-            app:layout_constraintStart_toEndOf="@+id/imageGoogle"
-            app:layout_constraintTop_toTopOf="@+id/imageGoogle" />
+            <ImageView
+                android:id="@+id/ImageFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/icon_facebook"
+                app:layout_constraintBottom_toBottomOf="@+id/imageGoogle"
+                app:layout_constraintStart_toEndOf="@+id/imageGoogle"
+                app:layout_constraintTop_toTopOf="@+id/imageGoogle" />
 
-        <ImageView
-            android:id="@+id/imageInstagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:src="@drawable/icon_facebook"
-            app:layout_constraintBottom_toBottomOf="@+id/ImageFacebook"
-            app:layout_constraintStart_toEndOf="@+id/ImageFacebook"
-            app:layout_constraintTop_toTopOf="@+id/ImageFacebook" />
+            <ImageView
+                android:id="@+id/imageInstagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/icon_facebook"
+                app:layout_constraintBottom_toBottomOf="@+id/ImageFacebook"
+                app:layout_constraintStart_toEndOf="@+id/ImageFacebook"
+                app:layout_constraintTop_toTopOf="@+id/ImageFacebook" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

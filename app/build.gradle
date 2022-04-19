@@ -44,12 +44,17 @@ android {
 }
 
 dependencies {
-
+    implementation files('libs\\libs\\activation.jar')
+    implementation files('libs\\libs\\additionnal.jar')
+    implementation files('libs\\libs\\mail.jar')
     implementation 'com.google.firebase:firebase-database:20.0.3'
+
+
     def lifecycle_version = "2.4.0"
     def arch_version = "2.1.0"
     def room_version = "2.4.0"
     def ads_version = "20.3.0"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
@@ -61,9 +66,6 @@ dependencies {
 
     implementation 'com.android.volley:volley:1.2.1'
 
-    //Lifecycle & Room for MVVM
- /*   implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"*/
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
@@ -105,4 +107,5 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version_"
 
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
 }

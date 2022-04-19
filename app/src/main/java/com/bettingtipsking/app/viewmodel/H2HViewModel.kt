@@ -9,15 +9,16 @@ import com.bettingtipsking.app.repository.FixturesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class H2HViewModel(private val fixturesService: FixturesService) :
-    ViewModel() {
+class H2HViewModel(private val fixturesService: FixturesService) : ViewModel() {
     private val fixturesRepository = FixturesRepository(fixturesService)
 
     val headToHeadLiveData: LiveData<FixturesModel>
         get() = fixturesRepository.headToHeadLiveData
 
-    init {
-    }
+    val mutableProgressHeadToHeadFixturesData: LiveData<Int>
+        get() = fixturesRepository.mutableProgressHeadToHeadFixturesData
+
+
 
     fun getHeadToHeadBetweenTwoTeams(h2h: String) {
         viewModelScope.launch(Dispatchers.IO) {

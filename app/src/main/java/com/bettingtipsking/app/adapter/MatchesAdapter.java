@@ -76,11 +76,6 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesViewHolder> {
         });
 
         String shortStatus = list.get(position).getFixture().getStatus().getShort();
-        if (shortStatus.equalsIgnoreCase("live")) {
-            holder.binding.spinKitWave.setVisibility(View.VISIBLE);
-        } else {
-            holder.binding.spinKitWave.setVisibility(View.GONE);
-        }
 
 
 
@@ -104,7 +99,6 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesViewHolder> {
         }
         else if (shortStatus.equalsIgnoreCase("ET")){
             shortStatusLogic(holder,"Extra Time",0);
-
         }
         else if (shortStatus.equalsIgnoreCase("P")){
             shortStatusLogic(holder,"Penalty In Progress",0);
@@ -148,7 +142,6 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesViewHolder> {
 
     private void shortStatusLogic(MatchesViewHolder holder, String message, int logic){
         holder.binding.textMatchStatus.setText(message);
-
         if (logic==1)
             holder.binding.spinKitWave.setVisibility(View.VISIBLE);
             else

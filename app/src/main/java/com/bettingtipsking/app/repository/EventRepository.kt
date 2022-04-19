@@ -8,29 +8,39 @@ import com.bettingtipsking.app.model.events.EventsModel
 
 class EventRepository(private val fixturesService: FixturesService) {
 
-    private val mutableEventData = MutableLiveData<EventsModel>()
+    val mutableEventData = MutableLiveData<EventsModel>()
+    val progressMutableEventData = MutableLiveData<Int>()
 
     val eventsLiveData: LiveData<EventsModel>
         get() = mutableEventData
 
     suspend fun getEventsByFixture(fixture: Int) {
-        val result = fixturesService.getEventsByFixture(fixture);
-        if (result?.body() != null)
-            mutableEventData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        try {
+            progressMutableEventData.postValue(0)
+            val result = fixturesService.getEventsByFixture(fixture);
+            if (result?.body() != null){
+                progressMutableEventData.postValue(1)
+                mutableEventData.postValue(result.body())
+            }
+        }catch (exception:Exception){
+            progressMutableEventData.postValue(1)
+            //todo handal expection
+        }
     }
 
     suspend fun getEventsByTeam(fixture: Int, id: Int) {
-        val result = fixturesService.getEventsByTeam(fixture, id);
-        if (result?.body() != null)
-            mutableEventData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        try {
+            progressMutableEventData.postValue(0)
+            val result = fixturesService.getEventsByTeam(fixture, id);
+            if (result?.body() != null){
+                progressMutableEventData.postValue(1)
+                mutableEventData.postValue(result.body())
+            }
+        }catch (exception:Exception){
+            progressMutableEventData.postValue(1)
+        }
+
     }
 
-    private fun showException(exception: String) {
-
-    }
 
 }

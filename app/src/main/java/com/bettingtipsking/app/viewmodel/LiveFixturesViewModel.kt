@@ -16,8 +16,9 @@ class LiveFixturesViewModel(private val fixturesService: FixturesService) : View
     val liveMatchLiveData: LiveData<FixturesModel>
         get() = fixturesRepository.liveMatchLiveData
 
-    init {
-    }
+    val mutableProgressLiveFixturesData: LiveData<Int>
+        get() = fixturesRepository.mutableProgressLiveFixturesData
+
 
     fun getLiveFixtures(live: String) {
         viewModelScope.launch(Dispatchers.IO) {

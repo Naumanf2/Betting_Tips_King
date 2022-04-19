@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
-        android:padding="8dp"
         android:orientation="vertical"
+        android:padding="8dp"
         tools:context=".ui.home.matches.fragment.TodayFixturesFragment">
 
         <EditText
@@ -25,13 +25,13 @@
             android:hint="Search"
             android:paddingStart="15dp"
             android:paddingEnd="10dp"
-            android:textSize="15sp"
-           />
+            android:textSize="15sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/editTextSearch"
             android:layout_marginTop="7dp"
             tools:listitem="@layout/item_fixtures" />
 
@@ -40,9 +40,16 @@
             android:id="@+id/matchesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/editTextSearch"
             android:visibility="gone"
             tools:listitem="@layout/item_matches" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>

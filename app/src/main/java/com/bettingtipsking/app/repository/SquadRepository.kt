@@ -7,17 +7,24 @@ import com.bettingtipsking.app.model.squad.SquadModel
 
 class SquadRepository(private val fixturesService: FixturesService) {
 
-    private val mutableSquadData = MutableLiveData<SquadModel>()
+     val mutableSquadData = MutableLiveData<SquadModel>()
+     val mutableProgressData = MutableLiveData<Int>()
 
-    val squadLiveData: LiveData<SquadModel>
-        get() = mutableSquadData
 
-    suspend fun getSquad(team: String) {
-        val result = fixturesService.getSquad(team);
-        if (result?.body() != null)
-            mutableSquadData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+    suspend fun getSquad(team: Int) {
+        try {
+            mutableProgressData.postValue(0)
+            val result = fixturesService.getSquad(team);
+            if (result?.body() != null){
+                mutableProgressData.postValue(1)
+                mutableSquadData.postValue(result.body())
+            }
+        }catch (exception:Exception){
+            //todo exception
+            mutableProgressData.postValue(1)
+        }
+
+
     }
 
     private fun showException(exception: String) {

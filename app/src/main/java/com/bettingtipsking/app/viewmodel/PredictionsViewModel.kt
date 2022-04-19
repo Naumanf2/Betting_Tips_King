@@ -17,9 +17,10 @@ class PredictionsViewModel(private val fixturesService: FixturesService) : ViewM
     val predictionsLiveData: LiveData<PredictionsModel>
         get() = predicationRepository.predictionsLiveData
 
-    init {
-    }
-     fun getPredictions(feature: Int) {
+    val progressMutableLiveData: LiveData<Int>
+        get() = predicationRepository.progressMutableLiveData
+
+    fun getPredictions(feature: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             predicationRepository.getPredictions(feature)
 

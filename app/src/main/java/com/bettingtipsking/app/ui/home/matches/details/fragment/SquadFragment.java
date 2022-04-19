@@ -38,26 +38,61 @@ public class SquadFragment extends Fragment {
     SquadAdapter adapter;
     List<Player> list;
 
+    int team_home_id;
+    int team_away_id;
+
+    public SquadFragment() {
+    }
     public SquadFragment(int fixture_id, int league_id, int team_home_id, int team_away_id) {
+        this.team_home_id = team_home_id;
+        this.team_away_id = team_away_id;
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSquadBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(this, new SquadViewModelFactory(FixturesRetrofitHelper.INSTANCE.getInstance().create(FixturesService.class))).get(SquadViewModel.class);
-        viewModel.getSquad("1954");
-
         list = new ArrayList<>();
 
-        viewModel.getSquadLiveData().observe(getViewLifecycleOwner(), squadModel -> {
-            list = squadModel.getResponse().get(0).getPlayers();
+        viewModel.getSquad(team_home_id);
 
-            adapter = new SquadAdapter(getContext(), list);
-            binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            binding.recyclerView.setAdapter(adapter);
+        viewModel.getMutableSquadData().observe(getViewLifecycleOwner(), squadModel -> {
+            list.clear();
+            List<Response> responses = squadModel.getResponse();
+            if (!responses.isEmpty() && responses.size() > 0) {
+                list = squadModel.getResponse().get(0).getPlayers();
+                adapter = new SquadAdapter(getContext(), list);
+                binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                binding.recyclerView.setAdapter(adapter);
+            }
+
+        });
+
+        viewModel.getMutableProgressData().observe(getViewLifecycleOwner(),integer -> {
+            if (integer==0)
+                binding.progressBar.setVisibility(View.VISIBLE);
+            else if (integer==1)
+                binding.progressBar.setVisibility(View.GONE);
+
+        });
+
+
+
+        binding.textHome.setOnClickListener(v -> {
+            //todo change the team id
+            viewModel.getSquad(team_home_id);
+
+        });
+
+        binding.textAway.setOnClickListener(v -> {
+            //todo change the team id
+            viewModel.getSquad(team_away_id);
 
         });
 
         return binding.getRoot();
     }
+
+
 }

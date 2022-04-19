@@ -70,11 +70,12 @@ public class NewsFragment extends Fragment {
         });
 
         viewModel.getNews().observe(getViewLifecycleOwner(), newsModel -> {
-
             if (newsModel!=null){
                 for (Data data : newsModel.getData()) {
                     dataList.add(data);
                 }
+
+
                 adapter.notifyDataSetChanged();
             }else {
                 QuickHelp.showSimpleToast(getActivity().getApplication(), "Something is wrong");

@@ -2,9 +2,11 @@ package com.bettingtipsking.app.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.bettingtipsking.app.Helper.QuickHelp
 import com.bettingtipsking.app.api.FixturesService
 import com.bettingtipsking.app.model.fixture_by_fixture_id.FixtureByFixtureId
 import com.bettingtipsking.app.model.fixtures.FixturesModel
+import java.lang.Exception
 
 class FixturesRepository(private val fixturesService: FixturesService) {
 
@@ -15,6 +17,13 @@ class FixturesRepository(private val fixturesService: FixturesService) {
     private val mutableHeadToHeadFixturesData = MutableLiveData<FixturesModel>()
     private val mutableMatchDetailsFixturesData = MutableLiveData<FixtureByFixtureId>()
 
+    val mutableProgressTodayFixturesData = MutableLiveData<Int>()
+    val mutableProgressLiveFixturesData = MutableLiveData<Int>()
+    val mutableProgressComingFixturesData = MutableLiveData<Int>()
+    val mutableProgressPastFixturesData = MutableLiveData<Int>()
+    val mutableProgressHeadToHeadFixturesData = MutableLiveData<Int>()
+
+
     val liveMatchLiveData: LiveData<FixturesModel>
         get() = mutableLiveFixturesData
 
@@ -23,9 +32,6 @@ class FixturesRepository(private val fixturesService: FixturesService) {
 
     val todayMatchLiveData: LiveData<FixturesModel>
         get() = mutableTodayFixturesData
-
-
-
 
 
     val comingMatchLiveData: LiveData<FixturesModel>
@@ -39,51 +45,85 @@ class FixturesRepository(private val fixturesService: FixturesService) {
         get() = mutableMatchDetailsFixturesData
 
     suspend fun getLiveFixtures(live: String) {
-        val result = fixturesService.getLiveMatches(live);
-        if (result?.body() != null)
-            mutableLiveFixturesData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        try {
+            mutableProgressLiveFixturesData.postValue(0)
+            val result = fixturesService.getLiveMatches(live);
+            if (result?.body() != null) {
+                mutableProgressLiveFixturesData.postValue(1)
+                mutableLiveFixturesData.postValue(result.body())
+            }
+        } catch (exception: Exception) {
+            mutableProgressLiveFixturesData.postValue(1)
+        }//todo exception
+
     }
 
     suspend fun getTodayFixtures(date: String) {
-        val result = fixturesService.getFixturesByDate(date);
-        if (result?.body() != null)
-            mutableTodayFixturesData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+
+        try {
+            mutableProgressTodayFixturesData.postValue(0)
+            val result = fixturesService.getFixturesByDate(date);
+            if (result?.body() != null) {
+                mutableProgressTodayFixturesData.postValue(1)
+                mutableTodayFixturesData.postValue(result.body())
+            }
+        } catch (exception: Exception) {
+            mutableProgressTodayFixturesData.postValue(1)
+        }
+
     }
 
     suspend fun getComingFixtures(date: String) {
-        val result = fixturesService.getFixturesByDate(date);
-        if (result?.body() != null)
-            mutableComingFixturesData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        mutableProgressComingFixturesData.postValue(0)
+        try {
+            val result = fixturesService.getFixturesByDate(date);
+            if (result?.body() != null) {
+                mutableProgressComingFixturesData.postValue(1)
+                mutableComingFixturesData.postValue(result.body())
+            }
+        } catch (exception: Exception) {
+            mutableProgressComingFixturesData.postValue(1)
+        }
+
     }
 
     suspend fun getPastFixtures(date: String) {
-        val result = fixturesService.getFixturesByDate(date);
-        if (result?.body() != null)
-            mutablePastFixturesData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        try {
+            mutableProgressPastFixturesData.postValue(1)
+            val result = fixturesService.getFixturesByDate(date);
+            if (result?.body() != null) {
+                mutableProgressPastFixturesData.postValue(1)
+                mutablePastFixturesData.postValue(result.body())
+            }
+        } catch (exception: Exception) {
+            mutableProgressPastFixturesData.postValue(1)
+        }
     }
 
     suspend fun getFixturesBYFixtureId(id: Int) {
-        val result = fixturesService.getFixturesByFixtureId(id);
-        if (result?.body() != null)
-            mutableMatchDetailsFixturesData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        try {
+            val result = fixturesService.getFixturesByFixtureId(id);
+            if (result?.body() != null)
+                mutableMatchDetailsFixturesData.postValue(result.body())
+        } catch (exception: Exception) {
+            //todo exception
+        }
     }
 
     suspend fun getHeadToHeadBetweenTwoTeams(h2h: String) {
-        val result = fixturesService.getHeadToHeadBetweenTwoTeams(h2h)
-        if (result?.body() != null)
-            mutableHeadToHeadFixturesData.postValue(result.body())
-        else
-            showException(result.errorBody().toString())
+        try {
+            mutableProgressHeadToHeadFixturesData.postValue(0)
+            val result = fixturesService.getHeadToHeadBetweenTwoTeams(h2h)
+            if (result?.body() != null) {
+                mutableProgressHeadToHeadFixturesData.postValue(1)
+                mutableHeadToHeadFixturesData.postValue(result.body())
+            }
+        } catch (exception: Exception) {
+            mutableProgressHeadToHeadFixturesData.postValue(1)
+
+        }
+
+
     }
 
     suspend fun getHeadToHeadBetweenTwoTeamsByDate(h2h: String, date: String) {

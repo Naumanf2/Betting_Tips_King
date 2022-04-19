@@ -37,15 +37,18 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.binding.textTeamName.setText(responseList.get(position).getTeam().getName());
-        if (responseList.get(position).getType().equalsIgnoreCase("Goal")) {
-            holder.binding.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.goal));
-        } else if (responseList.get(position).getType().equalsIgnoreCase("card")) {
-            holder.binding.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.card));
-        }
+        String detail = responseList.get(position).getDetail();
+
+        if (detail.contains("Yellow"))
+            holder.binding.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_yellow_card));
+        else if (detail.contains("Red"))
+            holder.binding.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_red_card));
+        else if (detail.contains("Substitution"))
+            holder.binding.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_substitution));
 
         holder.binding.textPlayerName.setText(responseList.get(position).getPlayer().getName());
-        holder.binding.textTimeElapsed.setText(""+responseList.get(position).getTime().getElapsed());
-        holder.binding.textEventDetail.setText(responseList.get(position).getDetail());
+        holder.binding.textTime.setText("" + responseList.get(position).getTime().getElapsed());
+        holder.binding.textDetail.setText(responseList.get(position).getDetail());
         Glide.with(context).load(responseList.get(position).getTeam().getLogo()).into(holder.binding.imageTeamLogo);
     }
 
@@ -56,7 +59,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ItemEventsBinding binding;
-
         public ViewHolder(ItemEventsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

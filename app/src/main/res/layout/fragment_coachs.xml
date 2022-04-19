@@ -9,144 +9,158 @@
             type="com.bettingtipsking.app.model.coach.CoachesModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.home.matches.details.fragment.CoachsFragment">
 
-        <TextView
-            android:id="@+id/textHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_dark_background"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_medium"
-            android:paddingStart="15dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="5dp"
-            android:text="Home"
-            android:drawablePadding="7dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textAway"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_light_back_ground"
-            android:fontFamily="@font/poppins_medium"
-            android:paddingTop="5dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="5dp"
-            android:text="Away"
-            android:layout_marginStart="15dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textHome"
-            app:layout_constraintStart_toEndOf="@+id/textHome"
-            app:layout_constraintTop_toTopOf="@+id/textHome" />
-
-
-        <ImageView
-            android:id="@+id/circleImageProfile"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_margin="20dp"
-            android:coachImage="@{coach.response.get(0).team.logo}"
-            app:civ_border_color="#707070"
-            app:civ_border_width="1dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textHome" />
-
-        <TextView
-            android:id="@+id/textCoachName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@{coach.response.get(0).name}"
-            android:textColor="#000000"
-            android:textSize="21sp"
-            app:layout_constraintStart_toEndOf="@+id/circleImageProfile"
-            app:layout_constraintTop_toTopOf="@+id/circleImageProfile" />
-
-        <TextView
-            android:id="@+id/textCountry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/calibri_regular"
-            android:text="@{coach.response.get(0).nationality}"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@+id/textCoachName"
-            app:layout_constraintTop_toBottomOf="@+id/textCoachName" />
-
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Place of birth"
-            android:textColor="#B30E0E0E"
-            android:textSize="17sp"
-            android:layout_marginTop="7dp"
-            app:layout_constraintStart_toStartOf="@+id/circleImageProfile"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageProfile" />
-
-        <TextView
-            android:id="@+id/textBirthLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@{coach.response.get(0).birth.place}"
-            android:textColor="#010101"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        <View
-            android:id="@+id/view1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0.01dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:background="#707070"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textBirthLocation" />
-
-
-        <TextView
-            android:id="@+id/textDB"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Date of Birth"
-            android:textColor="#B30E0E0E"
-            android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/view1" />
+           >
 
-        <TextView
-            android:id="@+id/textDOB"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textCoachNameA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textAgeA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textDateOfBirthA"
+                app:layout_constraintTop_toTopOf="@+id/textDateOfBirthA" />
+
+            <TextView
+                android:id="@+id/textDateOfBirthA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@+id/textCoachNameA"
+                app:layout_constraintTop_toBottomOf="@+id/textCoachNameA" />
+
+            <TextView
+                android:id="@+id/textPlaceA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="@+id/textDateOfBirthA"
+                app:layout_constraintTop_toBottomOf="@+id/textDateOfBirthA" />
+
+
+            <ImageView
+                android:id="@+id/imageTeamLogoA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textPlaceA"
+                app:layout_constraintTop_toBottomOf="@+id/textPlaceA" />
+
+            <TextView
+                android:id="@+id/textTeamNameA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/imageTeamLogoA"
+                app:layout_constraintTop_toTopOf="@+id/imageTeamLogoA" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageTeamLogoA" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@{coach.response.get(0).birth.date}"
-            android:textColor="#010101"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/textDB"
-            app:layout_constraintTop_toBottomOf="@+id/textDB" />
+            >
+
+            <TextView
+                android:id="@+id/textCoachNameB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
+            <TextView
+                android:id="@+id/textAgeB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textDateOfBirthB"
+                app:layout_constraintTop_toTopOf="@+id/textDateOfBirthB" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textDateOfBirthB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@+id/textCoachNameB"
+                app:layout_constraintTop_toBottomOf="@+id/textCoachNameB" />
+
+            <TextView
+                android:id="@+id/textPlaceB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="@+id/textDateOfBirthB"
+                app:layout_constraintTop_toBottomOf="@+id/textDateOfBirthB" />
+
+
+            <ImageView
+                android:id="@+id/imageTeamLogoB"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textPlaceB"
+                app:layout_constraintTop_toBottomOf="@+id/textPlaceB" />
+
+            <TextView
+                android:id="@+id/textTeamNameB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/imageTeamLogoB"
+                app:layout_constraintTop_toTopOf="@+id/imageTeamLogoB" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageTeamLogoB" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
 </layout>
